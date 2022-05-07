@@ -8,3 +8,6 @@ export * from './PlanBenefitsTextItems'
 
 //pricing item
 export * from './PricingItem'
+
+//clients item
+export * from './ClientsItem'

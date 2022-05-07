@@ -16,7 +16,7 @@ interface Styles<T> extends BackgroundColorProps<T>, PositionProps<T> { }
 
 export const Container = styled.div<Styles<Theme>>`
 	margin: 0 auto;
-    max-width: 75rem;
+    max-width: 70rem;
     padding: 0 1rem;
     @media ${tablet} {
     max-width: 100%;

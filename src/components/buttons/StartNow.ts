@@ -19,7 +19,7 @@ cursor: pointer;
 @media ${mobile} {
     text-align: center;
     /* width: 50%; */
-    margin-top: 2rem;
+    margin-top: 1rem;
     
     }
 `

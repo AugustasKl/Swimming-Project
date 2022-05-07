@@ -14,10 +14,11 @@ interface ListProps {
 }
 
 const Lists: React.FC<ListProps> = ({ title, listItems, bullet, columns }) => {
+  console.log(listItems)
   return (
     <Container>
      
-        <Typography
+        {title && <Typography
           textAlign={{ _: "start", desktop: "center" }}
           type="h6"
           paddingY={{ _: "s16", desktop: "s32" }}
@@ -25,7 +26,7 @@ const Lists: React.FC<ListProps> = ({ title, listItems, bullet, columns }) => {
           fontSize="fs20"
         >
           {title}
-        </Typography>
+        </Typography>}
         <ContainerSmall maxWidth="49.5rem">
           <FlexWrapper flexDirection="column" gap="0.5rem">
             <ListStyle columns={columns}>
@@ -46,6 +47,7 @@ const ListStyle = styled.ul<{ columns?: string }>`
   columns: ${({ columns }) => (columns ? columns : "0")};
   column-gap: 1.5rem;
   height: 100%;
+  /* width: 100%; */
     padding: 0;
   @media ${mobile} {
     columns: 1;

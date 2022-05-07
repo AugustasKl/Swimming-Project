@@ -23,7 +23,6 @@ export const PricingItem: React.FC<BillingProps> = ({
         <FlexWrapper gap="0.25rem" alignItems="center">
           <Typography fontWeight="fw700"> {name}</Typography>
           <Typography
- 
             p="s4"
             fontWeight="fw700"
             color={message === "Most popular" ? "purple" : "green"}
@@ -33,7 +32,6 @@ export const PricingItem: React.FC<BillingProps> = ({
                 ? "1px solid #9767BD"
                 : "1px solid #00878A"
             }>
-            {/* {message === "Most popular" && <Star/>} */}
             {message}
           </Typography>
         </FlexWrapper>
@@ -43,7 +41,7 @@ export const PricingItem: React.FC<BillingProps> = ({
         /day
         </FlexWrapper>
         <Typography fontSize="fs14">
-          <del>${oldPrice}</del> &nbsp; <a>${newPrice}</a> billed every month
+          <del>${oldPrice}</del> &nbsp; <text>${newPrice}</text> billed every month
         </Typography>
         <StartNow>Start now (Save 25%)</StartNow>
       </FlexWrapper>
@@ -62,8 +60,7 @@ const PricingItemStyles = styled(FlexWrapper)`
   height: 11.5rem;
   width: 24rem;
 
-  a{
-      text-decoration: none;
+  text{
       color:${theme.colors.orange}
   }
 `;

@@ -1,17 +1,17 @@
 import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
 
-const DemoHeart:React.FC = () => {
+const FallingDudeDemo:React.FC = () => {
   return (
   <StaticImage
-  src='./../images/demoHeart.png'
-  alt='Demo heart img'
+  src='./../images/FallingDude.png'
+  alt='Demo falling dude img'
   style={{height:'100%'}}
   />
   )
 }
 
-export default DemoHeart
+export default FallingDudeDemo
 
 
 

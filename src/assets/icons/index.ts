@@ -9,3 +9,6 @@ export * from './Star'
 
 //safe checkout image
 export * from './SafeCheckout'
+
+//rating stars
+export * from './RatingStars'

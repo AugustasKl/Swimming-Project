@@ -20,6 +20,20 @@ import star from 'assets/svg/star.svg'
 //safe checkout
 import safecheckout from 'assets/images/SafeCheckout.png'
 
+//clients
+//stars
+import starsRating from 'assets/svg/starsRating.svg'
+//clients
+import Jules from 'assets/images/Jules.png'
+import Rūta from 'assets/images/Ruta.jpeg'
+import Michael from 'assets/images/Michael.jpeg'
+
+//what will you get
+//falling dude
+import FallingDude from 'assets/images/FallingDude.png'
+
+
+
 export type Visuals = keyof typeof visuals;
 export const visuals: Record<string, string> = {
 	logo,
@@ -29,5 +43,10 @@ export const visuals: Record<string, string> = {
 	freestyle,
 	bullet,
 	star,
-	safecheckout
+	safecheckout,
+	starsRating,
+	Jules,
+	Rūta,
+	Michael,
+	FallingDude
 };

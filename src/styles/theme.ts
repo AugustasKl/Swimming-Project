@@ -63,6 +63,7 @@ export const theme = {
   colors,
   fontFamily: { primary: "Red Hat Display" },
   fontSizes: {
+    fs12: '0.75rem',
 		fs14: '0.875rem',
 		fs16: '1rem',
 		fs18: '1.125rem',

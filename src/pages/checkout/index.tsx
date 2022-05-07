@@ -1,14 +1,20 @@
-import Header from 'components/layout/header/Header'
-import React from 'react'
-import { PlanSection, Pricing } from './sections'
+import Header from "components/layout/header/Header";
+import React from "react";
+import { useQuery } from "styles/theme";
+import { Clients, PlanSection, Pricing, YouWillGet } from "./sections";
 // import PlanSection from './sections/PlanSection'
 
-const Checkout:React.FC = () => (
+const Checkout: React.FC = () => {
+    const{isMobile}=useQuery()
+  return (
     <>
-    <Header/>
-    <PlanSection/>
-    <Pricing/>
+      <Header />
+      <PlanSection />
+      <Pricing />
+      {isMobile? '' :<Clients />}
+      <YouWillGet />
     </>
-)
+  );
+};
 
-export default Checkout
+export default Checkout;
