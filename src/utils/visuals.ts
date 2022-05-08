@@ -32,6 +32,21 @@ import Michael from 'assets/images/Michael.jpeg'
 //falling dude
 import FallingDude from 'assets/images/FallingDude.png'
 
+//swimming coaches
+// import coachA from 'assets/images/CoachA.png'
+import coachB from 'assets/images/CoachB.png'
+import coachC from 'assets/images/CoachC.png'
+// import coachD from 'assets/images/CoachD.png'
+import coachE from 'assets/images/CoachE.png'
+import coachF from 'assets/images/CoachF.png'
+import coachG from 'assets/images/CoachG.png'
+import coachH from 'assets/images/CoachH.png'
+
+//rating
+
+import connect from 'assets/svg/connect.svg'
+import arrow from 'assets/svg/arrow.svg'
+
 
 
 export type Visuals = keyof typeof visuals;
@@ -48,5 +63,15 @@ export const visuals: Record<string, string> = {
 	Jules,
 	Rūta,
 	Michael,
-	FallingDude
+	FallingDude,
+	// coachA,
+	coachB,
+	coachC,
+	// coachD,
+	coachE,
+	coachF,
+	coachG,
+	coachH,
+	connect,
+	arrow
 };
