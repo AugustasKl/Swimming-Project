@@ -4,11 +4,18 @@ import styled from 'styled-components/macro'
 
 export const SafeCheckout:React.FC = () => (
     <CheckoutStyles>
-        <Image src='safecheckout' alt='safe checkout' />
+        <Image src='safecheckout' alt='safe checkout'  />
     </CheckoutStyles>
 )
 
 
 const CheckoutStyles=styled(FlexWrapper)`
 justify-content: center;
+
+img{
+    
+    padding: 0.25rem;
+    background: white;
+}
+;
 `

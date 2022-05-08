@@ -13,15 +13,16 @@ const Header: React.FC = () => {
   return (
     
     
-    // <Container>
-    <Box as="header" width="100%">
+    
+    <Box as="header"  >
+      <HeaderWrapper>
       {/* <Container > */}
       <FlexWrapper
         justifyContent="space-between"
         flexDirection={{ _: "column", desktop: "row" }}
         alignItems="center"
-        boxShadow= "0 0.25rem 0.625rem -0.375rem"
-        paddingY={{ _: "s32", desktop: "s8" }}
+        // boxShadow= "0 0.25rem 0.625rem -0.375rem"
+        paddingY={{ _: "s32", desktop: "s24" }}
         paddingX={{ _: "s8", desktop: "s160" }}
         gap={isMobile ? "2rem" : "0rem"}
         >
@@ -32,15 +33,16 @@ const Header: React.FC = () => {
           <ButtonPrimary>Start Quiz</ButtonPrimary>
         </FlexWrapper>   
       </FlexWrapper>
+          </HeaderWrapper>
     </Box>
-      // </Container>
+   
        
   );
 };
 
 export default Header;
 
-const HeaderWrapper = styled(FlexWrapper)`
-        
+const HeaderWrapper = styled(Box)`
+        background: linear-gradient(128deg, #000F33 65%, #0747DA 35%);
 `;
  

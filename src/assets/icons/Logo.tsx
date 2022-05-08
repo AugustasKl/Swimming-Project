@@ -4,9 +4,9 @@ import React from 'react'
 const Logo:React.FC = () => (
 
     <StaticImage 
-    src='./../images/logo.png'
+    src='./../svg/Logo.svg'
     alt='logo'
-    style={{width:'3.5rem', height:'3.5rem'}}
+    // style={{width:'3.5rem', height:'3.5rem'}}
     />
   )
 

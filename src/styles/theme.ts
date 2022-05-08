@@ -30,17 +30,20 @@ const backgrounds ={
 }
 
 const colors = {
-  white: "#ffffff",
+  
   black: "#000000",
-  heroBackground: "#E7FAFE",
   subscribeBackground: "#D2F5F6",
-  mainBackground: "#E5E5E5",
+  mainBackground: "#000F33",
+  backgroundSecondary:'#0747DA',
   radioColor: "#ccc",
   green:'#00878A',
   sectionColor:'#F3F0EB',
   purple:'#9767BD',
   orange:'#EF843B',
-  blue:'#2C71F0'
+  blue:'#2C71F0',
+  white:'#FFFFFF',
+  heroBackground:'#1A2747',
+  heroSecondary:'#D0DEFF'
 };
 const radii = {
   r0: "0",

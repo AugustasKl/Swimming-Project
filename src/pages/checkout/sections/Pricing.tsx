@@ -16,10 +16,10 @@ export const Pricing: React.FC = () => {
   console.log("labas");
   const { isMobile } = useQuery();
   return (
-    <SectionWrapper backgroundColor="sectionColor">
+    <SectionWrapper  background= 'linear-gradient(128deg, #000F33 65%, #0747DA 35%)'>
       <ContainerSmall maxWidth="49.5rem">
         <StyledPricing>
-          <Typography type="h6" paddingBottom="s32">
+          <Typography type="h6" paddingBottom="s32" color="white">
             {isMobile ? "Choose your personal plan" : "Select billing option"}
           </Typography>
           <FlexWrapper
@@ -41,7 +41,7 @@ export const Pricing: React.FC = () => {
             )}
           </FlexWrapper>
           <Box maxWidth={{ _: "70%", desktop: "100%" }}>
-            <Typography textAlign="center" fontSize="fs14" paddingY="s32">
+            <Typography textAlign="center" color="white" fontSize="fs14" paddingY="s32">
               By choosing a payment method you agree to the <a>T&Cs</a> and{" "}
               <a>Privacy Policy </a>{" "}
             </Typography>

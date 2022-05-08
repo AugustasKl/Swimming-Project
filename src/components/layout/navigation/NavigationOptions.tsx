@@ -18,15 +18,17 @@ const NavigationOptions: React.FC = () => {
 export default NavigationOptions;
 
 const HeaderWrapper = styled(FlexWrapper)`
+
   gap: 3rem;
   a {
-    color: ${theme.colors.black};
+    font-size: 1.15rem;
+    color: ${theme.colors.white};
     text-decoration: none;
     font-weight: ${theme.fontWeights.fw400};
     border-bottom: 3px solid transparent;
   }
   a:hover {
-    border-color: ${theme.colors.black};
+    border-color: ${theme.colors.white};
   }
   a:active{
     border-color: ${theme.colors.heroBackground};
