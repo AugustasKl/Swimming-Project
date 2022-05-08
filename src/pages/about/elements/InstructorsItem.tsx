@@ -1,10 +1,10 @@
 import React from "react";
 import { InstructorsProps } from "constants/swimInstructors";
 import { FlexWrapper, Typography } from "components";
-import UniversalImages from "assets/icons/UniversalImages";
+
 import styled from "styled-components/macro";
 import { theme } from "styles/theme";
-import { Star } from "assets/icons";
+import { Star, UniversalImages } from "assets/icons";
 import { SocialButton } from "components/buttons";
 
 interface InstructorsStylesProps {
@@ -34,7 +34,7 @@ const InstructorsItem: React.FC<InstructorsProps> = ({
         alignItems="center"
         gap="0.5rem"
       >
-        <UniversalImages tag={tag} />
+        <UniversalImages tag={tag} height='20rem' width='100%' />
         <Typography fontWeight="fw600" textAlign="center" fontSize="fs24">
           {name}
         </Typography>

@@ -48,6 +48,13 @@ import connect from 'assets/svg/connect.svg'
 import arrow from 'assets/svg/arrow.svg'
 
 
+//partners
+import lithuaniaSwimming from 'assets/images/lithuania.png'
+import lithuaniaWithoutText from 'assets/images/lithuaniaWithoutText.jpeg'
+import usaSwimming from 'assets/images/usa.jpeg'
+import usaWithoutText from 'assets/images/usaWithoutText.png'
+import olympics from 'assets/images/olympics.png'
+
 
 export type Visuals = keyof typeof visuals;
 export const visuals: Record<string, string> = {
@@ -73,5 +80,12 @@ export const visuals: Record<string, string> = {
 	coachG,
 	coachH,
 	connect,
-	arrow
+	arrow,
+	lithuaniaSwimming,
+	lithuaniaWithoutText,
+	usaWithoutText,
+	usaSwimming,
+	olympics
+
+
 };

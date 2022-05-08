@@ -1,10 +1,19 @@
 import { Image } from 'components'
 import React from 'react'
+import styled from 'styled-components/macro'
 
-const UniversalImages:React.FC<{tag:string}> = ({tag}) => {
+export const UniversalImages:React.FC<{tag:string, height?:string, width?:string}> = ({tag, height, width}) => {
   return (
-    <Image src={tag} alt={tag} height='20rem' width='100%' />
+    //   <ImageStyle height={height} width={width}>
+
+    <Image src={tag} alt={tag} height={height} width={width}/>
+    //   </ImageStyle>
   )
 }
 
-export default UniversalImages
+
+const ImageStyle=styled.image<{}>`
+    height: ${({height})=> height ? height : ''};
+    width: ${({width})=> width? width : ''};
+
+`

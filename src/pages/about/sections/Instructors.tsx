@@ -16,7 +16,7 @@ export const Instructors:React.FC = () => {
                 Progress tracking sheet, that helps you fallow your achievements and see your improvement
                 </Typography>
                 </Box>
-            <GridWrapper gridTemplateColumns={{_:'1fr', desktop:"repeat(3, 1fr)"}} gap='2rem' marginTop='s48' >
+            <GridWrapper gridTemplateColumns={{_:'1fr', desktop:"repeat(3, 1fr)"}} gap='2.5rem' marginTop='s48'  >
             {SWIMMING_INSTRUCTORS.map(({id, name, position, experience, rating, tag})=>(
                 <InstructorsItem
                 id={id}

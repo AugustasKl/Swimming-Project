@@ -12,7 +12,8 @@ const Header: React.FC = () => {
   const{isMobile}=useQuery()
   return (
     
-
+    
+    // <Container>
     <Box as="header" width="100%">
       {/* <Container > */}
       <FlexWrapper
@@ -31,8 +32,8 @@ const Header: React.FC = () => {
           <ButtonPrimary>Start Quiz</ButtonPrimary>
         </FlexWrapper>   
       </FlexWrapper>
-      {/* </Container> */}
     </Box>
+      // </Container>
        
   );
 };

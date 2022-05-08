@@ -69,6 +69,7 @@ export const theme = {
 		fs18: '1.125rem',
     fs20:'1.25rem',
 		fs24: '1.5rem',
+    fs40: '2.5rem',
 		fs48: '3rem',
 		fs64: '4rem',
   },

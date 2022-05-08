@@ -16,7 +16,7 @@ export const SocialButton:React.FC = () => {
         <Styledicon>
             {isClicked ? (
                 <Image src='connect' alt='connect icon' width='2.5rem' />):
-                (<FlexWrapper flexDirection='column' justifyContent="center" gap='1rem'>
+                (<FlexWrapper flexDirection='column' justifyContent="center" gap='1rem' height='100%'>
                     <Image src='arrow' alt='arrow' />
                     <SocialLinks/>
                 </FlexWrapper>
