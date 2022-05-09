@@ -6,3 +6,8 @@ export * from './Community'
 export * from './Partners'
 //Programs
 export * from './Programs'
+//About
+export * from './About'
+
+//Find the right program
+export * from './FindRightProgram'

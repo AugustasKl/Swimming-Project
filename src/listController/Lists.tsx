@@ -3,7 +3,7 @@ import { ContainerSmall } from "components/wrappers/ContainerSmall";
 import React from "react";
 import ListsItem from "./ListsItem";
 import { PlanProps } from "./../constants/personalPlan";
-import { mobile, theme } from "styles/theme";
+import { mobile, theme, useQuery } from "styles/theme";
 import styled from "styled-components/macro";
 
 interface ListProps {
@@ -11,10 +11,12 @@ interface ListProps {
   listItems: Array<object>;
   bullet: string;
   columns?: string;
+  mobileColumns?:string;
 }
 
-const Lists: React.FC<ListProps> = ({ title, listItems, bullet, columns }) => {
+const Lists: React.FC<ListProps> = ({ title, listItems, bullet, columns, mobileColumns }) => {
   console.log(listItems)
+  const {isMobile}=useQuery()
   return (
     <Container>
      
@@ -29,7 +31,7 @@ const Lists: React.FC<ListProps> = ({ title, listItems, bullet, columns }) => {
         </Typography>}
         <ContainerSmall maxWidth="49.5rem">
           <FlexWrapper flexDirection="column" gap="0.5rem">
-            <ListStyle columns={columns}>
+            <ListStyle columns={isMobile? mobileColumns : columns}>
               {listItems.map((item) => (
                 <ListsItem key={item.id} text={item.text} bullet={bullet} />
               ))}
@@ -48,9 +50,10 @@ const ListStyle = styled.ul<{ columns?: string }>`
   column-gap: 1.5rem;
   height: 100%;
   /* width: 100%; */
-    padding: 0;
+  padding: 0;
   @media ${mobile} {
-    columns: 1;
+    columns: ${({ columns }) => (columns ? columns : "1")};
+ 
     /* width: 19.5rem; */
     padding: 0;
   }

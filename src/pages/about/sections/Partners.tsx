@@ -3,6 +3,7 @@ import {
   Box,
   Container,
   FlexWrapper,
+  SectionWrapper,
   Typography,
 } from "components";
 import React from "react";
@@ -12,22 +13,24 @@ const logosArray = ["lithuaniaSwimming", "usaSwimming", "olympics"];
 const logosMobileArray = ["lithuaniaWithoutText", "usaWithoutText", "olympics"];
 
 export const Partners: React.FC = () => {
-    const { isMobile } = useQuery();
-    
-    const isMobileData = isMobile ? logosMobileArray : logosArray;
+  const { isMobile } = useQuery();
+
+  const isMobileData = isMobile ? logosMobileArray : logosArray;
   return (
-    <Container>
-      <Typography type="h6" pb="s32" textAlign="center">
-        Our beloved Partners
-      </Typography>
-      <FlexWrapper gap="2rem" justifyContent="center">
-        {isMobileData.map((tag) => (
-          <LogosStyles>
-            <UniversalImages tag={tag} width="10rem" height="4rem" />
-          </LogosStyles>
-        ))}
-      </FlexWrapper>
-    </Container>
+    <SectionWrapper>
+      <Container>
+        <Typography type="h6" pb="s32" textAlign="center">
+          Our beloved Partners
+        </Typography>
+        <FlexWrapper gap="2rem" justifyContent="center">
+          {isMobileData.map((tag) => (
+            <LogosStyles>
+              <UniversalImages tag={tag} width="10rem" height="4rem" />
+            </LogosStyles>
+          ))}
+        </FlexWrapper>
+      </Container>
+    </SectionWrapper>
   );
 };
 
