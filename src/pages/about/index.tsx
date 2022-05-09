@@ -1,6 +1,6 @@
 import Header from "components/layout/header/Header";
 import React from "react";
-import { Instructors, Partners } from "./sections";
+import { Instructors, Partners, Programs } from "./sections";
 import Community from "./sections/Community";
 
 const Checkout: React.FC = () => {
@@ -9,6 +9,7 @@ const Checkout: React.FC = () => {
       <Header />
       <Community />
       <Instructors />
+      <Programs/>
       <Partners/>
     </>
   );

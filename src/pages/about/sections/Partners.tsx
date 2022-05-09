@@ -17,7 +17,7 @@ export const Partners: React.FC = () => {
     const isMobileData = isMobile ? logosMobileArray : logosArray;
   return (
     <Container>
-      <Typography type="h6" paddingBottom="s32" textAlign="center">
+      <Typography type="h6" pb="s32" textAlign="center">
         Our beloved Partners
       </Typography>
       <FlexWrapper gap="2rem" justifyContent="center">

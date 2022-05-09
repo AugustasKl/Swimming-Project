@@ -1,10 +1,12 @@
-interface ClassesProps{
+export interface ClassesProps{
     id:string,
     title:string,
     price:number,
     message:string,
     lessonCount:number,
-    enrolled:number
+    enrolled:number,
+    tag:string,
+    status:string
 }
 
 export const SWIMMING_CLASSES:Array<ClassesProps>=[
@@ -14,7 +16,9 @@ export const SWIMMING_CLASSES:Array<ClassesProps>=[
         price:800,
         message: 'Contrary to polular belied, lorem ipsum is not simply random desktop',
         lessonCount:20,
-        enrolled: 18
+        enrolled: 18,
+        tag:'train1',
+        status:'starter'
     },
     {
         id:'c1',
@@ -22,7 +26,9 @@ export const SWIMMING_CLASSES:Array<ClassesProps>=[
         price:600,
         message: 'Contrary to polular belied, lorem ipsum is not simply random desktop',
         lessonCount:12,
-        enrolled: 22
+        enrolled: 22,
+        tag:'train2',
+        status:'intermediate'
     },
     {
         id:'c1',
@@ -30,7 +36,9 @@ export const SWIMMING_CLASSES:Array<ClassesProps>=[
         price:600,
         message: 'Contrary to polular belied, lorem ipsum is not simply random desktop',
         lessonCount:17,
-        enrolled: 10
+        enrolled: 10,
+        tag:'train3',
+        status:'professional'
     },
 
 ]

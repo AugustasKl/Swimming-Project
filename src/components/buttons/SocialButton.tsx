@@ -13,7 +13,7 @@ export const SocialButton:React.FC = () => {
     };
   return (
     <Button onClick={clickedHandler}>
-        <Styledicon>
+        <StyledIcon>
             {isClicked ? (
                 <Image src='connect' alt='connect icon' width='2.5rem' />):
                 (<FlexWrapper flexDirection='column' justifyContent="center" gap='1rem' height='100%'>
@@ -21,12 +21,12 @@ export const SocialButton:React.FC = () => {
                     <SocialLinks/>
                 </FlexWrapper>
             )}
-        </Styledicon>
+        </StyledIcon>
     </Button>
   )
 }
 
-const Styledicon=styled.image`
+const StyledIcon=styled.image`
   position: absolute;
   top: 9.5%;
   left: 5%;

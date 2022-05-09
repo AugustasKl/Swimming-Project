@@ -4,3 +4,5 @@ export * from './Instructors'
 export * from './Community'
 //Partners
 export * from './Partners'
+//Programs
+export * from './Programs'

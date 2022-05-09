@@ -10,6 +10,8 @@ import twitter from 'assets/svg/twitter.svg';
 
 // freestyle
 import freestyle from 'assets/gifs/freestyle.gif'
+import swimmerStarting from 'assets/images/swimmerStarting.jpeg'
+import swimming from 'assets/images/swimming.png'
 
 //bulletPoints
 import bullet from 'assets/svg/bulletPoint.svg'
@@ -55,6 +57,20 @@ import usaSwimming from 'assets/images/usa.jpeg'
 import usaWithoutText from 'assets/images/usaWithoutText.png'
 import olympics from 'assets/images/olympics.png'
 
+//programs
+
+import train2 from 'assets/images/train1.jpeg'
+import train1 from 'assets/images/train2.jpeg'
+import train3 from 'assets/images/train3.jpeg'
+
+
+//utils
+import enrolled from 'assets/svg/enrolled.svg'
+import practice from 'assets/svg/practice.svg'
+import starter from 'assets/svg/starter.svg'
+import intermediate from 'assets/svg/intermediate.svg'
+import professional from 'assets/svg/professional.svg'
+
 
 export type Visuals = keyof typeof visuals;
 export const visuals: Record<string, string> = {
@@ -63,6 +79,8 @@ export const visuals: Record<string, string> = {
 	instagram,
 	twitter,
 	freestyle,
+	swimmerStarting,
+	swimming,
 	bullet,
 	star,
 	safecheckout,
@@ -85,7 +103,15 @@ export const visuals: Record<string, string> = {
 	lithuaniaWithoutText,
 	usaWithoutText,
 	usaSwimming,
-	olympics
+	olympics,
+	train1,
+	train2,
+	train3,
+	enrolled,
+	practice,
+	starter,
+	intermediate,
+	professional
 
 
 };
