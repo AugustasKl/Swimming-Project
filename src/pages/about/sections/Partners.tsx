@@ -24,7 +24,7 @@ export const Partners: React.FC = () => {
         </Typography>
         <FlexWrapper gap="2rem" justifyContent="center">
           {isMobileData.map((tag) => (
-            <LogosStyles>
+            <LogosStyles key={tag}>
               <UniversalImages tag={tag} width="10rem" height="4rem" />
             </LogosStyles>
           ))}

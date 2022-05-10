@@ -21,7 +21,7 @@ export const SWIMMING_CLASSES:Array<ClassesProps>=[
         status:'starter'
     },
     {
-        id:'c1',
+        id:'c2',
         title:'Swimming class for intermediate swimmers',
         price:600,
         message: 'Contrary to polular belied, lorem ipsum is not simply random desktop',
@@ -31,7 +31,7 @@ export const SWIMMING_CLASSES:Array<ClassesProps>=[
         status:'intermediate'
     },
     {
-        id:'c1',
+        id:'c3',
         title:'Swimming class for professionals',
         price:600,
         message: 'Contrary to polular belied, lorem ipsum is not simply random desktop',

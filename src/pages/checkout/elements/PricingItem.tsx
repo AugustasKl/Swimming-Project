@@ -41,7 +41,7 @@ export const PricingItem: React.FC<BillingProps> = ({
         /day
         </FlexWrapper>
         <Typography fontSize="fs14">
-          <del>${oldPrice}</del> &nbsp; <text>${newPrice}</text> billed every month
+          <del>${oldPrice}</del> &nbsp; <samp>${newPrice}</samp> billed every month
         </Typography>
         <StartNow>Start now (Save 25%)</StartNow>
       </FlexWrapper>
@@ -60,7 +60,8 @@ const PricingItemStyles = styled(FlexWrapper)`
   height: 11.5rem;
   width: 24rem;
 
-  text{
+  samp{
+    font-family: ${theme.fontFamily.primary};
       color:${theme.colors.orange}
   }
 `;

@@ -1,6 +1,8 @@
 import React, { StrictMode } from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components/macro';
 import { theme } from 'styles/theme';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 const GlobalStyle = createGlobalStyle`
 * {

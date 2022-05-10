@@ -17,6 +17,6 @@ export const UniversalImages: React.FC<{
   );
 };
 
-// const ImageStyle = styled.image<{padding?:string}>`
-//   padding: ${({ padding }) => (padding ? padding : "")};
-// `;
+{/* const ImageStyle = styled.image<{padding?:string}>`
+  padding: ${({ padding }) => (padding ? padding : "")};
+`; */}

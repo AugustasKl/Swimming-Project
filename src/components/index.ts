@@ -30,6 +30,8 @@ export * from './layout/navigation/NavigationOptions'
 export * from './layout/navigation/SocialLinks'
 export * from './layout/header/Header'
 
+//slider
+export * from './slider/Slider'
 
 
 

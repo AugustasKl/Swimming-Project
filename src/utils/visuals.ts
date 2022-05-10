@@ -11,7 +11,8 @@ import twitter from 'assets/svg/twitter.svg';
 // freestyle
 import freestyle from 'assets/gifs/freestyle.gif'
 import swimmerStarting from 'assets/images/swimmerStarting.jpeg'
-import swimming from 'assets/images/swimming.png'
+import swimmingDesktop from 'assets/images/swimmingDesktop.jpg'
+import swimmingMobile from 'assets/images/swimmingMobile.jpg'
 
 //bulletPoints
 import bullet from 'assets/svg/bulletPoint.svg'
@@ -80,7 +81,8 @@ export const visuals: Record<string, string> = {
 	twitter,
 	freestyle,
 	swimmerStarting,
-	swimming,
+	swimmingDesktop,
+	swimmingMobile,
 	bullet,
 	star,
 	safecheckout,

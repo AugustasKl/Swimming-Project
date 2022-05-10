@@ -1,3 +1,4 @@
+import { SliderComponent } from "components";
 import Header from "components/layout/header/Header";
 import React from "react";
 import { useQuery } from "styles/theme";
@@ -11,7 +12,7 @@ const Checkout: React.FC = () => {
       <Header />
       <PlanSection />
       <Pricing />
-      {isMobile? '' :<Clients />}
+    <Clients />
       <YouWillGet />
     </>
   );

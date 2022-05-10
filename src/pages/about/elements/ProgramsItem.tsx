@@ -3,7 +3,7 @@ import { FlexWrapper, Typography } from "components";
 import React from "react";
 import { ClassesProps } from "constants/swimmingClasses";
 import styled from "styled-components/macro";
-import { theme } from "styles/theme";
+import { mobile, theme, useQuery } from "styles/theme";
 import { TagElement } from "components/tag/TagElement";
 
 
@@ -26,6 +26,7 @@ export const ProgramsItem: React.FC<ClassesProps> = ({
   tag,
   status
 }) => {
+  const {isMobile}=useQuery()
     return (
         <ProgramStyles>
             <TagElement status={status}/>
@@ -41,7 +42,7 @@ export const ProgramsItem: React.FC<ClassesProps> = ({
         </FlexWrapper>
           <Typography>{message}</Typography>
           <FlexWrapper justifyContent='center' alignItems='center' gap="0.5rem" borderTop='1px solid #ccc' mt='s24' pt='s8'  >
-          <UniversalImages tag='practice' width="0.75rem"/>
+          {isMobile ? '' :<UniversalImages tag='practice' width="0.75rem"/>}
             <Typography fontSize='fs20' fontWeight="fw500">{lessonCount} Practices</Typography>
           </FlexWrapper>
         </ProgramStyles>
@@ -60,5 +61,11 @@ text-align:center;
   list-style: none;
   img {
     margin-top: -4.3rem;
+  }
+
+  @media ${mobile} {
+margin: 0 auto;
+ 
+   
   }
 `;
