@@ -29,8 +29,8 @@ width: 100%;
     flex-direction: column;
     background: ${theme.colors.mainBackground};
    
-  border-radius: 0 1rem 1rem 0;
+  border-radius: 0 1.25rem 1.25rem 0;
   @media ${mobile} {
-    border-radius: 1rem 1rem 1rem 1rem;
+    border-radius: ${theme.radii.r20}
   }
 `

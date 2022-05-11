@@ -22,3 +22,7 @@ export * from './Minus'
 //swimmers
 export * from './Swimmers'
 export * from './Lochte'
+
+//physician
+export * from './Physician'
+export * from './PhysicianMobile'

@@ -2,19 +2,30 @@ import { SliderComponent } from "components";
 import Header from "components/layout/header/Header";
 import React from "react";
 import { useQuery } from "styles/theme";
-import { Clients, PlanSection, Pricing, Questions, YouWillGet } from "./sections";
+import {
+  Clients,
+  Message,
+  OrderInformation,
+  PlanSection,
+  Pricing,
+  Questions,
+  YouWillGet,
+} from "./sections";
 // import PlanSection from './sections/PlanSection'
 
 const Checkout: React.FC = () => {
-    const{isMobile}=useQuery()
+  const { isMobile } = useQuery();
   return (
     <>
       <Header />
       <PlanSection />
       <Pricing />
-    <Clients />
+      <Clients />
+      <Questions />
       <YouWillGet />
-      <Questions/>
+      <Message />
+      <Pricing />
+      <OrderInformation />
     </>
   );
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import LazyLoad from 'react-lazyload';
 
-import { mobile } from './../styles/theme';
+import {  mobile } from './../styles/theme';
 import { Visuals, visuals } from 'utils/visuals';
 
 interface Styles {
@@ -11,6 +11,7 @@ interface Styles {
 	height?: string;
 	margin?: string;
 	maxHeight?: string;
+	
 }
 
 interface ImageProps extends Styles {
@@ -26,6 +27,8 @@ const Img = styled.img<Styles>`
 	width: ${({ width }) => width || ''};
 	height: ${({ height }) => height || ''};
 	max-height: ${({ maxHeight }) => maxHeight || ''};
+	
+
 `;
 
 export const Image: React.FC<ImageProps> = ({

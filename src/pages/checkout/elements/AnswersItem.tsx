@@ -6,7 +6,6 @@ export const AnswersItem: React.FC<{ specificAnswer?: string }> = ({
   specificAnswer,
 }) => {
   return (
-    
       <Typography color="white">{specificAnswer}</Typography>
   
   );
