@@ -2,7 +2,7 @@ import { SliderComponent } from "components";
 import Header from "components/layout/header/Header";
 import React from "react";
 import { useQuery } from "styles/theme";
-import { Clients, PlanSection, Pricing, YouWillGet } from "./sections";
+import { Clients, PlanSection, Pricing, Questions, YouWillGet } from "./sections";
 // import PlanSection from './sections/PlanSection'
 
 const Checkout: React.FC = () => {
@@ -14,6 +14,7 @@ const Checkout: React.FC = () => {
       <Pricing />
     <Clients />
       <YouWillGet />
+      <Questions/>
     </>
   );
 };

@@ -11,3 +11,15 @@ export * from './PricingItem'
 
 //clients item
 export * from './ClientsItem'
+
+//questions list
+export * from './QuestionsList'
+
+//questions item
+export * from './QuestionsItem'
+
+//answers item
+export * from './AnswersItem'
+
+//questions images
+export * from './QuestionsImage'

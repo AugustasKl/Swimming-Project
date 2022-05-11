@@ -15,3 +15,10 @@ export * from './RatingStars'
 //universal images
 export * from './UniversalImages'
 
+//plus/minus icons
+export * from './Plus'
+export * from './Minus'
+
+//swimmers
+export * from './Swimmers'
+export * from './Lochte'

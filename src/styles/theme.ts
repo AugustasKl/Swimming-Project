@@ -43,7 +43,8 @@ const colors = {
   blue:'#2C71F0',
   white:'#FFFFFF',
   heroBackground:'#1A2747',
-  heroSecondary:'#D0DEFF'
+  heroSecondary:'#D0DEFF',
+  questionsAnswers:'#212D4D'
 };
 const radii = {
   r0: "0",

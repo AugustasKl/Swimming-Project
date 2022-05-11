@@ -9,10 +9,10 @@ const Checkout: React.FC = () => {
     <>
       <Header />
       <About/>
-      <Community />
-      <Instructors />
       <Programs/>
       <FindRightProgram/>
+      <Community />
+      <Instructors />
       <Partners/>
     </>
   );
