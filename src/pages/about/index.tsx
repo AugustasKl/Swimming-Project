@@ -4,7 +4,7 @@ import { About, FindRightProgram, Instructors, Partners, Programs } from "./sect
 import Community from "./sections/Community";
 
 
-const Checkout: React.FC = () => {
+const AboutPage: React.FC = () => {
   return (
     <>
       <Header />
@@ -18,4 +18,4 @@ const Checkout: React.FC = () => {
   );
 };
 
-export default Checkout;
+export default AboutPage;

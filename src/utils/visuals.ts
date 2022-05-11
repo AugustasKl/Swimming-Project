@@ -76,12 +76,13 @@ import professional from 'assets/svg/professional.svg'
 import plus from 'assets/svg/plus.svg'
 import minus from 'assets/svg/minus.svg'
 
-// swimmers
-import swimmers from 'assets/images/swimmers.jpg'
-import lochte from 'assets/images/lochte.jpg'
 
-
-
+//success page
+//complete
+// import minus from 'assets/svg/minus.svg'
+import complete from 'assets/svg/Complete.svg'
+//confetti
+import confetti from 'assets/images/confetti.png'
 
 export type Visuals = keyof typeof visuals;
 export const visuals: Record<string, string> = {
@@ -126,8 +127,8 @@ export const visuals: Record<string, string> = {
 	professional,
 	plus,
 	minus,
-	swimmers,
-	lochte
+	complete,
+	confetti
 
 
 };

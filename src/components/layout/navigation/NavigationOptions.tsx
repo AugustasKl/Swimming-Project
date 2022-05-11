@@ -10,7 +10,7 @@ const NavigationOptions: React.FC = () => {
       <Link to="/">Home</Link>
       <Link to="/about">About</Link>
       <Link to="/checkout">Contact</Link>
-      <Link to="/about">About us</Link>
+      <Link to="/success">About us</Link>
     </HeaderWrapper>
   );
 };

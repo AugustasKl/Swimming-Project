@@ -20,9 +20,7 @@ export const QuestionsImage:React.FC = () => {
 const QuestionImageStyles=styled(FlexWrapper)`
 width: 100%;
 background: linear-gradient(134deg, #000f33 50%, #0747da 50%);
-/* background:  #000f33 50%; */ //maybe?
 justify-content: center;
 align-items: center;
 border-radius: 1.25rem 0 0 1.25rem;
-
 `

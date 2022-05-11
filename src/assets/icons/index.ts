@@ -26,3 +26,6 @@ export * from './Lochte'
 //physician
 export * from './Physician'
 export * from './PhysicianMobile'
+
+//confeti
+export * from './Confetti'
