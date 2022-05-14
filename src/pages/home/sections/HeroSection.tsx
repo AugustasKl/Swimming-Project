@@ -53,8 +53,8 @@ const HeroSection: React.FC = () => {
 export default HeroSection;
 
 const HeroStyles = styled(SectionWrapper)`
-  background: linear-gradient(128deg, #1a2747 46.1%, #65bdf0 35%);
-  padding:10rem 4rem;
+  background: linear-gradient(128deg, #1a2747 47.7%, #65bdf0 35%);
+  padding:6.8rem 4rem;
 
    @media ${mobile} {
     padding: 2rem 0.5rem ;

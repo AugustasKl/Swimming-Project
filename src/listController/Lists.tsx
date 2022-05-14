@@ -7,6 +7,7 @@ import { mobile, theme, useQuery } from "styles/theme";
 import styled from "styled-components/macro";
 
 interface ListProps {
+  id?:string
   title?: string;
   listItems: Array<object>;
   bullet: string;
@@ -14,7 +15,7 @@ interface ListProps {
   mobileColumns?:string;
 }
 
-const Lists: React.FC<ListProps> = ({ title, listItems, bullet, columns, mobileColumns }) => {
+const Lists: React.FC<ListProps> = ({  title, listItems, bullet, columns, mobileColumns }) => {
   console.log(listItems)
   const {isMobile}=useQuery()
   return (

@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
 export default Footer;
 
 const FooterStyles = styled(Box).attrs({as:'footer'})`
-  background: linear-gradient(128deg, #000f33 24.4%, #0747da 20%);
+  background: linear-gradient(128deg, #000f33 28.7%, #0747da 20%);
   @media ${mobile} {
   
     /* padding: 0 0.5rem ; */

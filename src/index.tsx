@@ -3,6 +3,8 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components/macro';
 import { theme } from 'styles/theme';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import { Provider } from 'react-redux';
+import { store } from 'store/store/store';
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -20,9 +22,12 @@ html {
 
 export const wrapRootElement = ({ element }: any) => (
 	<StrictMode>
+		<Provider store={store}>
+
 		<ThemeProvider theme={theme}>
 			<GlobalStyle />
 			{element}
 		</ThemeProvider>
+		</Provider>
 	</StrictMode>
 );
