@@ -6,6 +6,7 @@ export type InputProps = InputHTMLAttributes<HTMLInputElement> &
   BoxProps<Theme> & {
     label?: string;
     errorMessage?: string;
+    ref?:any
   };
 
 export const Input: React.FC<InputProps> = ({
@@ -17,6 +18,7 @@ export const Input: React.FC<InputProps> = ({
   label,
   errorMessage,
   children,
+  ref,
   ...props
 }) => {
   return (
@@ -36,6 +38,7 @@ export const Input: React.FC<InputProps> = ({
         max={max}
         type={type}
         onChange={onChange}
+        ref={ref}
         {...props}
         />
         {children}

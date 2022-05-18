@@ -3,6 +3,9 @@ import { QUIZ } from "constants/quiz";
 import { fetchQuizAxios } from "./thunks";
 
 export type QuestionsState = QuestionsPropsDDD[]
+// export type QuestionsState = {
+//     [key:number]:QuestionsPropsDDD
+// }
 // [key: number]: QuestionsPropsDDD,
 // QuestionsPropsDDD[]
 // // email:string
@@ -11,17 +14,43 @@ export type QuestionsState = QuestionsPropsDDD[]
 
 
 export interface QuestionsPropsDDD{
-    id:number,
-    answerType:string,
-    questionText:string,
-    answerOptions:string[]
-}
+  
+
+        id:number,
+        answerType:string,
+        questionText:string,
+        answerOptions:string[]
+    }[]
+
 // export interface AnswerProps{
 //     id:number,
 //     answer:string
 // }
 
-const initialState:QuestionsState= []
+interface StateProps{
+    data:object| null,
+    kitas:string
+}
+
+
+const initialState:StateProps= {
+// data:null as unknown as [],
+data:null,
+kitas:''
+
+}
+//     id: null,
+//         answerType: "",
+//         questionText: "",
+//         answerOptions: []
+// }[]
+// const initialState:QuestionsState=
+// {
+//     id: null,
+//     answerType: "",
+//     questionText: "",
+//     answerOptions: []
+// }
 
 
 // {
@@ -39,10 +68,10 @@ const questionsSlice=createSlice({
     name:'questions',
     initialState,
     reducers:{
-        // setQuestions:(state, actions:PayloadAction<QuestionsPropsDDD[]>)=>{
-        //     // console.log(actions.payload)
-        //     state = actions.payload
-        // }
+        setQuestions:(state, action:PayloadAction<StateProps['kitas']>)=>{
+            console.log(action.payload)
+            state.kitas = action.payload
+        }
         // setAnswer:(state, actions:PayloadAction<AnswerProps>)=>{
         //     // state[actions.payload.id].answers
         //     const anserExist=state[actions.payload.id].answers.indexOf(actions.payload.answer)
@@ -63,12 +92,26 @@ const questionsSlice=createSlice({
         
     },
     extraReducers: (builder) => {
-        builder.addCase(fetchQuizAxios.fulfilled, (state, action) => {
+        builder.addCase(fetchQuizAxios.fulfilled, (state, action:PayloadAction<StateProps['data']>) => {
+            // console.log('lopas')
             // Add user to the state array
-            state.push(action.payload)
-          })
+            // console.log(action.payload)
+            // state.push(action.payload)
+            // console.log(action.payload)
+            if(action.payload){
+                state.data=action.payload
+                // console.log('dejau')
+            }
+            // console.log(initialState)
+            //     console.log(state)
+            //     // state[action.payload.id]=action.payload
+            //     state = action.payload
+                // state[actions.payload.id].answers = [actions.payload.answer]
+        })
     }
+    // })
+    // }
 })
 
-// export const {setQuestions}=questionsSlice.actions
+export const {setQuestions}=questionsSlice.actions
 export default questionsSlice

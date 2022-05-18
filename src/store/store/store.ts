@@ -3,7 +3,8 @@
 import { configureStore,  } from '@reduxjs/toolkit';
 import { combineReducers, CombinedState, AnyAction } from 'redux';
 import answersSlice from 'store/slice';
-import questionsSlice, {  QuestionsPropsDDD } from 'store/slice';
+import  {  QuestionsPropsDDD } from 'store/slice';
+import questionsSlice from './questions-slice';
 // import userSlice from './slice';
 // import { UserState } from './types';
 

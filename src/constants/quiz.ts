@@ -15,14 +15,14 @@ export interface QuestionsPropsDDD{
 // const answers = {
 //   lukas@getMaxListeners.com: {
 //     0: ['Moncius'],
-//     1: ['New York']
+//     1: ['New Yo']
 //   }
 // }
 
 export const QUIZ:QuestionsState={
    
        0: {
-          id: 0,
+          id: 44,
           answerType:'single',
           questionText: "Monciaus vardas?",
           answerOptions: ["Moncius", "liepa", "Reinas", "birzelis"],
