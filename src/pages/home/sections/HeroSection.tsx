@@ -8,6 +8,7 @@ import {
   Typography,
 } from "components";
 import { ButtonPrimary } from "components/buttons/ButtonPrimary";
+import { Link } from "gatsby";
 import React from "react";
 import styled from "styled-components/macro";
 import { mobile, theme, useQuery } from "styles/theme";
@@ -39,7 +40,11 @@ const HeroSection: React.FC = () => {
               approved by our experts, and get your personalized plan now.
             </Typography>
 
-            <ButtonPrimary margin="2rem 0">Start quiz</ButtonPrimary>
+            <ButtonPrimary margin="2rem 0">
+              <Link to='/quiz'>
+              Start quiz
+              </Link>
+              </ButtonPrimary>
           </Box>
           <HeroImageDesktop />
         </FlexWrapper>

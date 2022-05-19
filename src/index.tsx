@@ -4,7 +4,8 @@ import { theme } from 'styles/theme';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import { Provider } from 'react-redux';
-import { store } from 'store/store/store';
+import { persistor, store } from 'store/store/store';
+import { PersistGate } from 'redux-persist/integration/react';
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -23,11 +24,12 @@ html {
 export const wrapRootElement = ({ element }: any) => (
 	<StrictMode>
 		<Provider store={store}>
-
+		<PersistGate persistor={persistor}>
 		<ThemeProvider theme={theme}>
 			<GlobalStyle />
 			{element}
 		</ThemeProvider>
+		</PersistGate>
 		</Provider>
 	</StrictMode>
 );

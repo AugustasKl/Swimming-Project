@@ -17,6 +17,7 @@ export const Input: React.FC<InputProps> = ({
   onChange,
   label,
   errorMessage,
+  // backgroundColor,
   children,
   ref,
   ...props
@@ -34,6 +35,7 @@ export const Input: React.FC<InputProps> = ({
       <Box
         as="input"
         placeholder={placeholder}
+        // backgroundColor={backgroundColor}
         min={min}
         max={max}
         type={type}

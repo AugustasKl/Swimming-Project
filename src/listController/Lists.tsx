@@ -9,18 +9,22 @@ import styled from "styled-components/macro";
 interface ListProps {
   id?:string
   title?: string;
-  listItems: Array<object>;
+  listItems: Array<ListItem>;
   bullet: string;
   columns?: string;
   mobileColumns?:string;
 }
 
-const Lists: React.FC<ListProps> = ({  title, listItems, bullet, columns, mobileColumns }) => {
+interface ListItem  {
+  id: string;
+  text: string;
+}
+
+const Lists: React.FC<ListProps> = ({ title, listItems, bullet, columns, mobileColumns }) => {
   console.log(listItems)
   const {isMobile}=useQuery()
   return (
     <Container>
-     
         {title && <Typography
           textAlign={{ _: "start", desktop: "center" }}
           type="h6"

@@ -44,7 +44,12 @@ interface answerProps {
 
 export interface QuizAnswers{
 lololol: string[],
-vardas: string
+// vardas: string,
+gender:string,
+reason:string,
+last_3_months:string,
+aa:string[],
+var:string
   
 }
 
@@ -52,8 +57,13 @@ vardas: string
 const initialState: QuestionsState = {
   
   quiz_answers:{
+    aa:[],
 lololol: [],
-vardas:''
+// vardas:'',
+gender:'',
+reason:'',
+last_3_months:'',
+var:''
   }
 };
 
@@ -105,10 +115,7 @@ export default answersSlice;
 //   }
 // })
 // // import {SingleQuizAnswer} from typings/user
-const onSelect =  (answer:SingleQuizAnswer)=>{
-  // if(question)
-  dispatch(setQuizAnswers(answer))
-}
+
 
 // import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 // import { QUIZ } from "constants/quiz";

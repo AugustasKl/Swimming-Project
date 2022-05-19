@@ -43,7 +43,7 @@ export const SliderComponent: React.FC<SliderProps> = ({
 };
 
 const SliderP = styled.div<SliderStyles>`
-  margin: 0 -16px;
+  margin: 0 -1rem;
 
   @media ${mobile} {
   margin:0 auto;
