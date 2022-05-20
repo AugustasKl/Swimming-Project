@@ -84,6 +84,10 @@ import complete from 'assets/svg/Complete.svg'
 //confetti
 import confetti from 'assets/images/confetti.png'
 
+
+
+
+
 export type Visuals = keyof typeof visuals;
 export const visuals: Record<string, string> = {
 	logo,
@@ -128,7 +132,8 @@ export const visuals: Record<string, string> = {
 	plus,
 	minus,
 	complete,
-	confetti
+	confetti,
+
 
 
 };

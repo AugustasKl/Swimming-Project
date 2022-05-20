@@ -29,3 +29,6 @@ export * from './PhysicianMobile'
 
 //confeti
 export * from './Confetti'
+
+//check
+export * from './Check'

@@ -43,27 +43,31 @@ interface answerProps {
 
 
 export interface QuizAnswers{
-lololol: string[],
-// vardas: string,
-gender:string,
-reason:string,
-last_3_months:string,
-aa:string[],
-var:string
   
+  exercise_type:string[],
+  gender:string,
+  health_problems:string[]
+  last_3_months:string,
+  personality:string
+  reason:string,
+  swim_meters:string,
+  training_frequency:string,
+  //check
 }
 
 
 const initialState: QuestionsState = {
   
   quiz_answers:{
-    aa:[],
-lololol: [],
-// vardas:'',
-gender:'',
-reason:'',
-last_3_months:'',
-var:''
+    exercise_type:[],
+    gender:'',
+    health_problems:[],
+    last_3_months:'',
+    personality:'',
+    reason:'',
+    swim_meters:'',
+    training_frequency:'',
+//check
   }
 };
 
