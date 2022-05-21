@@ -7,7 +7,7 @@ import { Button } from "./Button";
 
 
 export const StartNow=styled(Button)`
-background: ${theme.colors.blue};
+/* background: ${theme.colors.blue}; */
 color:${theme.colors.white};
 font-weight: ${theme.fontWeights.fw700};
 padding: 1rem 0;
@@ -15,6 +15,11 @@ border-radius: ${theme.radii.r30};
 width: 20rem;
 margin: ${({margin})=> margin || '1rem 0 0 0 '};
 cursor: pointer;
+/* a{
+    text-decoration: none;
+    color:white;
+   
+  } */
 
 @media ${mobile} {
     text-align: center;

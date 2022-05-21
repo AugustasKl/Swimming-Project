@@ -84,7 +84,10 @@ import complete from 'assets/svg/Complete.svg'
 //confetti
 import confetti from 'assets/images/confetti.png'
 
-
+//email
+import email from 'assets/svg/email.svg'
+//phone
+import phone from 'assets/svg/phone.svg'
 
 
 
@@ -133,6 +136,8 @@ export const visuals: Record<string, string> = {
 	minus,
 	complete,
 	confetti,
+	email,
+	phone
 
 
 

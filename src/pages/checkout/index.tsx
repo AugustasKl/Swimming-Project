@@ -9,6 +9,7 @@ import {
   PlanSection,
   Pricing,
   Questions,
+  QuizSelection,
   YouWillGet,
 } from "./sections";
 // import PlanSection from './sections/PlanSection'
@@ -18,8 +19,9 @@ const Checkout: React.FC = () => {
   return (
     <>
       <Header />
-      <PlanSection />
+      <QuizSelection/>
       <Pricing />
+      <PlanSection />
       <Clients />
       <Questions />
       <YouWillGet />

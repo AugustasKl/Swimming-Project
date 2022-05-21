@@ -1,5 +1,8 @@
 //plan benefits
 export * from './PlanBenefits'
+// plan switcher
+export * from './PlanSwitcher'
+
 //plan benefits texts
 export * from './PlanBenefitsText'
 
@@ -23,3 +26,9 @@ export * from './AnswersItem'
 
 //questions images
 export * from './QuestionsImage'
+
+//plans
+export * from './SelectedPlan'
+
+//contact
+export * from './Contact'

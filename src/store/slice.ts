@@ -6,6 +6,7 @@ export interface QuestionsState {
   // [key: number]: QuestionsPropsDDD;
   // email:string
   quiz_answers:QuizAnswers
+  email:string
 }
 
 export interface QuestionsPropsDDD {
@@ -68,7 +69,8 @@ const initialState: QuestionsState = {
     swim_meters:'',
     training_frequency:'',
 //check
-  }
+  },
+  email:null as unknown as string
 };
 
 
@@ -83,6 +85,9 @@ const answersSlice = createSlice({
       ...actions.payload,
     };
   },
+  setEmail:(state, actions:PayloadAction<string>)=>{
+    state.email=actions.payload
+  }
 //   setAnswer:(state, actions:PayloadAction<AnswerProps>)=>{
 //     console.log(actions.payload)
 //     // state[actions.payload.id].answers
@@ -106,7 +111,7 @@ const answersSlice = createSlice({
  
 });
 
-export const { setQuizAnswers}=answersSlice.actions
+export const { setQuizAnswers,setEmail}=answersSlice.actions
 export default answersSlice;
 
 

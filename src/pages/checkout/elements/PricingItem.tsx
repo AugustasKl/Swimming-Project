@@ -7,6 +7,7 @@ import { theme } from "styles/theme";
 import { Star } from "assets/icons";
 import { borderRadius } from "styled-system";
 import { StartNow } from "components/buttons/StartNow";
+import { Link } from "gatsby";
 
 export const PricingItem: React.FC<BillingProps> = ({
   id,
@@ -43,17 +44,18 @@ export const PricingItem: React.FC<BillingProps> = ({
         <Typography fontSize="fs14">
           <del>${oldPrice}</del> &nbsp; <samp>${newPrice}</samp> billed every month
         </Typography>
-        <StartNow>Start now (Save 25%)</StartNow>
+        <StartNow>
+          <Link to='/success'>
+          Start now (Save 25%)
+          </Link>
+          </StartNow>
       </FlexWrapper>
     </PricingItemStyles>
   );
 };
 
 const PricingItemStyles = styled(FlexWrapper)`
-  /* flex-direction: row; */
-  /* position: relative; */
-    /* align-items: center; */
-    justify-content: center;
+  justify-content: center;
   background-color: ${theme.colors.white};
   padding: 1rem 0;
   border-radius: ${theme.radii.r20};
@@ -64,4 +66,10 @@ const PricingItemStyles = styled(FlexWrapper)`
     font-family: ${theme.fontFamily.primary};
       color:${theme.colors.orange}
   }
+  a{
+    text-decoration: none;
+    color:${theme.colors.white};
+  }
+  
+ 
 `;

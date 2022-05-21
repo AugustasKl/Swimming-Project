@@ -1,3 +1,6 @@
+//Quiz Selection
+export * from './QuizSelection'
+
 //Plan Benefits
 export * from './PlanSection'
 

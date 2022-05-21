@@ -13,10 +13,11 @@ import { ContainerSmall } from "components/wrappers/ContainerSmall";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { setQuizAnswers } from "store/slice";
+import { setQuizAnswers, setEmail } from "store/slice";
 import { fetchQuizAxios, postUser } from "store/store/thunks";
 import styled from "styled-components/macro";
 import { theme } from "styles/theme";
+import { EmailElement, QuizTopElement } from "../elements";
 
 export const QuizSection: React.FC<{
   onSelected: (choice: boolean) => void;
@@ -24,18 +25,14 @@ export const QuizSection: React.FC<{
   const dispatch = useDispatch();
   const questions = useSelector((state: any) => state.questions.data);
   const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
-  const [radioAnswer, setRadioAnswer] = useState<string>("");
   const [questionNumber, setQuestionNumber] = useState<number>(0);
-
-  const currentQuestion = questions
-    ? Object.entries(questions)[questionNumber]
-    : [];
-  const [questionKey, questionData]: any = currentQuestion
-    ? currentQuestion
-    : [];
-  const [email, setEmail] = useState("");
+  const email=useSelector((state:any)=>state.answers.email)
   const answers = useSelector((state: any) => state.answers.quiz_answers);
-  console.log(answers);
+  const currentQuestion = questions? Object.entries(questions)[questionNumber]: [];
+  const [questionKey, questionData]: any = currentQuestion? currentQuestion: [];
+  const quizFinished = !currentQuestion;
+
+  
   useEffect(() => {
     dispatch(fetchQuizAxios());
   }, []);
@@ -44,7 +41,7 @@ export const QuizSection: React.FC<{
     return <Typography>Loading....</Typography>;
   }
 
-  const allQuestionsNumber=Object.keys(questions).length
+  const allQuestionsNumber = Object.keys(questions).length;
 
   const currentQuestionHandler = () => {
     setQuestionNumber((prevState) => prevState + 1);
@@ -54,16 +51,15 @@ export const QuizSection: React.FC<{
   const submitHanlder = () => {
     const quizData = { answers, email };
     dispatch(postUser(quizData));
-    // sessionStorage.clear()
   };
 
-  const quizFinished = !currentQuestion;
-
+ 
   const backButtonhandler = () => {
     if (0 < questionNumber) {
       setQuestionNumber((prevState) => prevState - 1);
     }
   };
+
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     let newAnswers;
     if (!selectedAnswers.includes(event.target.value)) {
@@ -75,55 +71,49 @@ export const QuizSection: React.FC<{
     }
     setSelectedAnswers(newAnswers);
     dispatch(setQuizAnswers({ [questionKey]: newAnswers }));
-    if(selectedAnswers.length>1){
-      setSelectedAnswers([])
-    }
-   
   };
 
   const radioHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.value);
-    if (questionData.answerType === "single") {
+    if(questionData.answerType === "single") {
       dispatch(setQuizAnswers({ [questionKey]: event.target.value }));
       setQuestionNumber((prevState) => prevState + 1);
     }
   };
 
   const emailHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(event.target.value);
+    dispatch(setEmail(event.target.value));
   };
+
   if (quizFinished) {
     return (
-      <>
-        <Input
-          label="input email"
-          type="email"
-          value={email}
-          onChange={emailHandler}
+      <EmailElement
+        value={email}
+        onChange={emailHandler}
+        onClick={(e: React.ChangeEvent<HTMLInputElement>) =>
+          e.target.textContent === "Submit"
+          ? submitHanlder()
+          : backButtonhandler()
+        }
         />
-        <ButtonPrimary onClick={backButtonhandler}>Back</ButtonPrimary>
-        <ButtonPrimary onClick={submitHanlder}>Done</ButtonPrimary>
-      </>
     );
   }
 
-  const answerType =
-    questionData.answerType === "multiple" ? "checkbox" : "radio";
-  const answerHandler =
-    questionData.answerType === "multiple" ? changeHandler : radioHandler;
-    return (
-      <SectionWrapper>
+  const answerType =questionData.answerType === "multiple" ? "checkbox" : "radio";
+  const answerHandler =questionData.answerType === "multiple" ? changeHandler : radioHandler;
+
+  return (
+    <SectionWrapper>
       <ContainerSmall maxWidth="35rem">
         <QuizSectionStyles>
-            <Typography>{`${questionNumber+1}/${allQuestionsNumber}`}</Typography>
-          <Box backgroundColor="heroBackground" width="100%">
-            <Typography type="h6" color="white" textAlign="center">
-              {questionData.questionText}
-            </Typography>
+          <Box backgroundColor="heroBackground" width="100%" textAlign="center">
+            <QuizTopElement
+              questionNumber={questionNumber}
+              allQuestionsLength={allQuestionsNumber}
+              onClick={backButtonhandler}
+              renderedQuestion={questionData.questionText}
+            />
           </Box>
           {questionData.answerOptions.map((answer: string) => {
-      console.log(selectedAnswers)
-            console.log(answerType);
             return (
               <QuizOptions
                 border={
@@ -143,14 +133,15 @@ export const QuizSection: React.FC<{
               </QuizOptions>
             );
           })}
-          <FlexWrapper mt="s24" p="s16">
-            <ButtonPrimary onClick={backButtonhandler}>Back</ButtonPrimary>
-            {questionData.answerType === "multiple" && (
-              <ButtonPrimary onClick={currentQuestionHandler} disabled={selectedAnswers.length===0}>
-                Next
-              </ButtonPrimary>
-            )}
-          </FlexWrapper>
+
+          {questionData.answerType === "multiple" && (
+            <ButtonPrimary
+              onClick={currentQuestionHandler}
+              disabled={selectedAnswers.length === 0}
+            >
+              Next
+            </ButtonPrimary>
+          )}
         </QuizSectionStyles>
       </ContainerSmall>
     </SectionWrapper>
@@ -163,20 +154,16 @@ const QuizSectionStyles = styled(FlexWrapper)`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-bottom: 2.5rem;
 `;
 const QuizOptions = styled(FlexWrapper)`
-  /* padding: 1rem; */
   align-items: center;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   width: 95%;
   margin-top: 1.25rem;
   border-radius: 1rem;
   cursor: pointer;
-
   :hover {
     border: 2px solid ${theme.colors.green};
-  }
-  :active {
-    border: 1px solid ${theme.colors.blue};
   }
 `;

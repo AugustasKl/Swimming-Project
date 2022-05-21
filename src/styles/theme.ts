@@ -44,7 +44,8 @@ const colors = {
   white:'#FFFFFF',
   heroBackground:'#1A2747',
   heroSecondary:'#D0DEFF',
-  questionsAnswers:'#212D4D'
+  questionsAnswers:'#212D4D',
+  red:'#FF0000',
 };
 const radii = {
   r0: "0",

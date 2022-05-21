@@ -1,7 +1,9 @@
 import { Box, Container, FlexWrapper, SectionWrapper, Typography } from "components";
 import React from "react";
+import { useSelector } from "react-redux";
 
 export const SuccessText: React.FC = () => {
+  const email=useSelector((state:any)=>state.answers.email)
   return (
     <SectionWrapper >
       <Container>
@@ -13,7 +15,7 @@ export const SuccessText: React.FC = () => {
             We have just sent out a letter to this email address:
           </Typography>
           <Typography fontSize="fs18" fontWeight="fw700"  >
-            johndoe@mail.com
+            {email}
           </Typography>
           <Typography fontSize="fs14"  >
             (Please check your Spam folder, too)
