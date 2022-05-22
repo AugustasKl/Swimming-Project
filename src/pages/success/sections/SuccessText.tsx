@@ -1,9 +1,28 @@
 import { Box, Container, FlexWrapper, SectionWrapper, Typography } from "components";
+import { ButtonPrimary } from "components/buttons/ButtonPrimary";
+import { Link } from "gatsby";
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setEmail, setQuizAnswers } from "store/slice";
 
 export const SuccessText: React.FC = () => {
+  const dispatch=useDispatch()
   const email=useSelector((state:any)=>state.answers.email)
+  const emptyAnswers={
+    exercise_type:[],
+    gender:'',
+    health_problems:[],
+    last_3_months:'',
+    personality:'',
+    reason:'',
+    swim_meters:'',
+    training_frequency:'',
+   }
+  const startOverHandler=()=>{
+    sessionStorage.clear()
+    dispatch(setQuizAnswers(emptyAnswers))
+    dispatch(setEmail(''))
+  }
   return (
     <SectionWrapper >
       <Container>
@@ -26,6 +45,11 @@ export const SuccessText: React.FC = () => {
             additional services, check your email for a confirmation letter.
           </Typography>
           </Box>
+          <ButtonPrimary onClick={startOverHandler}>
+            <Link to='/'>
+              Start Over!
+            </Link>
+          </ButtonPrimary>
         </FlexWrapper>
       </Container>
     </SectionWrapper>

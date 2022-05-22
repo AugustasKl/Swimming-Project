@@ -1,11 +1,13 @@
 import { Box, FlexWrapper, Input, Typography } from "components";
 import { ButtonPrimary } from "components/buttons/ButtonPrimary";
 import { Link } from "gatsby";
+import { Contact } from "pages/checkout/elements";
 import React, { useRef, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { postUser } from "store/store/thunks";
 import styled from "styled-components/macro";
 import { mobile } from "styles/theme";
-import { QuizTopElement } from ".";
+import { DataAnalyzer, QuizTopElement } from ".";
 
 interface EmailElementProps {
   onClick?: () => void;
@@ -18,7 +20,27 @@ export const EmailElement: React.FC<EmailElementProps> = ({
   onClick,
   value,
 }) => {
+  
+  const dispatch=useDispatch()
+  const email = useSelector((state: any) => state.answers.email);
+  const answers = useSelector((state: any) => state.answers.quiz_answers);
+  const [initLoader, setInitLoader] = useState<boolean>(false);
 
+  const submitHanlder = (event:React.FormEvent) => {
+    event.preventDefault()
+    console.log("dadadad");
+    const quizData = { answers, email };
+    dispatch(postUser(quizData));
+    setInitLoader(true)
+  };
+
+
+  if(initLoader){
+    return(
+     <DataAnalyzer/>
+    )
+  }
+  const message=<Typography color="red" textAlign='center' fontSize="fs12" p='s0' mb='s8'>Email must include @ symbol</Typography>
 
   return (
     <StyledEmailElement>
@@ -35,18 +57,14 @@ export const EmailElement: React.FC<EmailElementProps> = ({
           Thanks for your time.
         </Typography>
       </Box>
-
-      <Input type="email" value={value} onChange={onChange} />
-      {/* {!value.includes('@') && <Typography color="red" fontSize="fs12" p='s0' mb='s8'>Email must include @ symbol</Typography>} */}
+      <Form onSubmit={submitHanlder}>
+      <Input  type="email" value={value} onChange={onChange} />
+      {!value.includes('@') && message}
       <FlexWrapper gap="1.5rem">
-        <ButtonPrimary onClick={onClick}>Back</ButtonPrimary>
-        {/* <ButtonPrimary onClick={onClick} disabled={!value.includes('@')}>Submit</ButtonPrimary> */}
-        <ButtonPrimary onClick={onClick}>
-          <Link to='/checkout'>
-          Submit
-          </Link>
-          </ButtonPrimary>
+        <ButtonPrimary onClick={onClick} type="button">Back</ButtonPrimary>
+        <ButtonPrimary disabled={!email.includes('@')}>Submit</ButtonPrimary>
       </FlexWrapper>
+      </Form>
     </StyledEmailElement>
   );
 };
@@ -66,11 +84,9 @@ const StyledEmailElement = styled(FlexWrapper)`
     font-size: 1.125rem;
     margin: 0.5rem 0;
   }
-  a{
-    text-decoration: none;
-    color:white;
-  }
+
   @media ${mobile} {
     width: 90%;
   }
 `;
+const Form =styled(Box).attrs({as:'form'})``

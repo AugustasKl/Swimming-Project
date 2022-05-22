@@ -19,6 +19,10 @@ margin: ${({margin})=> margin || ''};
 width: ${({width})=> width || ''};
 
 cursor: pointer;
+a{
+    color: ${theme.colors.white};
+    text-decoration: none;
+  }
 
 @media ${mobile} {
     text-align: center;

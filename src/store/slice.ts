@@ -70,7 +70,7 @@ const initialState: QuestionsState = {
     training_frequency:'',
 //check
   },
-  email:null as unknown as string
+  email:''
 };
 
 

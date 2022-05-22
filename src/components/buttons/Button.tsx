@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 import { theme } from "styles/theme";
+import { Statuses } from "typings/generalTypes";
 
 
 
@@ -18,17 +19,19 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>{
     fontSize?:string;
     fontWeight?:string;
     textAlign?:string
-    onClick?:()=>void
+    onClick?:()=>void,
+    isLoading?:boolean
 
 }
 
 export const Button:React.FC<ButtonProps>=({
 onClick,
 children,
+isLoading,
 ...rest
 })=>(
-<ButtonP onClick={onClick}{...rest}>
-    {children}
+<ButtonP onClick={onClick} disabled={isLoading} {...rest}>
+    {isLoading? 'Loading... ' :children}
 </ButtonP>
 )
 
@@ -47,10 +50,13 @@ const ButtonP=styled.button<ButtonProps>`
     background:${({background})=>background|| ''};
     background-color:${({backgroundColor})=>backgroundColor|| ''};
     border-radius: ${({borderRadius})=> borderRadius || ''};
-    transition: all 0.3s ease-in-out;  
     border: none;
     
     cursor: pointer;
+    :disabled{
+        cursor: not-allowed;
+        opacity: 0.8;
+    }
 
 
-`
+` 

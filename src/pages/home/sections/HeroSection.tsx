@@ -10,6 +10,7 @@ import {
 import { ButtonPrimary } from "components/buttons/ButtonPrimary";
 import { Link } from "gatsby";
 import React from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components/macro";
 import { mobile, theme, useQuery } from "styles/theme";
 import HeroImageDesktop from "../elements/HeroImageDesktop";
@@ -17,6 +18,8 @@ import HeroImageMobile from "../elements/HeroImageMobile";
 
 const HeroSection: React.FC = () => {
   const isMobile = useQuery();
+
+
   return (
     <HeroStyles>
    
@@ -39,10 +42,9 @@ const HeroSection: React.FC = () => {
               Find out how much weight you can lose by taking a 60-sec quiz
               approved by our experts, and get your personalized plan now.
             </Typography>
-
-            <ButtonPrimary margin="2rem 0">
+            <ButtonPrimary margin='2rem 0'>
               <Link to='/quiz'>
-              Start quiz
+              Start Quiz
               </Link>
               </ButtonPrimary>
           </Box>
@@ -60,6 +62,7 @@ export default HeroSection;
 const HeroStyles = styled(SectionWrapper)`
   background: linear-gradient(128deg, #1a2747 47.7%, #65bdf0 35%);
   padding:6.8rem 4rem;
+
 
    @media ${mobile} {
     padding: 2rem 0.5rem ;

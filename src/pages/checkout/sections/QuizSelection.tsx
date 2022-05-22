@@ -6,10 +6,8 @@ import { useSelector } from "react-redux";
 import { Contact } from "../elements";
 
 export const QuizSelection: React.FC = () => {
-  const answers = useSelector(
-    (state: any) => state.answers.quiz_answers.reason
-  );
-  console.log(answers);
+  const answers = useSelector((state: any) => state.answers.quiz_answers.reason);
+  
 
   return (
     <SectionWrapper>

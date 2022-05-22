@@ -7,9 +7,13 @@ import {
   SectionWrapper,
   Typography,
 } from "components";
+import { BackButton } from "components/buttons/BackButton";
 import { ButtonPrimary } from "components/buttons/ButtonPrimary";
+import { NextButton } from "components/buttons/NextButton";
 import InputAnswers from "components/Input/InputAnswers";
+import { Loader } from "components/loader/Loader";
 import { ContainerSmall } from "components/wrappers/ContainerSmall";
+import { Link, navigate } from "gatsby";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -19,41 +23,35 @@ import styled from "styled-components/macro";
 import { theme } from "styles/theme";
 import { EmailElement, QuizTopElement } from "../elements";
 
-export const QuizSection: React.FC<{
-  onSelected: (choice: boolean) => void;
-}> = (props) => {
+export const QuizSection: React.FC = () => {
   const dispatch = useDispatch();
   const questions = useSelector((state: any) => state.questions.data);
   const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
   const [questionNumber, setQuestionNumber] = useState<number>(0);
-  const email=useSelector((state:any)=>state.answers.email)
+  const email = useSelector((state: any) => state.answers.email);
   const answers = useSelector((state: any) => state.answers.quiz_answers);
-  const currentQuestion = questions? Object.entries(questions)[questionNumber]: [];
+  const currentQuestion = questions ? Object.entries(questions)[questionNumber]: [];
   const [questionKey, questionData]: any = currentQuestion? currentQuestion: [];
   const quizFinished = !currentQuestion;
 
-  
+
   useEffect(() => {
     dispatch(fetchQuizAxios());
   }, []);
 
   if (!questions) {
-    return <Typography>Loading....</Typography>;
+    return (<FlexWrapper justifyContent='center' mt='s160'><Loader/></FlexWrapper>)
   }
 
   const allQuestionsNumber = Object.keys(questions).length;
 
   const currentQuestionHandler = () => {
     setQuestionNumber((prevState) => prevState + 1);
-    // setSelectedAnswers([])
+    setSelectedAnswers([])
   };
 
-  const submitHanlder = () => {
-    const quizData = { answers, email };
-    dispatch(postUser(quizData));
-  };
 
- 
+
   const backButtonhandler = () => {
     if (0 < questionNumber) {
       setQuestionNumber((prevState) => prevState - 1);
@@ -71,10 +69,11 @@ export const QuizSection: React.FC<{
     }
     setSelectedAnswers(newAnswers);
     dispatch(setQuizAnswers({ [questionKey]: newAnswers }));
+
   };
 
   const radioHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if(questionData.answerType === "single") {
+    if (questionData.answerType === "single") {
       dispatch(setQuizAnswers({ [questionKey]: event.target.value }));
       setQuestionNumber((prevState) => prevState + 1);
     }
@@ -84,28 +83,28 @@ export const QuizSection: React.FC<{
     dispatch(setEmail(event.target.value));
   };
 
+
   if (quizFinished) {
     return (
       <EmailElement
         value={email}
         onChange={emailHandler}
-        onClick={(e: React.ChangeEvent<HTMLInputElement>) =>
-          e.target.textContent === "Submit"
-          ? submitHanlder()
-          : backButtonhandler()
-        }
+        onClick={backButtonhandler}
         />
+        
     );
-  }
 
-  const answerType =questionData.answerType === "multiple" ? "checkbox" : "radio";
-  const answerHandler =questionData.answerType === "multiple" ? changeHandler : radioHandler;
+  }
+ 
+  const multipleAnswer = questionData.answerType === "multiple";
+  const answerType = multipleAnswer ? "checkbox" : "radio";
+  const answerHandler = multipleAnswer ? changeHandler : radioHandler;
 
   return (
     <SectionWrapper>
       <ContainerSmall maxWidth="35rem">
         <QuizSectionStyles>
-          <Box backgroundColor="heroBackground" width="100%" textAlign="center">
+          <Box backgroundColor="heroBackground" width='100%' textAlign="center">
             <QuizTopElement
               questionNumber={questionNumber}
               allQuestionsLength={allQuestionsNumber}
@@ -115,15 +114,8 @@ export const QuizSection: React.FC<{
           </Box>
           {questionData.answerOptions.map((answer: string) => {
             return (
-              <QuizOptions
-                border={
-                  answers[questionKey].includes(answer)
-                    ? `2px solid ${theme.colors.green}`
-                    : "2px solid transperant"
-                }
-              >
+              <QuizOptions isSelected={answers[questionKey].includes(answer)} key={answer}>
                 <InputAnswers
-                  key={answer}
                   answer={answer}
                   value={answer}
                   type={answerType}
@@ -134,13 +126,13 @@ export const QuizSection: React.FC<{
             );
           })}
 
-          {questionData.answerType === "multiple" && (
-            <ButtonPrimary
+          {multipleAnswer && (
+            <NextButton
               onClick={currentQuestionHandler}
               disabled={selectedAnswers.length === 0}
             >
               Next
-            </ButtonPrimary>
+            </NextButton>
           )}
         </QuizSectionStyles>
       </ContainerSmall>
@@ -156,12 +148,14 @@ const QuizSectionStyles = styled(FlexWrapper)`
   flex-direction: column;
   padding-bottom: 2.5rem;
 `;
-const QuizOptions = styled(FlexWrapper)`
+const QuizOptions = styled(FlexWrapper)<{ isSelected: boolean }>`
+  border: ${({ isSelected }) =>
+    isSelected === true ? `2px solid ${theme.colors.green}` : "2px solid #ccc"};
   align-items: center;
-  border: 2px solid #ccc;
   width: 95%;
   margin-top: 1.25rem;
   border-radius: 1rem;
+
   cursor: pointer;
   :hover {
     border: 2px solid ${theme.colors.green};

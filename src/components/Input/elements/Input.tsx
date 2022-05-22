@@ -6,7 +6,7 @@ export type InputProps = InputHTMLAttributes<HTMLInputElement> &
   BoxProps<Theme> & {
     label?: string;
     errorMessage?: string;
-    ref?:any
+   
   };
 
 export const Input: React.FC<InputProps> = ({
@@ -17,9 +17,8 @@ export const Input: React.FC<InputProps> = ({
   onChange,
   label,
   errorMessage,
-  // backgroundColor,
   children,
-  ref,
+
   ...props
 }) => {
   return (
@@ -34,13 +33,12 @@ export const Input: React.FC<InputProps> = ({
       </label>
       <Box
         as="input"
+       
         placeholder={placeholder}
-        // backgroundColor={backgroundColor}
         min={min}
         max={max}
         type={type}
         onChange={onChange}
-        ref={ref}
         {...props}
         />
         {children}

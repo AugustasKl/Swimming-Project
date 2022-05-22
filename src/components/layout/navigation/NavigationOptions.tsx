@@ -18,7 +18,7 @@ const NavigationOptions: React.FC = () => {
 export default NavigationOptions;
 
 const HeaderWrapper = styled(FlexWrapper)`
-
+margin-right: 3rem;
   gap: 3rem;
   a {
     font-size: 1.15rem;
