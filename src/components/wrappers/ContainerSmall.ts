@@ -1,20 +1,20 @@
-import styled from 'styled-components/macro';
 import {
     color,
-    BackgroundColorProps,
+    ColorProps,
     compose,
+    border,
+    BorderProps,
+    BackgroundColorProps,
     position,
     PositionProps,
-    border,
-    BorderProps
 } from 'styled-system';
+import styled from 'styled-components/macro';
 import { tablet } from 'styles/theme';
-
 import { Theme } from 'styles/theme';
 
 const containerSmallProps = compose(color,border, position);
 
-interface Styles<T> extends BackgroundColorProps<T>, PositionProps<T>, BorderProps<T> {
+interface Styles<T> extends BackgroundColorProps<T>, BorderProps<T>, ColorProps<T>, PositionProps<T> {
     maxWidth?:string
     boder?:string
  }

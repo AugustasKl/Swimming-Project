@@ -1,46 +1,44 @@
 import React from "react";
 import { BillingProps } from "constants/billing";
-import styled from "styled-components/macro";
-import { FlexWrapper, Image, Typography } from "components";
-import { ButtonPrimary } from "components/buttons/ButtonPrimary";
-import { theme } from "styles/theme";
-import { Star } from "assets/icons";
-import { borderRadius } from "styled-system";
-import { StartNow } from "components/buttons/StartNow";
+import { FlexWrapper, Typography } from "components";
 import { Link } from "gatsby";
+import { StartNow } from "components/buttons/StartNow";
+import styled from "styled-components/macro";
+import { theme } from "styles/theme";
 
 export const PricingItem: React.FC<BillingProps> = ({
-  id,
-  name,
   message,
-  price,
-  oldPrice,
+  name,
   newPrice,
-}) => (
-    <PricingItemStyles>
-      <FlexWrapper flexDirection="column" alignItems="center" justifyContent="center" >
+  oldPrice,
+  price,
+}) => {
+  const payment= (price=== 800 ? <Typography fontSize="fs14"><del>${oldPrice}</del> &nbsp; <span>${newPrice}</span> billed every week</Typography> 
+  : <Typography fontSize="fs14"> One time payment </Typography>)
+return(
+  <PricingItemStyles>
+      <FlexWrapper alignItems="center" flexDirection="column" justifyContent="center" >
         <FlexWrapper gap="0.25rem" alignItems="center">
           <Typography fontWeight="fw700"> {name}</Typography>
           <Typography
-            p="s4"
-            fontWeight="fw700"
-            color={message === "Most popular" ? "purple" : "green"}
-            borderRadius="r10"
             border={
               message === "Most popular"
-                ? "1px solid #9767BD"
-                : "1px solid #00878A"
-            }>
+              ? "1px solid #9767BD"
+              : "1px solid #00878A"
+            }
+            borderRadius="r10"
+            color={message === "Most popular" ? "purple" : "green"}
+            fontWeight="fw700"
+            p="s4"
+            >
             {message}
           </Typography>
         </FlexWrapper>
         <FlexWrapper alignItems="center" gap="0.25rem">
-        <Typography fontWeight="fw900" fontSize="fs24">${price}</Typography>
+        <Typography fontSize="fs24" fontWeight="fw900">${price}</Typography>
         /program
         </FlexWrapper>
-        {price=== 800 ? <Typography fontSize="fs14">
-          (<del>${oldPrice}</del> &nbsp; <samp>${newPrice}</samp> billed every week)
-        </Typography> : <Typography> One time payment </Typography>}
+        {payment}
         <StartNow>
           <Link to='/success'>
           Start now (Save 25%)
@@ -49,24 +47,25 @@ export const PricingItem: React.FC<BillingProps> = ({
       </FlexWrapper>
     </PricingItemStyles>
   );
+}
 
 
 const PricingItemStyles = styled(FlexWrapper)`
   justify-content: center;
-  background-color: ${theme.colors.white};
-  padding: 1rem 0;
-  border-radius: ${theme.radii.r20};
+  
   height: 11.5rem;
   width: 24rem;
+  
+  padding: 1rem 0;
+  
+  background-color: ${theme.colors.white};
+  border-radius: ${theme.radii.r20};
 
-  samp{
-    font-family: ${theme.fontFamily.primary};
+  span{
       color:${theme.colors.orange}
   }
   a{
-    text-decoration: none;
     color:${theme.colors.white};
+    text-decoration: none;
   }
-  
- 
 `;

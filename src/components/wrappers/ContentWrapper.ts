@@ -1,8 +1,6 @@
+import { Box } from "./Box";
 import styled from "styled-components/macro";
 import { tablet } from "styles/theme";
-import { Theme } from "styles/theme";
-
-import { Box } from "./Box";
 
 export const ContentWrapper = styled(Box)`
   margin: 0 auto;

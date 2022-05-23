@@ -1,8 +1,8 @@
-import styled from "styled-components/macro";
+import { Box } from "./Box";
 import { grid, GridProps } from "styled-system";
+import styled from "styled-components/macro";
 import { Theme } from "styles/theme";
 
-import { Box } from "./Box";
 interface GapProps{
   gap?:string;
 }

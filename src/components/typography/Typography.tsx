@@ -1,6 +1,6 @@
-import { Property } from "csstype";
 import React, { ReactNode } from "react";
-import styled from "styled-components/macro";
+import { applyTextType } from "./TypographyHelpers";
+import { BorderRadius, Colors, Theme } from "styles/theme";
 import {
   compose,
   fontWeight,
@@ -12,10 +12,10 @@ import {
   textStyle,
   typography,
 } from "styled-system";
+import { Property } from "csstype";
+import styled from "styled-components/macro";
 
-import { BorderRadius, Colors, Theme } from "styles/theme";
 
-import { applyTextType } from "./TypographyHelpers";
 
 export type TextType =
   | "h1"
@@ -52,22 +52,21 @@ const typographyProperties = compose(
 );
 
 export interface TextProps extends SpaceProps<Theme>, TypographyProps<Theme> {
-  color?: Colors;
-  type?: TextType;
-  textTransform?: Property.TextTransform;
-  textDecoration?: Property.TextDecoration;
-  onClick?: () => void;
-  children: ReactNode;
+  display?: string;
   border?: string;
   borderBottom?: string;
   borderRadius?: BorderRadius;
-  display?: string;
-  // lineHeight?:
+  color?: Colors;
+  children: ReactNode;
+  textDecoration?: Property.TextDecoration;
+  textTransform?: Property.TextTransform;
+  onClick?: () => void;
+  type?: TextType;
 }
 
 export const Typography: React.FC<TextProps> = ({
-  type = "body16",
   children,
+  type = "body16",
   ...props
 }) => {
   const as = TextTag[type] as AsAttributeType;
@@ -80,24 +79,18 @@ export const Typography: React.FC<TextProps> = ({
 };
 
 const Text = styled.p<TextProps>`
-  padding: ${({ padding }) => padding || ""};
-  line-height: ${({ lineHeight }) => lineHeight || ""};
   border: ${({ border }) => border || ""};
   border-bottom: ${({ borderBottom }) => borderBottom || ""};
+  border-radius: ${({ theme, borderRadius }) =>borderRadius ? theme.radii[borderRadius] : theme.radii.r0};
+  ${({ type, theme }) => type && applyTextType(type as TextType, theme as Theme)};
+  color: ${({ theme, color }) =>color ? theme.colors[color] : theme.colors.black};
   display: ${({ display }) => display || ""};
-
-  ${({ type, theme }) =>
-    type && applyTextType(type as TextType, theme as Theme)};
-
-  color: ${({ theme, color }) =>
-    color ? theme.colors[color] : theme.colors.black};
-
-  border-radius: ${({ theme, borderRadius }) =>
-    borderRadius ? theme.radii[borderRadius] : theme.radii.r0};
+  line-height: ${({ lineHeight }) => lineHeight || ""};
+  padding: ${({ padding }) => padding || ""};
+  text-transform: ${({ textTransform }) => textTransform || ""};
+  text-decoration: ${({ textDecoration }) => textDecoration || ""};
 
   && {
     ${typographyProperties}
   }
-  text-transform: ${({ textTransform }) => textTransform || ""};
-  text-decoration: ${({ textDecoration }) => textDecoration || ""};
 `;

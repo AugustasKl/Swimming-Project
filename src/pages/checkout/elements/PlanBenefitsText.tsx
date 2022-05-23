@@ -1,11 +1,10 @@
-import { FlexWrapper, Typography } from "components";
-import { BENEFITS } from "constants/benefits";
 import React from "react";
+import { BENEFITS } from "constants/benefits";
 import { PlanBenefitsTextItems } from ".";
+import { FlexWrapper} from "components";
 
 
-export const PlanBenefitsText: React.FC = () => {
-  return (
+export const PlanBenefitsText: React.FC = () => (
     <>
       <FlexWrapper flexDirection="column" gap="0.5rem" justifyContent="center" >
         {BENEFITS.map(({ id, name, text }) => (
@@ -14,6 +13,6 @@ export const PlanBenefitsText: React.FC = () => {
       </FlexWrapper>
     </>
   );
-};
+
 
 

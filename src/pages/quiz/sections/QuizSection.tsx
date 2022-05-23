@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Box, ContainerSmall, FlexWrapper,SectionWrapper} from "components";
 import { Check } from "assets/icons";
-import { ContainerSmall } from "components/wrappers/ContainerSmall";
-import { Box,FlexWrapper,SectionWrapper} from "components";
 import { EmailElement, QuizTopElement } from "../elements";
 import { fetchQuizAxios } from "store/store/thunks";
 import InputAnswers from "components/Input/InputAnswers";

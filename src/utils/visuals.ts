@@ -30,10 +30,12 @@ import starsRating from 'assets/svg/starsRating.svg'
 import Jules from 'assets/images/Jules.png'
 import Rūta from 'assets/images/Ruta.jpeg'
 import Michael from 'assets/images/Michael.jpeg'
+import pool from 'assets/images/pool.jpg'
+
 
 //what will you get
 //falling dude
-import FallingDude from 'assets/images/FallingDude.png'
+
 
 //swimming coaches
 // import coachA from 'assets/images/CoachA.png'
@@ -108,11 +110,9 @@ export const visuals: Record<string, string> = {
 	Jules,
 	Rūta,
 	Michael,
-	FallingDude,
-	// coachA,
+	pool,
 	coachB,
 	coachC,
-	// coachD,
 	coachE,
 	coachF,
 	coachG,

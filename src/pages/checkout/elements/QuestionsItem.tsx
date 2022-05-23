@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import { QuestionsProps } from "constants/questions";
-import styled from "styled-components/macro";
-import { FlexWrapper, Typography } from "components";
 import { AnswersItem } from ".";
+import { FlexWrapper, Typography } from "components";
+import { QuestionsProps } from "constants/questions";
 import { Minus, Plus } from "assets/icons";
-import { mobile, theme, useQuery } from "styles/theme";
+import {mobile, theme } from "styles/theme";
+import styled from "styled-components/macro";
+
+
 export const QuestionsItem: React.FC<QuestionsProps> = ({
+  answer,
   id,
   question,
-  answer,
 }) => {
   const [questionAsked, setQuestionAsked] = useState<string>("");
   const [showAnswer, setShowAnswer] = useState<boolean>(false);
@@ -17,7 +19,7 @@ export const QuestionsItem: React.FC<QuestionsProps> = ({
     setQuestionAsked(id);
     setShowAnswer((prevState) => !prevState);
   };
-  const {isMobile}=useQuery()
+
   return (
     <QuestionItemStyles onClick={toggleAnswerHandler}>
       <FlexWrapper justifyContent="space-between">
@@ -34,14 +36,16 @@ export const QuestionsItem: React.FC<QuestionsProps> = ({
 };
 
 const QuestionItemStyles = styled.li`
-  list-style: none;
-  cursor: pointer;
+  width: 100%;
+  
   padding: 1rem 1.5rem;
-  background: ${theme.colors.questionsAnswers};
   margin: 1rem;
- width: 100%;
+  
+  cursor: pointer;
+  background: ${theme.colors.questionsAnswers};
+  list-style: none;
+
  @media ${mobile} {
     margin: 1rem auto;
-
   }
 `;

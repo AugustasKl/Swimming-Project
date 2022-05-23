@@ -1,7 +1,7 @@
 import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
 
-const DemoHeart:React.FC = () => {
+const SwimmingGirl:React.FC = () => {
   return (
   <StaticImage
   src='./../images/swimmingGirl.jpg'
@@ -11,7 +11,7 @@ const DemoHeart:React.FC = () => {
   )
 }
 
-export default DemoHeart
+export default SwimmingGirl
 
 
 

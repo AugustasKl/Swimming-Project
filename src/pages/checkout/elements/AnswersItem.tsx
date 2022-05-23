@@ -1,13 +1,9 @@
-import { Box, Typography } from "components";
 import React from "react";
-import styled from "styled-components/macro";
+import {Typography } from "components";
 
-export const AnswersItem: React.FC<{ specificAnswer?: string }> = ({
-  specificAnswer,
-}) => {
-  return (
+
+export const AnswersItem: React.FC<{ specificAnswer: string }> = ({specificAnswer}) => (
       <Typography color="white">{specificAnswer}</Typography>
-  
   );
-};
+
 

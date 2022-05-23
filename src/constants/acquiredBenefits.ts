@@ -6,27 +6,27 @@ export interface BenefitsProps{
 export const AQUIRED_BENEFITS: Array<BenefitsProps>=[
     {
         id:'b1',
-        text:'Complete inspiring and practical anxiety-reducing exercises.'
+        text:'You will have a the best swim coach delivering the lessons.'
     },
     {
         id:'b2',
-        text:'Gradually but effectively reduce your stress levels.'
+        text:'Swimming is a fun way to keep yourself active and healthy all year long.'
     },
     {
         id:'b3',
-        text:'Identify the most common triggers for you.'
+        text:'When it comes to cardiovascular health, swimming is one of the best activities.'
     },
     {
         id:'b4',
-        text:'Take back control of your thoughts, emotions, and decisions.'
+        text:'Your swimming technique will increase higher than before'
     },
     {
         id:'b5',
-        text:'Build effective routines and habits to resolve anxiety episodes quickly.'
+        text:'One of the biggest things swimmers are taught early on is how to control their breath, which in turn helps increase their lung capacity. '
     },
     {
         id:'b6',
-        text:'Streamline your environment for a calm and enjoyable life.'
+        text:'You will get the best facilities and inventory there is.'
     },
     
 ]

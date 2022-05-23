@@ -2,7 +2,7 @@
 export * from './Logo'
 
 //demo heart
-export * from './DemoHeart'
+export * from './SwimmingGirl'
 
 //most popular choice (star)
 export * from './Star'
@@ -32,3 +32,5 @@ export * from './Confetti'
 
 //check
 export * from './Check'
+
+export * from './SwimmingPool'

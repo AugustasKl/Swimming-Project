@@ -1,22 +1,18 @@
-import { SectionWrapper } from "components";
-import { PERSONAL_PLAN } from "constants/personalPlan";
-import Lists from "listController/Lists";
 import React from "react";
+import Lists from "listController/Lists";
 import { PlanBenefits } from "../elements";
+import { PERSONAL_PLAN } from "constants/personalPlan";
+import { SectionWrapper } from "components";
 
 
-export const PlanSection: React.FC = () => {
-  return (
-    <>
+export const PlanSection: React.FC = () => (
       <SectionWrapper>
         <PlanBenefits />
         <Lists
-          title="Your personal 3-month Anxiety and Stress Reduction Plan"
-          listItems={PERSONAL_PLAN}
-          columns="2"
           bullet="bullet"
+          columns="2"
+          listItems={PERSONAL_PLAN}
+          title="Your personal Swimming and Skills Improvement Plan"
         />
       </SectionWrapper>
-    </>
   );
-};

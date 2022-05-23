@@ -1,22 +1,24 @@
 import styled from "styled-components/macro";
 
-import { Backgrounds, Colors, mobile, tablet, theme } from "styles/theme";
+import { mobile, tablet } from "styles/theme";
 
 interface SectionWrapperStyles {
-  minHeight?: string;
   background?: string;
-  padding?: string;
-  borderRadius?: string;
   backgroundImage?: string;
+  borderRadius?: string;
+  minHeight?: string;
+  padding?: string;
 }
 
 export const SectionWrapper = styled.section<SectionWrapperStyles>`
   position: relative;
-  padding: ${({ padding }) => padding || "4rem"};
+  
+  min-height: ${({ minHeight }) => minHeight || ""};
+
+  background: ${({ background }) => (background ? background : "")};
   background-image: ${({ backgroundImage }) => backgroundImage || ""};
   border-radius: ${({ borderRadius }) => borderRadius || ""};
-  min-height: ${({ minHeight }) => minHeight || ""};
-  background: ${({ background }) => (background ? background : "")};
+  padding: ${({ padding }) => padding || "4rem"};
 
   @media ${tablet} {
     padding: 3rem;

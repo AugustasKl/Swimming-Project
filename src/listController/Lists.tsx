@@ -1,5 +1,4 @@
-import { Box, Container, FlexWrapper, Image, Typography } from "components";
-import { ContainerSmall } from "components/wrappers/ContainerSmall";
+import { Box, Container, ContainerSmall, FlexWrapper, Image, Typography } from "components";
 import React from "react";
 import ListsItem from "./ListsItem";
 import { PlanProps } from "./../constants/personalPlan";

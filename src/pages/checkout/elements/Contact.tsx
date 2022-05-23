@@ -1,11 +1,10 @@
-import { UniversalImages } from "assets/icons";
-import { Box, ContentWrapper, FlexWrapper, Typography } from "components";
-import { CONTACT } from "constants/contact";
 import React from "react";
+import { Box, FlexWrapper, Typography } from "components";
+import { CONTACT } from "constants/contact";
+import { UniversalImages } from "assets/icons";
 
-export const Contact: React.FC = () => {
-  return (
-    <FlexWrapper justifyContent="center" gap="1.5rem" alignItems="center" pt='s8'>
+export const Contact: React.FC = () => (
+    <FlexWrapper alignItems="center" gap="1.5rem" justifyContent="center"  pt='s8'>
       {CONTACT.map(({ id, text, contact, tag }) => (
           <FlexWrapper gap="0.5rem" key={id}>
           <UniversalImages tag={tag} height="3.5rem" width="3.5rem" />
@@ -17,4 +16,3 @@ export const Contact: React.FC = () => {
       ))}
     </FlexWrapper>
   );
-};

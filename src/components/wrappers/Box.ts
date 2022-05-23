@@ -1,4 +1,3 @@
-import styled from 'styled-components/macro';
 import {
 	alignSelf,
 	AlignSelfProps,
@@ -23,8 +22,9 @@ import {
 	zIndex,
 	ZIndexProps,
 } from 'styled-system';
-
+import styled from 'styled-components/macro';
 import { Theme } from 'styles/theme';
+
 
 const boxProps = compose(
 	alignSelf,

@@ -1,7 +1,6 @@
 import React from "react";
 import { ButtonPrimary } from "components/buttons/ButtonPrimary";
-import { ContainerSmall } from "components/wrappers/ContainerSmall";
-import { FlexWrapper, SectionWrapper, Typography } from "components";
+import {ContainerSmall, FlexWrapper, SectionWrapper, Typography } from "components";
 import { Link } from "gatsby";
 import styled from "styled-components/macro";
 import { useQuery } from "styles/theme";

@@ -6,37 +6,37 @@ export interface PlanProps{
 export const PERSONAL_PLAN:Array<PlanProps>=[
     {
         id:'p1',
-        text:'84 self-paced lessons from a personal behavioural psychologist that you can complete at your own pace'
+        text:'With workloads and personal obligations, juggling all your responsibilities can get overwhelming. Swimming is a great outlet to release this stress.'
     },
     {
         id:'p2',
-        text:'Simple 10-30 minutes tasks to complete each day. However, when repeated for a month, they will hugely impact your mood, reaction to stress, and overall mental health'
+        text:"One study from the University of Minnesota found young adults who implement regular socialization and exercise into their routines tend to have better mental health than those who don't."
     },
     {
         id:'p3',
-        text:'Progress tracking sheet, that helps you fallow your achievements and see your improvement'
+        text:'Another reason why people pick swimming as their primary form of cardio.'
     },
     {
         id:'p4',
-        text:'Daily guidance that will make your journey easy'
+        text:'A regular swimming regimen can help you sleep better.'
     },
     {
         id:'p5',
-        text:'Personalized content about anxiety, to help you understand and manage your triggers'
+        text:'Swimming is low-impact, non-weight-bearing exercise which is ideal for joints.'
     },
     {
         id:'p6',
-        text:'Tips on successful anxiety management so you always feel in control'
+        text:'Swimming works all major muscle groups, resulting in stronger muscles overall.'
     },
     
     {
         id:'p7',
-        text:'Practical daily tasks delivered to your email, that you can follow any time of the day'
+        text:'Swimming is one of the most effective ways to burn calories.'
     },
     
     {
         id:'p8',
-        text:'In-depth and comprehensive information about anxiety and stress management'
+        text:'As a swimmer, you’ll never feel sweaty no matter how hard you work.'
     },
     
 ]

@@ -9,7 +9,7 @@ export const Physician: React.FC = () => {
     <StaticImage
       src="./../images/CoachB.png"
       alt="physician"
-      style={{ borderRadius: "3.125rem", width: "9rem", height: "6rem" }}
+      style={{ borderRadius: "3.75rem", width: "8rem", height: "5rem" }}
      
       />
   

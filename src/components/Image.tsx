@@ -1,16 +1,15 @@
 import React from 'react';
-import styled from 'styled-components/macro';
 import LazyLoad from 'react-lazyload';
-
 import {  mobile } from './../styles/theme';
+import styled from 'styled-components/macro';
 import { Visuals, visuals } from 'utils/visuals';
 
 interface Styles {
-	maxWidth?: string;
-	width?: string;
 	height?: string;
-	margin?: string;
+	width?: string;
 	maxHeight?: string;
+	maxWidth?: string;
+	margin?: string;
 	
 }
 
@@ -42,7 +41,6 @@ export const Image: React.FC<ImageProps> = ({
 		<LazyLoad height={200}>
 			<picture onClick={onClick}>
 				{mobile_src && <source media={mobile} srcSet={visuals[mobile_src]} />}
-				{/* {mobile_src && <source media={theme.breakpoints.lmobile} srcSet={visuals[mobile_src]} />} */}
 				<Img src={visuals[src]} alt={alt} {...rest} />
 			</picture> 
 		</LazyLoad>

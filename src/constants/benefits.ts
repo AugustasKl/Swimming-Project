@@ -3,17 +3,17 @@ import { BenefitsProps } from "typings/benefits";
 export const BENEFITS:BenefitsProps[] = [
   {
     id: "b1",
-    name: "Calm mind",
-    text: "Simple ways to find and eliminate your anxiety triggers.",
+    name: "Meet new people",
+    text: "Be a contributing member of a class.",
   },
   {
     id: "b2",
-    name: "Better Sleep",
-    text: "Calm mind, brings fresh and sunny mornings.",
+    name: "Valuable Water Skills",
+    text: "Building upon floating skills.",
   },
   {
     id: "b3",
-    name: "Confidence",
-    text: "Get your life and inner peace back",
+    name: "Strengthen Muscles",
+    text: "Healthy heart and lungs. tones muscles and builds strength.",
   },
 ];
