@@ -1,2 +1,2 @@
-//Quiz
+//QuizSection
 export * from './QuizSection'

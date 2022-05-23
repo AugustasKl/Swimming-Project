@@ -6,7 +6,7 @@ export type InputProps = InputHTMLAttributes<HTMLInputElement> &
   BoxProps<Theme> & {
     label?: string;
     errorMessage?: string;
-   
+   htmlFor?:string
   };
 
 export const Input: React.FC<InputProps> = ({
@@ -18,7 +18,7 @@ export const Input: React.FC<InputProps> = ({
   label,
   errorMessage,
   children,
-
+  htmlFor,
   ...props
 }) => {
   return (
@@ -28,12 +28,11 @@ export const Input: React.FC<InputProps> = ({
           <Typography type="body16">{errorMessage}</Typography>
         </label>
       )}
-      <label htmlFor="input">
+      <label htmlFor={htmlFor}>
         <Typography type="body16">{label}</Typography>
       </label>
       <Box
         as="input"
-       
         placeholder={placeholder}
         min={min}
         max={max}

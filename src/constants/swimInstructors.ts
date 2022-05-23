@@ -8,65 +8,52 @@ export interface InstructorsProps{
 }
 
 export const SWIMMING_INSTRUCTORS:Array<InstructorsProps>=[
-    // {
-    //     id:'i1',
-    //     name:'Kathryn Murpy',
-    //     position:'Swim Coach',
-    //     experience:4,
-    //     tag:'coachA'
-    // },
+
     {
         id:'i2',
-        name:'Amy Hinton',
-        position:'Swim Coach',
+        name:'Marc Hinton',
+        position:'HEAD OF STRENGTH & CONDITIONING',
         experience:4,
         tag:'coachB',
         rating:4.8
     },
     {
         id:'i3',
-        name:'Rudy Collier',
-        position:'Swim Coach',
-        experience:4,
+        name:'Suzy Collier',
+        position:'HEAD OF NATIONAL DEVELOPMENT',
+        experience:6,
         tag:'coachC',
         rating:4.75
     },
-    // {
-    //     id:'i4',
-    //     name:'Yuliana Houston',
-    //     position:'Swim Coach',
-    //     experience:4,
-    //     tag:'coachD'
-    // },
     {
         id:'i5',
         name:'Adan Lee',
-        position:'Swim Coach',
-        experience:4,
+        position:'ASSISTANT HEAD COACH',
+        experience:8,
         tag:'coachE',
         rating:4.9
     },
     {
         id:'i6',
-        name:'Isabell Benitez',
-        position:'Swim Coach',
-        experience:4,
+        name:'Isabella Benitez',
+        position:'LEAD COACH, NATIONAL AGE GROUP AND REGIONAL AGE GROUP 1',
+        experience:5,
         tag:'coachF',
         rating:4.6
     },
     {
         id:'i7',
-        name:'Clayton Gordon',
-        position:'Swim Coach',
-        experience:4,
+        name:'Monica Gordon',
+        position:'HEAD OF REGIONAL AND COUNTY DEVELOPMENT SQUADS',
+        experience:6,
         tag:'coachG',
-        rating:5
+        rating:5.0
     },
     {
         id:'i1',
         name:'Madalynn Dennis',
-        position:'Swim Coach',
-        experience:4,
+        position:'ASSISTANT HEAD COACH & NATIONAL SQUADS COACH',
+        experience:7,
         tag:'coachH',
         rating:4.95
     },

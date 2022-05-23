@@ -1,37 +1,31 @@
-import {
-  Container,
-  FlexWrapper,
-  SectionWrapper,
-  SliderComponent,
-  Typography,
-} from "components";
-import { SWIMMING_CLASSES } from "constants/swimmingClasses";
 import React from "react";
-import Slider from "react-slick";
-import { useQuery } from "styles/theme";
+import {Container, FlexWrapper, SectionWrapper, SliderComponent, Typography} from "components";
 import { ProgramsItem } from "../elements";
+import { SWIMMING_CLASSES } from "constants/swimmingClasses";
+import { useQuery } from "styles/theme";
+
 
 export const Programs: React.FC = () => {
   const { isMobile } = useQuery();
   const swimmingClasses = SWIMMING_CLASSES.map(
-    ({ id, title, price, message, lessonCount, enrolled, tag, status }) => (
+    ({enrolled, id, lessonCount, message, price, status, tag, title}) => (
       <ProgramsItem
-        id={id}
-        key={id}
-        title={title}
-        price={price}
-        message={message}
-        lessonCount={lessonCount}
-        enrolled={enrolled}
-        tag={tag}
-        status={status}
+      enrolled={enrolled}
+      id={id}
+      key={id}
+      lessonCount={lessonCount}
+      message={message}
+      price={price}
+      status={status}
+      tag={tag}
+      title={title}
       />
     )
   );
   return (
     <SectionWrapper>
       <Container>
-        <Typography type="h6" textAlign="center" pb="s40">
+        <Typography pb="s40" textAlign="center" type="h6">
           Swimclub provides these program plans
         </Typography>
         {isMobile ? (
@@ -39,7 +33,7 @@ export const Programs: React.FC = () => {
             {swimmingClasses}
           </SliderComponent>
         ) : (
-          <FlexWrapper gap="2.5rem" alignItems="center">
+          <FlexWrapper alignItems="center" gap="2.5rem">
             {swimmingClasses}
           </FlexWrapper>
         )}

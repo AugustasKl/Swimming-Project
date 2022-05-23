@@ -43,7 +43,7 @@ export const Pricing: React.FC = () => {
           <Box maxWidth={{ _: "70%", desktop: "100%" }}>
             <Typography textAlign="center" color="white" fontSize="fs14" paddingY="s32">
               By choosing a payment method you agree to the <a>T&Cs</a> and{" "}
-              <a>Privacy Policy </a>{" "}
+              <a>Privacy Policy </a>
             </Typography>
           </Box>
           <SafeCheckout />

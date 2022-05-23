@@ -12,16 +12,16 @@ export const BILLING_OPTIONS: Array<BillingProps>=[
         id:'b1',
         name:'Weekly',
         message: "Most popular",
-        price:199,
-        oldPrice:299,
+        price:800,
+        oldPrice:109,
         newPrice:99
     },
     {
         id:'b2',
         name:'One-time payment',
         message: "Best Value",
-        price:800,
-        oldPrice:299,
+        price:600,
+        oldPrice:899,
         newPrice:79
     }
 ]

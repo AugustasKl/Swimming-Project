@@ -1,44 +1,33 @@
 import React from "react";
-import { InstructorsProps } from "constants/swimInstructors";
 import { FlexWrapper, Typography } from "components";
-
-import styled from "styled-components/macro";
-import { theme } from "styles/theme";
+import { InstructorsProps } from "constants/swimInstructors";
+import { mobile, theme } from "styles/theme";
 import { Star, UniversalImages } from "assets/icons";
 import { SocialButton } from "components/buttons";
+import styled from "styled-components/macro";
 
-interface InstructorsStylesProps {
-  listStyle?: string;
-  padding?: string;
-  margin?: string;
-  background?: string;
-  borderRadius?: string;
-  width?: string;
-}
-// interface InstructorsProps extends InstructorsStylesProps {}
 
-const InstructorsItem: React.FC<InstructorsProps> = ({
+export const InstructorsItem: React.FC<InstructorsProps> = ({
+  experience,
   id,
   name,
-  experience,
   position,
   rating,
   tag
-}) => {
-  return (
+}) => (
     <InstructorStyles>
       <SocialButton/>
       <FlexWrapper
+        alignItems="center"
         flexDirection="column"
         justifyContent="center"
-        alignItems="center"
         gap="0.5rem"
       >
-        <UniversalImages tag={tag} height='20rem' width='100%' />
-        <Typography fontWeight="fw600" textAlign="center" fontSize="fs24">
+        <UniversalImages height='20rem' tag={tag} width='100%' />
+        <Typography fontSize="fs24" fontWeight="fw600" textAlign="center" >
           {name}
         </Typography>
-        <Typography color="orange" fontSize="fs14">
+        <Typography color="orange" fontSize="fs14" textAlign='center'>
           {position}
         </Typography>
         <Typography border="1px dotted #000" padding="s4">
@@ -46,26 +35,37 @@ const InstructorsItem: React.FC<InstructorsProps> = ({
         </Typography>
         <FlexWrapper gap="0.25rem">
         <Star/>
-        <Typography fontWeight="fw600">5.0/{rating}</Typography>
+        <Typography fontWeight="fw600">5.00/{rating.toFixed(2)}</Typography>
         </FlexWrapper>
       </FlexWrapper>
     </InstructorStyles>
   );
-};
 
-export default InstructorsItem;
 
-const InstructorStyles = styled.li<InstructorsStylesProps>`
+
+
+const InstructorStyles = styled.li`
   position: relative;
+
   padding: 3rem 0;
+
   width: 21rem;
+
   background: linear-gradient(#e7f9fd 0%, #e7f9fd 100%);
   border-radius: ${theme.radii.r20};
   list-style: none;
   
   img {
-  
     border-radius: ${theme.radii.r10};
     margin-top: -4.3rem;
+  }
+  
+  @media ${mobile} {
+    display: none;
+    :nth-child(1),
+    :nth-child(2),
+    :nth-child(3) {
+      display: list-item;
+    }
   }
 `;

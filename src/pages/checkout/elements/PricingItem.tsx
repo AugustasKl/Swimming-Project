@@ -16,9 +16,7 @@ export const PricingItem: React.FC<BillingProps> = ({
   price,
   oldPrice,
   newPrice,
-}) => {
-  console.log(id, price);
-  return (
+}) => (
     <PricingItemStyles>
       <FlexWrapper flexDirection="column" alignItems="center" justifyContent="center" >
         <FlexWrapper gap="0.25rem" alignItems="center">
@@ -37,13 +35,12 @@ export const PricingItem: React.FC<BillingProps> = ({
           </Typography>
         </FlexWrapper>
         <FlexWrapper alignItems="center" gap="0.25rem">
-
         <Typography fontWeight="fw900" fontSize="fs24">${price}</Typography>
-        /day
+        /program
         </FlexWrapper>
-        <Typography fontSize="fs14">
-          <del>${oldPrice}</del> &nbsp; <samp>${newPrice}</samp> billed every month
-        </Typography>
+        {price=== 800 ? <Typography fontSize="fs14">
+          (<del>${oldPrice}</del> &nbsp; <samp>${newPrice}</samp> billed every week)
+        </Typography> : <Typography> One time payment </Typography>}
         <StartNow>
           <Link to='/success'>
           Start now (Save 25%)
@@ -52,7 +49,7 @@ export const PricingItem: React.FC<BillingProps> = ({
       </FlexWrapper>
     </PricingItemStyles>
   );
-};
+
 
 const PricingItemStyles = styled(FlexWrapper)`
   justify-content: center;

@@ -2,7 +2,7 @@ import { FlexWrapper, Image } from 'components';
 import SocialLinks from 'components/layout/navigation/SocialLinks';
 import React, { useState } from 'react'
 import styled from 'styled-components/macro'
-import { theme } from 'styles/theme';
+import { mobile, theme } from 'styles/theme';
 import { Button } from './Button'
 
 export const SocialButton:React.FC = () => {
@@ -30,5 +30,5 @@ const StyledIcon=styled.image`
   position: absolute;
   top: 9.5%;
   left: 5%;
-  /* background-color: ${theme.colors.sectionColor}; */
+  
 `

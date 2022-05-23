@@ -1,37 +1,69 @@
-import { Box, Container, FlexWrapper, GridWrapper, SectionWrapper, Typography } from 'components'
-import { SWIMMING_INSTRUCTORS } from 'constants/swimInstructors'
-import React from 'react'
-import InstructorsItem from '../elements/InstructorsItem'
+import React, {useState } from "react";
+import {Box,Container, FlexWrapper, GridWrapper, SectionWrapper, Typography} from "components";
+import { ButtonPrimary } from "components/buttons/ButtonPrimary";
+import { InstructorsItem } from "../elements";
+import {InstructorsProps, SWIMMING_INSTRUCTORS} from "constants/swimInstructors";
 
 
 
-export const Instructors:React.FC = () => {
+export const Instructors: React.FC = () => {
+  const [instructors, setInstructors] = useState<Array<InstructorsProps>>([]);
+  const [sortStatus, setSortStatus] = useState<boolean>(true);
+  const instructorsCopy =[...SWIMMING_INSTRUCTORS]
+  const renderSwimmingInstructors =  instructors.length === 0 ? SWIMMING_INSTRUCTORS :instructors
+  
+ 
+  const sortHandler = () => {
+    if (sortStatus) {
+      const sorted = instructorsCopy.sort((a, b) => a.rating > b.rating ? 1 : -1);
+      setInstructors(sorted);
+      setSortStatus(prevState=>!prevState);
+    } else {
+      const sorted = instructorsCopy.sort((a, b) => a.rating < b.rating ? 1 : -1);
+      setInstructors(sorted);
+      setSortStatus(prevState=>!prevState);
+    }
+  };
+
   return (
     <SectionWrapper>
-        <Container>
-            <Typography type='h6' textAlign="center">Our Professional Instructors</Typography>
-            <FlexWrapper justifyContent='center' flexDirection="column" alignItems="center">
-            <Box maxWidth="28.25rem">
-                <Typography textAlign='center' fontSize="fs14" color="radioColor">
-                Progress tracking sheet, that helps you fallow your achievements and see your improvement
-                </Typography>
-                </Box>
-            <GridWrapper gridTemplateColumns={{_:'1fr', desktop:"repeat(3, 1fr)"}} gap='2.5rem' marginTop='s48'  >
-            {SWIMMING_INSTRUCTORS.map(({id, name, position, experience, rating, tag})=>(
-                <InstructorsItem
+      <Container>
+        <Typography textAlign="center" type="h6">
+          Our Professional Instructors
+        </Typography>
+        <FlexWrapper
+          alignItems="center"
+          flexDirection="column"
+          justifyContent="center"
+        >
+          <Box maxWidth="28.25rem">
+            <Typography color="radioColor" textAlign="center" fontSize="fs14" >
+            Meet the coaches. Rigorously Trained. Fully Certified
+            </Typography>
+          </Box>
+          <GridWrapper
+            gap="2.5rem"
+            gridTemplateColumns={{ _: "1fr", desktop: "repeat(3, 1fr)" }}
+            marginTop="s48"
+          >
+            {renderSwimmingInstructors.map(({ experience, id, name, position, rating, tag }) => (
+              <InstructorsItem
                 id={id}
                 key={id}
+                experience={experience}
                 name={name}
                 position={position}
-                experience={experience}
                 rating={rating}
                 tag={tag}
-                />
-                ))}
-            </GridWrapper>
-            </FlexWrapper>
-        </Container>
+              />
+            ))}
+          </GridWrapper>
+        <Box marginTop='s24'>
+          <ButtonPrimary onClick={sortHandler}>Sort by Rating In {sortStatus? 'Descending': 'Ascending'} order</ButtonPrimary>
+        </Box>
+        </FlexWrapper>
+      </Container>
     </SectionWrapper>
-  )
-}
+  );
+};
 

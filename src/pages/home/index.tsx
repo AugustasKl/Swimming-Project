@@ -1,14 +1,10 @@
-
-import { Image } from 'components';
+import React from 'react';
 import Footer from 'components/layout/footer/Footer';
 import Header from 'components/layout/header/Header';
-
-import React from 'react';
-import HeroSection from './sections/HeroSection';
+import { HeroSection } from './sections';
 
 const Home: React.FC = () => (
 	<>
-
 	<Header/>
 	<HeroSection/>
 	<Footer/>

@@ -1,0 +1,2 @@
+// HeroImage
+export * from './HeroImage'

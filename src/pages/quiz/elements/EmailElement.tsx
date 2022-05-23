@@ -1,18 +1,16 @@
+import React, {useState } from "react";
 import { Box, FlexWrapper, Input, Typography } from "components";
 import { ButtonPrimary } from "components/buttons/ButtonPrimary";
-import { Link } from "gatsby";
-import { Contact } from "pages/checkout/elements";
-import React, { useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { DataAnalyzer } from ".";
+import { mobile } from "styles/theme";
 import { postUser } from "store/store/thunks";
 import styled from "styled-components/macro";
-import { mobile } from "styles/theme";
-import { DataAnalyzer, QuizTopElement } from ".";
+import { useDispatch, useSelector } from "react-redux";
 
 interface EmailElementProps {
+  onChange: () => void;
   onClick?: () => void;
   value: string;
-  onChange: () => void;
 }
 
 export const EmailElement: React.FC<EmailElementProps> = ({
@@ -28,7 +26,6 @@ export const EmailElement: React.FC<EmailElementProps> = ({
 
   const submitHanlder = (event:React.FormEvent) => {
     event.preventDefault()
-    console.log("dadadad");
     const quizData = { answers, email };
     dispatch(postUser(quizData));
     setInitLoader(true)
@@ -40,16 +37,16 @@ export const EmailElement: React.FC<EmailElementProps> = ({
      <DataAnalyzer/>
     )
   }
-  const message=<Typography color="red" textAlign='center' fontSize="fs12" p='s0' mb='s8'>Email must include @ symbol</Typography>
+  const message=<Typography color="red" fontSize="fs12" mb='s8' p='s0' textAlign='center'>Email must include @ symbol</Typography>
 
   return (
     <StyledEmailElement>
       <Box
         backgroundColor="heroBackground"
-        width="100%"
-        textAlign="center"
-        p="s16"
         mb="s40"
+        p="s16"
+        textAlign="center"
+        width="100%"
       >
         <Typography color="white" fontSize="fs18">
           Please leave your email address to us, so we can send a follow-up
@@ -57,36 +54,40 @@ export const EmailElement: React.FC<EmailElementProps> = ({
           Thanks for your time.
         </Typography>
       </Box>
-      <Form onSubmit={submitHanlder}>
-      <Input  type="email" value={value} onChange={onChange} />
+      <Box as='form' onSubmit={submitHanlder}>
+      <Input onChange={onChange} type="email" value={value}  />
       {!value.includes('@') && message}
       <FlexWrapper gap="1.5rem">
         <ButtonPrimary onClick={onClick} type="button">Back</ButtonPrimary>
         <ButtonPrimary disabled={!email.includes('@')}>Submit</ButtonPrimary>
       </FlexWrapper>
-      </Form>
+      </Box>
     </StyledEmailElement>
   );
 };
 
 const StyledEmailElement = styled(FlexWrapper)`
-  width: 35rem;
-  margin: 5rem auto;
-  box-shadow: 0px 16px 32px rgba(57, 53, 60, 0.08);
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
+  
   padding-bottom: 2.5rem;
+  margin: 5rem auto;
+  
+  width: 35rem;
+  
+  box-shadow: 0px 16px 32px rgba(57, 53, 60, 0.08);
 
   input {
     padding: 1rem;
-    border-radius: 1rem;
-    font-size: 1.125rem;
     margin: 0.5rem 0;
+    
+    font-size: 1.125rem; 
+    
+    border-radius: 1rem;
   }
 
   @media ${mobile} {
     width: 90%;
   }
 `;
-const Form =styled(Box).attrs({as:'form'})``

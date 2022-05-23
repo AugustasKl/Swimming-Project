@@ -1,9 +1,9 @@
+import React from "react";
 import { Box, Container, FlexWrapper, SectionWrapper, Typography } from "components";
 import { ButtonPrimary } from "components/buttons/ButtonPrimary";
 import { Link } from "gatsby";
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { setEmail, setQuizAnswers } from "store/slice";
+import { useDispatch, useSelector } from "react-redux";
 
 export const SuccessText: React.FC = () => {
   const dispatch=useDispatch()
@@ -24,11 +24,11 @@ export const SuccessText: React.FC = () => {
     dispatch(setEmail(''))
   }
   return (
-    <SectionWrapper >
+    <SectionWrapper>
       <Container>
-        <FlexWrapper flexDirection="column" alignItems="center" gap="1rem" >
-          <Typography type="h6" pt="s80"  >
-            How to start the Anxietless program?
+        <FlexWrapper alignItems="center" flexDirection="column" gap="1rem" >
+          <Typography pt="s80" textAlign='center' type="h6"  >
+            We are happy that you have joined our growing community!
           </Typography>
           <Typography  >
             We have just sent out a letter to this email address:
@@ -36,12 +36,12 @@ export const SuccessText: React.FC = () => {
           <Typography fontSize="fs18" fontWeight="fw700"  >
             {email}
           </Typography>
-          <Typography fontSize="fs14"  >
-            (Please check your Spam folder, too)
+          <Typography fontSize="fs14">
+            (Please check your Spam folder too)
           </Typography>
           <Box maxWidth='38.3125rem'>
           <Typography textAlign='center' >
-            Start your Anxietless journey right away! P.s. If you ordered any
+            We will get in touch with you shortly P.s. If you ordered any
             additional services, check your email for a confirmation letter.
           </Typography>
           </Box>

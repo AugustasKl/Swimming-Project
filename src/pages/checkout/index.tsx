@@ -1,22 +1,10 @@
-import { SliderComponent } from "components";
-import Header from "components/layout/header/Header";
 import React from "react";
-import { useQuery } from "styles/theme";
-import {
-  Clients,
-  Message,
-  OrderInformation,
-  PlanSection,
-  Pricing,
-  Questions,
-  QuizSelection,
-  YouWillGet,
-} from "./sections";
-// import PlanSection from './sections/PlanSection'
+import {Clients, Message, OrderInformation, PlanSection, Pricing, Questions, QuizSelection, YouWillGet} from "./sections";
+import Header from "components/layout/header/Header";
 
-const Checkout: React.FC = () => {
-  const { isMobile } = useQuery();
-  return (
+
+
+const Checkout: React.FC = () =>  (
     <>
       <Header />
       <QuizSelection/>
@@ -30,6 +18,6 @@ const Checkout: React.FC = () => {
       <OrderInformation />
     </>
   );
-};
+
 
 export default Checkout;

@@ -1,8 +1,8 @@
-import { FlexWrapper, SectionWrapper, Typography } from "components";
+import React from "react";
 import { ButtonPrimary } from "components/buttons/ButtonPrimary";
 import { ContainerSmall } from "components/wrappers/ContainerSmall";
+import { FlexWrapper, SectionWrapper, Typography } from "components";
 import { Link } from "gatsby";
-import React from "react";
 import styled from "styled-components/macro";
 import { useQuery } from "styles/theme";
 
@@ -13,11 +13,11 @@ export const FindRightProgram: React.FC = () => {
       <RightProgramStyles>
         <ContainerSmall maxWidth="49.5rem">
           <FlexWrapper
-            gap={isMobile ? "0rem" : "2rem"}
             alignItems="center"
             flexDirection={{ _: "column", desktop: "row" }}
+            gap={isMobile ? "0rem" : "2rem"}
           >
-            <Typography fontSize="fs24" fontWeight="fw700" color="white">
+            <Typography color="white" fontSize="fs24" fontWeight="fw700">
               Complete the quick quiz and find the right program for you!
             </Typography>
             <ButtonPrimary width={isMobile ? "60%" : "30%"}>

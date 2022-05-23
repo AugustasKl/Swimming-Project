@@ -1,11 +1,7 @@
-import { FlexWrapper, Typography } from "components";
-import { ButtonPrimary } from "components/buttons/ButtonPrimary";
 import React from "react";
-import Logo from "assets/icons/Logo";
-import styled from "styled-components/macro";
-import { borderRadius, marginTop } from "styled-system";
 import { BackButton } from "components/buttons/BackButton";
-
+import { FlexWrapper, Typography } from "components";
+import Logo from "assets/icons/Logo";
 
 interface QuizTopElementProps {
   allQuestionsLength: number;
@@ -20,8 +16,7 @@ export const QuizTopElement: React.FC<QuizTopElementProps> = ({
   renderedQuestion,
   questionNumber,
 }) => {
-
-  let progressValue = ((questionNumber + 1) / allQuestionsLength) * 100;
+  const progressBarValue = ((questionNumber + 1) / allQuestionsLength) * 100;
 
   return (
     <>
@@ -32,20 +27,16 @@ export const QuizTopElement: React.FC<QuizTopElementProps> = ({
         ml="s8"
         width="90%"
       >
-        <BackButton onClick={onClick} disabled={questionNumber===0}>Back</BackButton>
+        <BackButton onClick={onClick} disabled={questionNumber === 0}>Back</BackButton>
         <Logo />
-        <Typography color="white" fontSize="fs18" pt='s16'>{`${
-          questionNumber + 1
-        }/${allQuestionsLength}`}</Typography>
-      </FlexWrapper>
-    {progressValue  &&  <progress
+        <Typography color="white" fontSize="fs18" pt="s16">{`${questionNumber + 1}/${allQuestionsLength}`}</Typography>
+        </FlexWrapper>
+      <progress
         max="100"
-        value={progressValue}
+        value={progressBarValue}
         style={{ width: "100%", marginTop: "1rem" }}
-      />}
-      <Typography type="h6" color="white" textAlign="center" p="s16">
-        {renderedQuestion}
-      </Typography>
+      />
+      <Typography type="h6" color="white" textAlign="center" p="s16">{renderedQuestion}</Typography>
     </>
   );
 };

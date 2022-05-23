@@ -1,21 +1,18 @@
-import Header from "components/layout/header/Header";
 import React from "react";
-import { About, FindRightProgram, Instructors, Partners, Programs } from "./sections";
-import Community from "./sections/Community";
+import { About, Community, FindRightProgram, Instructors, Partners, Programs } from "./sections";
+import Header from "components/layout/header/Header";
 
-
-const AboutPage: React.FC = () => {
-  return (
+const AboutPage: React.FC = () => (
     <>
-      <Header />
+      <Header/>
       <About/>
       <Programs/>
       <FindRightProgram/>
-      <Community />
-      <Instructors />
+      <Community/>
+      <Instructors/>
       <Partners/>
     </>
   );
-};
+
 
 export default AboutPage;

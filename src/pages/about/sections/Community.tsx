@@ -1,17 +1,15 @@
-import { Container, FlexWrapper, SectionWrapper, Typography } from 'components'
-import { COMMUNITY } from 'constants/community'
 import React from 'react'
+import { COMMUNITY } from 'constants/community'
 import { CommunityItem } from '../elements/CommunityItem'
+import { Container, FlexWrapper, SectionWrapper, Typography } from 'components'
 
-const Community:React.FC = () => {
-  return (
+export const Community:React.FC = () => (
     <SectionWrapper>
         <Container>
             <FlexWrapper flexDirection='column'>
-            <Typography type='h6' textAlign='center' paddingY='s8'>Join the happy parents community</Typography>
-            <Typography textAlign='center' paddingBottom='s32'>See how Play2Grow helps parents and their families</Typography>
-            <FlexWrapper gap='2rem' flexDirection={{_:'column', desktop:'row'}}>
-
+            <Typography paddingY='s8' textAlign='center' type='h6'>Join the our swimmers community!</Typography>
+            <Typography paddingBottom='s32' textAlign='center'>See how Swimclub helps all kinds of swimmers to take their skills to another level!</Typography>
+            <FlexWrapper flexDirection={{_:'column', desktop:'row'}} gap='2rem' >
             {COMMUNITY.map(({id, percentage, text})=>(
                 <CommunityItem
                 id={id}
@@ -25,6 +23,5 @@ const Community:React.FC = () => {
         </Container>
     </SectionWrapper>
   )
-}
 
-export default Community
+
