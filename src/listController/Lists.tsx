@@ -1,17 +1,16 @@
-import { Box, Container, ContainerSmall, FlexWrapper, Image, Typography } from "components";
 import React from "react";
+import { Container, ContainerSmall, FlexWrapper, Typography } from "components";
 import ListsItem from "./ListsItem";
-import { PlanProps } from "./../constants/personalPlan";
-import { mobile, theme, useQuery } from "styles/theme";
+import { mobile, useQuery } from "styles/theme";
 import styled from "styled-components/macro";
 
 interface ListProps {
-  id?:string
-  title?: string;
-  listItems: Array<ListItem>;
   bullet: string;
   columns?: string;
+  id?:string
+  listItems: Array<ListItem>;
   mobileColumns?:string;
+  title?: string;
 }
 
 interface ListItem  {
@@ -19,17 +18,16 @@ interface ListItem  {
   text: string;
 }
 
-const Lists: React.FC<ListProps> = ({ title, listItems, bullet, columns, mobileColumns }) => {
-  console.log(listItems)
+const Lists: React.FC<ListProps> = ({ columns,  bullet, listItems, mobileColumns, title }) => {
   const {isMobile}=useQuery()
   return (
     <Container>
         {title && <Typography
+          fontSize="fs20"
+          paddingX={{ _: "s24" }}
+          paddingY={{ _: "s16", desktop: "s32" }}
           textAlign={{ _: "start", desktop: "center" }}
           type="h6"
-          paddingY={{ _: "s16", desktop: "s32" }}
-          paddingX={{ _: "s24" }}
-          fontSize="fs20"
         >
           {title}
         </Typography>}
@@ -37,7 +35,7 @@ const Lists: React.FC<ListProps> = ({ title, listItems, bullet, columns, mobileC
           <FlexWrapper flexDirection="column" gap="0.5rem">
             <ListStyle columns={isMobile? mobileColumns : columns}>
               {listItems.map((item) => (
-                <ListsItem key={item.id} text={item.text} bullet={bullet} />
+                <ListsItem key={item.id} bullet={bullet} text={item.text}  />
               ))}
             </ListStyle>
           </FlexWrapper>
@@ -50,15 +48,16 @@ const Lists: React.FC<ListProps> = ({ title, listItems, bullet, columns, mobileC
 export default Lists;
 
 const ListStyle = styled.ul<{ columns?: string }>`
+  height: 100%;
+  
+  padding: 0;
+  
   columns: ${({ columns }) => (columns ? columns : "0")};
   column-gap: 1.5rem;
-  height: 100%;
-  /* width: 100%; */
-  padding: 0;
-  @media ${mobile} {
-    columns: ${({ columns }) => (columns ? columns : "1")};
- 
-    /* width: 19.5rem; */
+
+  @media ${mobile}{
     padding: 0;
+    
+    columns: ${({ columns }) => (columns ? columns : "1")};
   }
 `;

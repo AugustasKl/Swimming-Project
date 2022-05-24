@@ -1,9 +1,8 @@
 import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
-import styled from "styled-components/macro";
 
-export const PhysicianMobile: React.FC = () => {
-  return (
+
+export const PhysicianMobile: React.FC = () => (
  
 
     <StaticImage
@@ -14,5 +13,4 @@ export const PhysicianMobile: React.FC = () => {
       />
   
   );
-};
 

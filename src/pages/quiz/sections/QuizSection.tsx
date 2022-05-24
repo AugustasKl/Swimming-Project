@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { answers, email, questions } from "store/users/selectors";
 import { Box, ContainerSmall, FlexWrapper,SectionWrapper} from "components";
 import { Check } from "assets/icons";
 import { EmailElement, QuizTopElement } from "../elements";
@@ -6,33 +7,34 @@ import { fetchQuizAxios } from "store/store/thunks";
 import InputAnswers from "components/Input/InputAnswers";
 import { Loader } from "components/loader/Loader";
 import { NextButton } from "components/buttons/NextButton";
-import { setQuizAnswers, setEmail } from "store/slice";
+import { setQuizAnswers, setEmail } from "store/users/answers-slice";
 import styled from "styled-components/macro";
 import { theme } from "styles/theme";
-import { useDispatch, useSelector } from "react-redux";
+import {useSelector } from "react-redux";
+import { useAppDispatch } from "store/store/store";
+
 
 
 export const QuizSection: React.FC = () => {
-  const dispatch = useDispatch();
-  const answers = useSelector((state: any) => state.answers.quiz_answers);
-  const questions = useSelector((state: any) => state.questions.data);
+  const dispatch = useAppDispatch();
+  const userQuestions = useSelector(questions);
+  const usAnswers:any = useSelector(answers);
+  const userEmail = useSelector(email);
   const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
   const [questionNumber, setQuestionNumber] = useState<number>(0);
-  const email = useSelector((state: any) => state.answers.email);
-  const currentQuestion = questions ? Object.entries(questions)[questionNumber]: [];
-  const [questionKey, questionData]: any = currentQuestion? currentQuestion: [];
+  const currentQuestion = userQuestions ? Object.entries(userQuestions)[questionNumber]: [];
+  const [questionKey, questionData] = currentQuestion? currentQuestion: [];
   const quizFinished = !currentQuestion;
-
 
   useEffect(() => {
     dispatch(fetchQuizAxios());
   }, []);
 
-  if (!questions) {
+  if (!userQuestions) {
     return (<FlexWrapper justifyContent='center' mt='s160'><Loader/></FlexWrapper>)
   }
 
-  const allQuestionsNumber = Object.keys(questions).length;
+  const allQuestionsNumber = Object.keys(userQuestions).length;
 
   const currentQuestionHandler = () => {
     setQuestionNumber((prevState) => prevState + 1);
@@ -77,7 +79,7 @@ export const QuizSection: React.FC = () => {
       <EmailElement
       onChange={emailHandler}
       onClick={backButtonHandler}
-      value={email}
+      value={userEmail}
         />
     );
   }
@@ -100,14 +102,14 @@ export const QuizSection: React.FC = () => {
           </Box>
           {questionData.answerOptions.map((answer: string) => {
             return (
-              <QuizOptionsStyles isSelected={answers[questionKey].includes(answer)} key={answer}>
+              <QuizOptionsStyles isSelected={usAnswers[questionKey].includes(answer)} key={answer}>
                 <InputAnswers
                   answer={answer}
                   onChange={answerHandler}
                   type={answerType}
                   value={answer}
                 />
-                {answers[questionKey].includes(answer) && <Check />}
+                {usAnswers[questionKey].includes(answer) && <Check />}
               </QuizOptionsStyles>
             );
           })}

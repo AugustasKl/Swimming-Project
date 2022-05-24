@@ -1,7 +1,8 @@
 import React from 'react'
 import {ContainerSmall, FlexWrapper } from 'components'
 import { PlanBenefitsText } from '.'
-import SwimmingGirl from 'assets/icons/SwimmingGirl'
+import { SwimmingGirl } from 'assets/icons'
+
 
 
 export const PlanBenefits:React.FC = () => (

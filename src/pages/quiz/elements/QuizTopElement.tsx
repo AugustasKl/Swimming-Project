@@ -1,7 +1,8 @@
 import React from "react";
 import { BackButton } from "components/buttons/BackButton";
 import { FlexWrapper, Typography } from "components";
-import Logo from "assets/icons/Logo";
+import { Logo } from "assets/icons";
+
 
 interface QuizTopElementProps {
   allQuestionsLength: number;

@@ -1,30 +1,23 @@
-// import React from 'react'
-
-import styled from "styled-components/macro";
-import {  mobile, theme } from "styles/theme";
 import { Button } from "./Button";
+import {  mobile, theme } from "styles/theme";
+import styled from "styled-components/macro";
 
 
 
 export const StartNow=styled(Button)`
-/* background: ${theme.colors.blue}; */
-color:${theme.colors.white};
-font-weight: ${theme.fontWeights.fw700};
-padding: 1rem 0;
-border-radius: ${theme.radii.r30};
 width: 20rem;
-margin: ${({margin})=> margin || '1rem 0 0 0 '};
+
+padding: 1rem 0;
+margin: ${({margin})=> margin || '1rem 0 0 0'};
+
+border-radius: ${theme.radii.r30};
+color:${theme.colors.white};
 cursor: pointer;
-/* a{
-    text-decoration: none;
-    color:white;
-   
-  } */
+font-weight: ${theme.fontWeights.fw700};
+
 
 @media ${mobile} {
     text-align: center;
-    /* width: 50%; */
     margin-top: 1rem;
-    
     }
 `

@@ -17,11 +17,11 @@ export const Instructors: React.FC = () => {
     if (sortStatus) {
       const sorted = instructorsCopy.sort((a, b) => a.rating > b.rating ? 1 : -1);
       setInstructors(sorted);
-      setSortStatus(prevState=>!prevState);
+      setSortStatus(!sortStatus);
     } else {
       const sorted = instructorsCopy.sort((a, b) => a.rating < b.rating ? 1 : -1);
       setInstructors(sorted);
-      setSortStatus(prevState=>!prevState);
+      setSortStatus(!sortStatus);
     }
   };
 
@@ -59,7 +59,7 @@ export const Instructors: React.FC = () => {
             ))}
           </GridWrapper>
         <Box marginTop='s24'>
-          <ButtonPrimary onClick={sortHandler}>Sort by Rating In {sortStatus? 'Descending': 'Ascending'} order</ButtonPrimary>
+          <ButtonPrimary onClick={sortHandler}>Sort by Rating In {sortStatus? 'Ascending': 'Descending'} order</ButtonPrimary>
         </Box>
         </FlexWrapper>
       </Container>

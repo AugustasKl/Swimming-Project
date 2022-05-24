@@ -33,15 +33,10 @@ import Michael from 'assets/images/Michael.jpeg'
 import pool from 'assets/images/pool.jpg'
 
 
-//what will you get
-//falling dude
-
 
 //swimming coaches
-// import coachA from 'assets/images/CoachA.png'
 import coachB from 'assets/images/CoachB.png'
 import coachC from 'assets/images/CoachC.png'
-// import coachD from 'assets/images/CoachD.png'
 import coachE from 'assets/images/CoachE.png'
 import coachF from 'assets/images/CoachF.png'
 import coachG from 'assets/images/CoachG.png'

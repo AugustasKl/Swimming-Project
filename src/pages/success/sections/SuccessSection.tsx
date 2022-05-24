@@ -1,10 +1,9 @@
 import React from 'react';
 import Confetti from 'react-confetti';
 import { Container, FlexWrapper, Typography } from 'components';
-import Logo from 'assets/icons/Logo';
+import { Logo, UniversalImages } from 'assets/icons';
 import { mobile, useQuery } from 'styles/theme';
 import styled from 'styled-components/macro';
-import { UniversalImages } from 'assets/icons';
 
 
 

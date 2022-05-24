@@ -1,17 +1,18 @@
+import { Button } from "./Button";
 import styled from "styled-components/macro";
 import { theme } from "styles/theme";
-import { Button } from "./Button";
 
 
 export const BackButton=styled(Button)`
-background: ${theme.colors.blue};
-color: ${theme.colors.white};
-text-align: center;
-gap: 0.5rem;
-padding: 0.75rem 2rem;
-border-radius: ${theme.radii.r10};
 width: 6rem;
-cursor: pointer;
+
+padding: 0.75rem 2rem;
 margin-top: 1rem;
-/* font-size: 16px; */
+
+background: ${theme.colors.blue};
+border-radius: ${theme.radii.r10};
+color: ${theme.colors.white};
+cursor: pointer;
+gap: 0.5rem;
+text-align: center;
 `

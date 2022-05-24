@@ -1,62 +1,59 @@
 import React from "react";
 import styled from "styled-components/macro";
 import { theme } from "styles/theme";
-import { Statuses } from "typings/generalTypes";
+
 
 
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>{
-    backgroundColor?:string;
     display?:string;
-    minWidth?:string;
-    maxWidth?:string;
     background?:string;
-    width?:string;
+    backgroundColor?:string;
     borderRadius?:string;
-    padding?:string;
-    position?:string;
-    margin?:string;
     fontSize?:string;
     fontWeight?:string;
-    textAlign?:string
-    onClick?:()=>void,
     isLoading?:boolean
-
+    margin?:string;
+    maxWidth?:string;
+    minWidth?:string;
+    onClick?:()=>void,
+    padding?:string;
+    position?:string;
+    textAlign?:string
+    width?:string;
 }
 
 export const Button:React.FC<ButtonProps>=({
-onClick,
-children,
-isLoading,
-...rest
+    children,
+    isLoading,
+    onClick,
+    ...rest
 })=>(
-<ButtonP onClick={onClick} disabled={isLoading} {...rest}>
+<ButtonP disabled={isLoading} onClick={onClick} {...rest}>
     {isLoading? 'Loading... ' :children}
 </ButtonP>
 )
 
 const ButtonP=styled.button<ButtonProps>`
     display: ${({display})=>display || ''};
-    margin:${({margin})=>margin || ''};
-    padding:${({padding})=>padding || ''};
-    text-align:${({textAlign})=>textAlign || 'center'};
-    max-width:${({maxWidth})=>maxWidth || ''};
-    min-width:${({minWidth})=>minWidth || ''};
-    font-size:${({fontSize})=>fontSize || ''};
-    font-weight: ${({fontWeight})=> fontWeight || ''};
-    font-family: ${theme.fontFamily.primary};
-    color:${({color})=>color|| ''};
-    position:${({position})=>position|| ''};
     background:${({background})=>background|| ''};
     background-color:${({backgroundColor})=>backgroundColor|| ''};
-    border-radius: ${({borderRadius})=> borderRadius || ''};
     border: none;
-    
+    border-radius: ${({borderRadius})=> borderRadius || ''};
+    color:${({color})=>color|| ''};
     cursor: pointer;
+    font-family: ${theme.fontFamily.primary};
+    font-size:${({fontSize})=>fontSize || ''};
+    font-weight: ${({fontWeight})=> fontWeight || ''};
+    margin:${({margin})=>margin || ''};
+    min-width:${({minWidth})=>minWidth || ''};
+    max-width:${({maxWidth})=>maxWidth || ''};
+    padding:${({padding})=>padding || ''};
+    position:${({position})=>position|| ''};
+    text-align:${({textAlign})=>textAlign || 'center'};
+
     :disabled{
         cursor: not-allowed;
         opacity: 0.8;
     }
-
-
 ` 

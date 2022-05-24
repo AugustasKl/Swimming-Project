@@ -1,11 +1,14 @@
 import React, {useState } from "react";
+import { answers, email } from "store/users/selectors";
 import { Box, FlexWrapper, Input, Typography } from "components";
 import { ButtonPrimary } from "components/buttons/ButtonPrimary";
 import { DataAnalyzer } from ".";
 import { mobile } from "styles/theme";
 import { postUser } from "store/store/thunks";
 import styled from "styled-components/macro";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
+import { useAppDispatch } from "store/store/store";
+
 
 interface EmailElementProps {
   onChange: () => void;
@@ -13,20 +16,23 @@ interface EmailElementProps {
   value: string;
 }
 
+
 export const EmailElement: React.FC<EmailElementProps> = ({
   onChange,
   onClick,
   value,
 }) => {
   
-  const dispatch=useDispatch()
-  const email = useSelector((state: any) => state.answers.email);
-  const answers = useSelector((state: any) => state.answers.quiz_answers);
+  const dispatch=useAppDispatch()
+  const userEmail = useSelector(email);
+  const userAnswers = useSelector(answers);
   const [initLoader, setInitLoader] = useState<boolean>(false);
+
 
   const submitHanlder = (event:React.FormEvent) => {
     event.preventDefault()
-    const quizData = { answers, email };
+    const quizData:any = { userAnswers, userEmail };
+    console.log(quizData)
     dispatch(postUser(quizData));
     setInitLoader(true)
   };
@@ -59,7 +65,7 @@ export const EmailElement: React.FC<EmailElementProps> = ({
       {!value.includes('@') && message}
       <FlexWrapper gap="1.5rem">
         <ButtonPrimary onClick={onClick} type="button">Back</ButtonPrimary>
-        <ButtonPrimary disabled={!email.includes('@')}>Submit</ButtonPrimary>
+        <ButtonPrimary disabled={!userEmail.includes('@')}>Submit</ButtonPrimary>
       </FlexWrapper>
       </Box>
     </StyledEmailElement>

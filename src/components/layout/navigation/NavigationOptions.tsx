@@ -1,11 +1,10 @@
+import React from "react";
 import { FlexWrapper } from "components";
 import { Link } from "gatsby";
-import React from "react";
 import styled from "styled-components/macro";
 import { theme } from "styles/theme";
 
-const NavigationOptions: React.FC = () => {
-  return (
+export const NavigationOptions: React.FC = () => (
     <HeaderWrapper>
       <Link to="/">Home</Link>
       <Link to="/about">About</Link>
@@ -13,19 +12,18 @@ const NavigationOptions: React.FC = () => {
       <Link to="/success">About us</Link>
     </HeaderWrapper>
   );
-};
 
-export default NavigationOptions;
 
 const HeaderWrapper = styled(FlexWrapper)`
-margin-right: 3rem;
+  margin-right: 3rem;
   gap: 3rem;
+
   a {
-    font-size: 1.15rem;
     color: ${theme.colors.white};
-    text-decoration: none;
-    font-weight: ${theme.fontWeights.fw400};
     border-bottom: 3px solid transparent;
+    font-size: 1.15rem;
+    font-weight: ${theme.fontWeights.fw400};
+    text-decoration: none;
   }
   a:hover {
     border-color: ${theme.colors.white};

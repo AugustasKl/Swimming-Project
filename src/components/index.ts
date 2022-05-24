@@ -8,10 +8,6 @@ export * from './wrappers/FlexWrapper';
 export * from './wrappers/GridWrapper';
 
 
-//texts
-export * from './texts/TextBase';
-export * from './texts/H1';
-
 //typography
 export * from './typography/Typography';
 
@@ -20,7 +16,7 @@ export * from './Image';
 
 //input
 export * from './Input/elements/Input';
-export * from './Input/InputPrimary';
+
 
 
 //header
@@ -31,6 +27,15 @@ export * from './layout/header/Header'
 //slider
 export * from './slider/Slider'
 
+//Tag
+export * from './tag/TagElement'
+//Loader
+export * from './loader/Loader'
+
+//footer
+export * from './layout/footer/Footer'
+//layout
+export * from './layout/Layout'
 
 
 

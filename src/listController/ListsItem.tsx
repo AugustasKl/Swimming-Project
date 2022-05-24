@@ -1,7 +1,7 @@
-import { Box, FlexWrapper, Image, Typography } from "components";
 import React from "react";
-import styled from "styled-components/macro";
+import { FlexWrapper, Image, Typography } from "components";
 import { mobile } from "styles/theme";
+import styled from "styled-components/macro";
 
 const ListsItem: React.FC<{ text: string; bullet: string }> = ({
   text,
@@ -10,7 +10,7 @@ const ListsItem: React.FC<{ text: string; bullet: string }> = ({
 
   return (
     <ListStyles>
-      <FlexWrapper gap="0.5rem" alignItems="flex-start">
+      <FlexWrapper alignItems="flex-start" gap="0.5rem">
         <Image src={bullet} alt="bullet points" />
         <Typography fontSize="fs14">{text}</Typography>
       </FlexWrapper>
@@ -23,10 +23,10 @@ export default ListsItem;
 const ListStyles = styled.li`
   list-style: none;
   line-height: 1.375rem;
-  
 
   @media ${mobile} {
-   padding: 0.5rem;
    width: 100%;
+   
+   padding: 0.5rem;
   }
 `;

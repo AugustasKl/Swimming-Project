@@ -20,19 +20,9 @@ return(
       <FlexWrapper alignItems="center" flexDirection="column" justifyContent="center" >
         <FlexWrapper gap="0.25rem" alignItems="center">
           <Typography fontWeight="fw700"> {name}</Typography>
-          <Typography
-            border={
-              message === "Most popular"
-              ? "1px solid #9767BD"
-              : "1px solid #00878A"
-            }
-            borderRadius="r10"
-            color={message === "Most popular" ? "purple" : "green"}
-            fontWeight="fw700"
-            p="s4"
-            >
+          <TypographyStyles hasMessage={message.includes('Most popular')} >
             {message}
-          </Typography>
+          </TypographyStyles>
         </FlexWrapper>
         <FlexWrapper alignItems="center" gap="0.25rem">
         <Typography fontSize="fs24" fontWeight="fw900">${price}</Typography>
@@ -69,3 +59,12 @@ const PricingItemStyles = styled(FlexWrapper)`
     text-decoration: none;
   }
 `;
+
+const TypographyStyles=styled(Typography)<{hasMessage:boolean}>`
+padding: 0.25rem;
+
+border: ${({hasMessage})=> hasMessage === true ? `1px solid ${theme.colors.purple}` : `1px solid ${theme.colors.green}`};
+border-radius: ${theme.radii.r10};
+color: ${({hasMessage})=> hasMessage === true ? `${theme.colors.purple}` : `${theme.colors.green}`};
+font-weight: ${theme.fontWeights.fw700};
+`

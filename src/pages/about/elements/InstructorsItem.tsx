@@ -3,13 +3,13 @@ import { FlexWrapper, Typography } from "components";
 import { InstructorsProps } from "constants/swimInstructors";
 import { mobile, theme } from "styles/theme";
 import { Star, UniversalImages } from "assets/icons";
-import { SocialButton } from "components/buttons";
+
 import styled from "styled-components/macro";
+import { SocialButton } from "components/buttons/SocialButton";
 
 
 export const InstructorsItem: React.FC<InstructorsProps> = ({
   experience,
-  id,
   name,
   position,
   rating,

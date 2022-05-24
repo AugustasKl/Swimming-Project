@@ -1,14 +1,11 @@
-import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
+import { StaticImage } from 'gatsby-plugin-image'
 
-const Logo:React.FC = () => (
-
+export const Logo:React.FC = () => (
     <StaticImage 
     src='./../svg/Logo.svg'
     alt='logo'
-    // style={{width:'3.5rem', height:'3.5rem'}}
     />
   )
 
 
-export default Logo

@@ -1,28 +1,25 @@
 import React from "react";
-import styled from "styled-components/macro";
-import Slider from "react-slick";
 import { mobile, useQuery } from "styles/theme";
+import Slider from "react-slick";
+import styled from "styled-components/macro";
 
 interface SliderProps {
   dots?: boolean;
   infinite?: boolean;
-  speed?: number;
+  mobileSlidesToScroll?: number;
+  mobileSlidesToShow?: number;
   slidesToShow?: number;
   slidesToScroll?: number;
-  mobileSlidesToShow?: number;
-  mobileSlidesToScroll?: number;
+  speed?: number;
 }
 
-interface SliderStyles extends SliderProps {
-  margin?: string;
-}
 
 export const SliderComponent: React.FC<SliderProps> = ({
   children,
+  mobileSlidesToScroll,
+  mobileSlidesToShow,
   slidesToScroll,
   slidesToShow,
-  mobileSlidesToShow,
-  mobileSlidesToScroll,
   ...rest
 }) => {
   const { isMobile } = useQuery();
@@ -31,9 +28,9 @@ export const SliderComponent: React.FC<SliderProps> = ({
       <Slider
         dots={true}
         infinite={true}
-        speed={500}
-        slidesToShow={isMobile ? mobileSlidesToShow : slidesToShow}
         slidesToScroll={isMobile ? mobileSlidesToScroll : slidesToScroll}
+        slidesToShow={isMobile ? mobileSlidesToShow : slidesToShow}
+        speed={500}
         {...rest}
       >
         {children}
@@ -42,7 +39,7 @@ export const SliderComponent: React.FC<SliderProps> = ({
   );
 };
 
-const SliderP = styled.div<SliderStyles>`
+const SliderP = styled.div`
   margin: 0 -1rem;
 
   @media ${mobile} {

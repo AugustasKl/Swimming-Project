@@ -1,7 +1,7 @@
-import { Image } from 'components'
 import React from 'react'
+import { Image } from 'components'
 
-const SocialLinks:React.FC = () =>  (
+export const SocialLinks:React.FC = () =>  (
   <>
     <a href="https://facebook.com/">
       <Image src="facebook" alt="facebook" height="2rem" width='2rem'/>
@@ -15,4 +15,3 @@ const SocialLinks:React.FC = () =>  (
   </>
 )
 
-export default SocialLinks

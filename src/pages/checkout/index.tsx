@@ -1,6 +1,7 @@
 import React from "react";
 import {Clients, Message, OrderInformation, PlanSection, Pricing, Questions, QuizSelection, YouWillGet} from "./sections";
-import Header from "components/layout/header/Header";
+import { Header } from "components";
+
 
 
 

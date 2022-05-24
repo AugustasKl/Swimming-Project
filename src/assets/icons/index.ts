@@ -1,8 +1,6 @@
 //logo
 export * from './Logo'
 
-//demo heart
-export * from './SwimmingGirl'
 
 //most popular choice (star)
 export * from './Star'
@@ -19,18 +17,17 @@ export * from './UniversalImages'
 export * from './Plus'
 export * from './Minus'
 
-//swimmers
-export * from './Swimmers'
-export * from './Lochte'
 
 //physician
 export * from './Physician'
 export * from './PhysicianMobile'
 
-//confeti
-export * from './Confetti'
+
+//swimming girl
+export * from './SwimmingGirl'
+
 
 //check
 export * from './Check'
-
+//swimming pool
 export * from './SwimmingPool'

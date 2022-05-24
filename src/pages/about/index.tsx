@@ -1,6 +1,7 @@
 import React from "react";
 import { About, Community, FindRightProgram, Instructors, Partners, Programs } from "./sections";
-import Header from "components/layout/header/Header";
+import { Header } from "components";
+
 
 const AboutPage: React.FC = () => (
     <>

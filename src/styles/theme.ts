@@ -30,9 +30,7 @@ const backgrounds ={
 }
 
 const colors = {
-  
   black: "#000000",
-  subscribeBackground: "#D2F5F6",
   mainBackground: "#000F33",
   backgroundSecondary:'#0747DA',
   radioColor: "#ccc",

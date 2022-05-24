@@ -1,7 +1,7 @@
-import { FlexWrapper, Typography } from "components";
-import { CommunityProps } from "constants/community";
 import React from "react";
-import { theme, useQuery } from "styles/theme";
+import { CommunityProps } from "constants/community";
+import { FlexWrapper, Typography } from "components";
+import {  useQuery } from "styles/theme";
 
 export const CommunityItem: React.FC<CommunityProps> = ({
   percentage,

@@ -1,5 +1,5 @@
-import { FlexWrapper, Image } from 'components'
 import React from 'react'
+import { FlexWrapper, Image } from 'components'
 import styled from 'styled-components/macro'
 
 export const SafeCheckout:React.FC = () => (
@@ -13,7 +13,6 @@ const CheckoutStyles=styled(FlexWrapper)`
 justify-content: center;
 
 img{
-    
     padding: 0.25rem;
     background: white;
 }

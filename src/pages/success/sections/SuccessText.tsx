@@ -1,13 +1,15 @@
 import React from "react";
 import { Box, Container, FlexWrapper, SectionWrapper, Typography } from "components";
 import { ButtonPrimary } from "components/buttons/ButtonPrimary";
+import { email } from "store/users/selectors";
 import { Link } from "gatsby";
-import { setEmail, setQuizAnswers } from "store/slice";
-import { useDispatch, useSelector } from "react-redux";
+import { setEmail, setQuizAnswers } from "store/users/answers-slice";
+import { useSelector } from "react-redux";
+import { useAppDispatch } from "store/store/store";
 
 export const SuccessText: React.FC = () => {
-  const dispatch=useDispatch()
-  const email=useSelector((state:any)=>state.answers.email)
+  const dispatch=useAppDispatch()
+  const userEmail=useSelector(email)
   const emptyAnswers={
     exercise_type:[],
     gender:'',
@@ -34,7 +36,7 @@ export const SuccessText: React.FC = () => {
             We have just sent out a letter to this email address:
           </Typography>
           <Typography fontSize="fs18" fontWeight="fw700"  >
-            {email}
+            {userEmail}
           </Typography>
           <Typography fontSize="fs14">
             (Please check your Spam folder too)
