@@ -6,6 +6,7 @@ import { EmailElement, QuizTopElement } from "../elements";
 import { fetchQuizAxios } from "store/store/thunks";
 import InputAnswers from "components/Input/InputAnswers";
 import { Loader } from "components/loader/Loader";
+import { navigate } from "gatsby";
 import { setQuizAnswers, setEmail } from "store/users/answers-slice";
 import styled from "styled-components/macro";
 import { theme } from "styles/theme";
@@ -38,7 +39,7 @@ export const QuizSection: React.FC = () => {
 
   const currentQuestionHandler = () => {
     setQuestionNumber((prevState) => prevState + 1);
-    console.log(selectedAnswers)
+    
     if(questionKey==='swim_meters'){
       setSelectedAnswers([])
     }
@@ -47,9 +48,11 @@ export const QuizSection: React.FC = () => {
 
 
   const backButtonHandler = () => {
-    if (0 < questionNumber) {
+    if ( questionNumber > 0 ) {
       setQuestionNumber((prevState) => prevState - 1);
-
+    }
+    if(questionNumber ===0){
+      navigate('/')
     }
   };
 

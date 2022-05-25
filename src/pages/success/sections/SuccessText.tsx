@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Container, FlexWrapper, SectionWrapper, Typography } from "components";
 import { ButtonPrimary } from "components/buttons/ButtonPrimary";
 import { email } from "store/users/selectors";
-import { Link } from "gatsby";
+import {  navigate } from "gatsby";
 import { setEmail, setPrice, setQuizAnswers } from "store/users/answers-slice";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "store/store/store";
@@ -25,6 +25,7 @@ export const SuccessText: React.FC = () => {
     dispatch(setQuizAnswers(emptyAnswers))
     dispatch(setEmail(''))
     dispatch(setPrice(0))
+    navigate('/')
   }
   return (
     <SectionWrapper>
@@ -49,9 +50,7 @@ export const SuccessText: React.FC = () => {
           </Typography>
           </Box>
           <ButtonPrimary onClick={startOverHandler}>
-            <Link to='/'>
               Start Over!
-            </Link>
           </ButtonPrimary>
         </FlexWrapper>
       </Container>

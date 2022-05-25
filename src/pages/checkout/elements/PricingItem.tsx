@@ -1,7 +1,7 @@
 import React from "react";
 import { BillingProps } from "constants/billing";
 import { FlexWrapper, Typography } from "components";
-import { Link } from "gatsby";
+import { navigate } from "gatsby";
 import { StartNowButton } from "components/buttons/StartNowButton";
 import { setPrice } from "store/users/answers-slice";
 import styled from "styled-components/macro";
@@ -17,8 +17,8 @@ export const PricingItem: React.FC<BillingProps> = ({
 }) => {
   const dispatch=useAppDispatch()
   const paymentHandler=()=>{
-    console.log(price)
     dispatch(setPrice(price))
+    navigate('/success')
   }
 
   const payment= (price=== 800 ? <Typography fontSize="fs14"><del>${oldPrice}</del> &nbsp; <span>${newPrice}</span> billed every week</Typography> 
@@ -38,9 +38,7 @@ return(
         </FlexWrapper>
         {payment}
         <StartNowButton onClick={paymentHandler}>
-          <Link to='/success'>
-          Start now (Save 25%)
-          </Link>
+          Pay now 
           </StartNowButton>
       </FlexWrapper>
     </PricingItemStyles>

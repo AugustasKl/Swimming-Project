@@ -10,6 +10,7 @@ width: 20rem;
 padding: 1rem 0;
 margin: ${({margin})=> margin || '1rem 0 0 0'};
 
+background-color: ${theme.colors.blue};
 border-radius: ${theme.radii.r30};
 color:${theme.colors.white};
 cursor: pointer;

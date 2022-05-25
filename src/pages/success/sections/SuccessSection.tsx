@@ -17,7 +17,6 @@ console.log(userAnswerReason)
     <SuccessSectionsStyles>
         <Container>
             <FlexWrapper alignItems='center' flexDirection='column'>
-                {isMobile? '' : <Logo/>}
                 <Typography color='white' fontSize="fs40" fontWeight="fw700" paddingY={{_:'s48',desktop:'s48'}}  textAlign='center'>Thank you for your order</Typography>
                 {isMobile? '':  <UniversalImages tag='complete'/>}
             </FlexWrapper>
@@ -30,7 +29,7 @@ console.log(userAnswerReason)
 const SuccessSectionsStyles=styled(FlexWrapper)`
   width:100%;
   
-  background: linear-gradient(128deg, #000f33 56.7%, #0747da 35%);
+  background: linear-gradient(128deg, #000f33 58%, #0747da 35%);
   
   @media ${mobile} {
     background: linear-gradient(128deg, #000f33 68.5%, #0747da 35%);  

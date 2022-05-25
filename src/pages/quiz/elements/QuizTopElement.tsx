@@ -28,7 +28,7 @@ export const QuizTopElement: React.FC<QuizTopElementProps> = ({
         ml="s8"
         width="90%"
       >
-        <BackButton onClick={onClick} disabled={questionNumber === 0}>Back</BackButton>
+        <BackButton onClick={onClick}>Back</BackButton>
         <Logo />
         <Typography color="white" fontSize="fs18" pt="s16">{`${questionNumber + 1}/${allQuestionsLength}`}</Typography>
         </FlexWrapper>

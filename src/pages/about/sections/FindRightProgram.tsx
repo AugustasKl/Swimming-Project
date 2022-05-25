@@ -1,7 +1,7 @@
 import React from "react";
 import { ButtonPrimary } from "components/buttons/ButtonPrimary";
 import {ContainerSmall, FlexWrapper, SectionWrapper, Typography } from "components";
-import { Link } from "gatsby";
+import { navigate } from "gatsby";
 import styled from "styled-components/macro";
 import { useQuery } from "styles/theme";
 
@@ -19,8 +19,8 @@ export const FindRightProgram: React.FC = () => {
             <Typography color="white" fontSize="fs24" fontWeight="fw700">
               Complete the quick quiz and find the right program for you!
             </Typography>
-            <ButtonPrimary width={isMobile ? "60%" : "30%"}>
-              <Link to="/quiz">Start Quiz</Link>
+            <ButtonPrimary width={isMobile ? "60%" : "35%"} onClick={()=>{navigate('/quiz')}}>
+              Start Quiz
             </ButtonPrimary>
           </FlexWrapper>
         </ContainerSmall>

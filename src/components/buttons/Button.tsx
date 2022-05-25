@@ -51,9 +51,12 @@ const ButtonP=styled.button<ButtonProps>`
     padding:${({padding})=>padding || ''};
     position:${({position})=>position|| ''};
     text-align:${({textAlign})=>textAlign || 'center'};
-
+    
     :disabled{
         cursor: not-allowed;
         opacity: 0.8;
+    }
+    a{
+        cursor:pointer;
     }
 ` 

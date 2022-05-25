@@ -2,7 +2,7 @@ import React from "react";
 import {Box,Container,FlexWrapper,SectionWrapper,Typography} from "components";
 import { ButtonPrimary } from "components/buttons/ButtonPrimary";
 import { HeroImage} from "../elements";
-import { Link } from "gatsby";
+import { Link, navigate } from "gatsby";
 import { mobile } from "styles/theme";
 import styled from "styled-components/macro";
 
@@ -23,8 +23,8 @@ export const HeroSection: React.FC = () => (
           <Typography color="white" marginRight={{ desktop: "s24" }}>
             Take a 30-sec quiz approved by our professionals and get your personalized swimming program right now! 
           </Typography>
-          <ButtonPrimary margin="2rem 0">
-            <Link to="/quiz">Start Quiz</Link>
+          <ButtonPrimary margin="2rem 0" onClick={()=>{navigate('/quiz')}}>
+           Start Quiz
           </ButtonPrimary>
         </Box>
         <HeroImage />

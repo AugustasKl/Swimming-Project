@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, FlexWrapper } from "components";
 import { ButtonPrimary } from "components/buttons/ButtonPrimary";
-import { Link } from "gatsby";
+import { navigate } from "gatsby";
 import { Logo } from "assets/icons";
 import { mobile, useQuery } from "styles/theme";
 import { NavigationOptions } from "..";
@@ -29,8 +29,8 @@ export const Header: React.FC = () => {
         {!isMobile && (
           <FlexWrapper>
             {questionsData ===null && (
-              <ButtonPrimary>
-                <Link to="/quiz">Start Quiz</Link>
+              <ButtonPrimary onClick={()=>{navigate('/quiz')}}>
+                Start Quiz
               </ButtonPrimary>
             )}
           </FlexWrapper>
