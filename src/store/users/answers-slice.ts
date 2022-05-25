@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { QuizAnswers, UserStateAnswers } from "../types";
 
-const initialState: UserStateAnswers = {
+export const initialState: UserStateAnswers = {
   quiz_answers: {
     exercise_type: [],
     gender: "",
@@ -21,10 +21,12 @@ const answersSlice = createSlice({
   initialState,
   reducers: {
     setQuizAnswers: (state, actions: PayloadAction<Partial<QuizAnswers>>) => {
-      state.quiz_answers = {
-        ...state.quiz_answers,
-        ...actions.payload,
-      };
+      if(actions.payload){
+        state.quiz_answers = {
+          ...state.quiz_answers,
+          ...actions.payload,
+        };
+      }
     },
     setEmail: (state, actions: PayloadAction<string>) => {
       state.email = actions.payload;

@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { fetchQuizAxios } from "../store/thunks";
 import { UserStateQuestions } from "store/types";
 
-const initialState: UserStateQuestions = {
+export const initialState: UserStateQuestions = {
   data: null,
 };
 

@@ -42,7 +42,8 @@
     "redux-persist": "^6.0.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.5",
-    "styled-system": "^5.1.5"
+    "styled-system": "^5.1.5",
+    "ts-jest": "^28.0.3"
   },
   "devDependencies": {
     "@types/jest": "^27.5.1",
