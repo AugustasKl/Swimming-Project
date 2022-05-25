@@ -1,7 +1,7 @@
 import React from "react";
 import {Box, Container, FlexWrapper, SectionWrapper, Typography} from "components";
 import { logosArray, logosMobileArray } from "constants/partners";
-import { mobile, useQuery } from "styles/theme";
+import { mobile, theme, useQuery } from "styles/theme";
 import styled from "styled-components/macro";
 import { UniversalImages } from "assets/icons";
 
@@ -29,7 +29,7 @@ export const Partners: React.FC = () => {
 
 const LogosStyles = styled(Box)`
   &:not(:last-child) {
-    border-right: 2px solid #ccc;
+    border-right: "2px solid ${theme.colors.radioColor}";
     padding-right: 1rem;
   }
   @media ${mobile} {

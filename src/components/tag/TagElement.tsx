@@ -13,6 +13,6 @@ export const TagElement:React.FC<{status:string}> = ({status}) =>(
 const StyledTag=styled.image`
 position: absolute;
 
-top:45%;
 left: 35%;
+top:45%;
 `

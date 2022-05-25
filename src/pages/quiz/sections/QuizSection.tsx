@@ -143,7 +143,7 @@ const QuizSectionStyles = styled(FlexWrapper)`
   padding-bottom: 2.5rem;
   margin: 2rem auto;
  
-  box-shadow: 0px 16px 32px rgba(57, 53, 60, 0.08);
+  box-shadow: 0rem 1rem 2rem rgba(57, 53, 60, 0.08);
 `;
 
 const QuizOptionsStyles = styled(FlexWrapper)<{ isSelected: boolean }>`

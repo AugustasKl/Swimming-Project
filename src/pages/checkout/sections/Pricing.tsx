@@ -2,7 +2,7 @@ import React from "react";
 import { BILLING_OPTIONS } from "constants/billing";
 import { Box, ContainerSmall, FlexWrapper, SectionWrapper, Typography } from "components";
 import { mobile, theme, useQuery } from "styles/theme";
-import { PricingItem } from "./../elements/PricingItem";
+import { PricingItem } from "../elements";
 import { SafeCheckout } from "assets/icons";
 import styled from "styled-components/macro";
 

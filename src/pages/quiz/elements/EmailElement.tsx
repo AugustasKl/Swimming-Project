@@ -77,12 +77,12 @@ const StyledEmailElement = styled(FlexWrapper)`
   justify-content: center;
   flex-direction: column;
   
+  width: 35rem;
+  
   padding-bottom: 2.5rem;
   margin: 5rem auto;
   
-  width: 35rem;
-  
-  box-shadow: 0px 16px 32px rgba(57, 53, 60, 0.08);
+  box-shadow: 0rem 1rem 2rem rgba(57, 53, 60, 0.08);
 
   input {
     padding: 1rem;

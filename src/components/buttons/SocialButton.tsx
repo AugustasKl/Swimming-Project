@@ -1,14 +1,11 @@
 import React, { useState } from 'react'
 import { Button } from './Button'
 import { FlexWrapper, Image, SocialLinks } from 'components';
-import { mobile, theme } from 'styles/theme';
 import styled from 'styled-components/macro'
 
 export const SocialButton:React.FC = () => {
     const [clicked, setClicked] = useState<boolean>(true);
-    const clickedHandler = () => {
-        setClicked(!clicked);
-    };
+    const clickedHandler = () => {setClicked(!clicked)};
   return (
     <Button onClick={clickedHandler}>
         <StyledIcon>

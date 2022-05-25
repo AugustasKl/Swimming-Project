@@ -4,14 +4,16 @@ import { Button } from "./Button";
 
 
 export const NextButton=styled(Button)`
-background: ${theme.colors.heroBackground};
-color: ${theme.colors.white};
-text-align: center;
-gap: 0.5rem;
-padding: 0.75rem 2rem;
-border-radius: ${theme.radii.r10};
 width: 95%;
-cursor: pointer;
+
+padding: 0.75rem 2rem;
 margin-top: 1rem;
+
+background: ${theme.colors.heroBackground};
+border-radius: ${theme.radii.r10};
+color: ${theme.colors.white};
+cursor: pointer;
 font-size: 16px;
+gap: 0.5rem;
+text-align: center;
 `

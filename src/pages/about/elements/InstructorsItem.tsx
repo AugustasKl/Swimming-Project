@@ -3,7 +3,6 @@ import { FlexWrapper, Typography } from "components";
 import { InstructorsProps } from "constants/swimInstructors";
 import { mobile, theme } from "styles/theme";
 import { Star, UniversalImages } from "assets/icons";
-
 import styled from "styled-components/macro";
 import { SocialButton } from "components/buttons/SocialButton";
 

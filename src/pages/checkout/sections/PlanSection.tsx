@@ -1,5 +1,5 @@
 import React from "react";
-import Lists from "listController/Lists";
+import Lists from "components/listController/Lists";
 import { PlanBenefits } from "../elements";
 import { PERSONAL_PLAN } from "constants/personalPlan";
 import { SectionWrapper } from "components";

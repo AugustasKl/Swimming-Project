@@ -2,7 +2,7 @@ import React from "react";
 import { ABOUT } from "constants/about";
 import { AboutImage } from "../elements";
 import {Container, FlexWrapper, SectionWrapper, Typography} from "components";
-import Lists from "listController/Lists";
+import Lists from "components/listController/Lists";
 import { useQuery } from "styles/theme";
 
 export const About: React.FC = () => {

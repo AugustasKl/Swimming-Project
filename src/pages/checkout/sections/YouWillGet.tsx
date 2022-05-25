@@ -1,7 +1,7 @@
 import React from "react";
 import { AQUIRED_BENEFITS } from "constants/acquiredBenefits";
 import {ContainerSmall, FlexWrapper, SectionWrapper, Typography } from "components";
-import Lists from "listController/Lists";
+import Lists from "components/listController/Lists";
 import { mobile, useQuery } from "styles/theme";
 import styled from "styled-components/macro";
 import { SwimmingPool } from "assets/icons";
