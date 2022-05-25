@@ -41,4 +41,12 @@ export * from './layout/Layout'
 
 
 
+//buttons
+export * from './buttons/BackButton'
+export * from './buttons/ButtonPrimary'
+export * from './buttons/NextButton'
+export * from './buttons/SocialButton'
+export * from './buttons/StartNowButton'
 
+//plan switcher
+export * from './PlanSwitcher/PlanSwitcher'

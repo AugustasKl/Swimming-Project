@@ -4,7 +4,7 @@ import styled from "styled-components/macro";
 
 
 
-export const StartNow=styled(Button)`
+export const StartNowButton=styled(Button)`
 width: 20rem;
 
 padding: 1rem 0;

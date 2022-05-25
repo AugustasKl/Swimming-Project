@@ -1,13 +1,14 @@
 import React from "react";
 import { answerReason } from "store/users/selectors";
-import { Contact } from "../elements";
-import { Container, SectionWrapper, Typography } from "components";
-import { PlanSwitcher } from "pages/checkout/elements/PlanSwitcher";
+import { Contact,  } from "../elements";
+import { Container,PlanSwitcher, SectionWrapper, Typography } from "components";
+
 import { useSelector } from "react-redux";
 
 
 export const QuizSelection: React.FC = () => {
   const userAnswerReason = useSelector(answerReason);
+  
   return (
     <SectionWrapper>
       <Container>

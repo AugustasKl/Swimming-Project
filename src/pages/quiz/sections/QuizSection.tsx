@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { answers, email, questions } from "store/users/selectors";
-import { Box, ContainerSmall, FlexWrapper,SectionWrapper} from "components";
+import { Box, ContainerSmall, FlexWrapper,NextButton,SectionWrapper} from "components";
 import { Check } from "assets/icons";
 import { EmailElement, QuizTopElement } from "../elements";
 import { fetchQuizAxios } from "store/store/thunks";
 import InputAnswers from "components/Input/InputAnswers";
 import { Loader } from "components/loader/Loader";
-import { NextButton } from "components/buttons/NextButton";
 import { setQuizAnswers, setEmail } from "store/users/answers-slice";
 import styled from "styled-components/macro";
 import { theme } from "styles/theme";
@@ -18,7 +17,7 @@ import { useAppDispatch } from "store/store/store";
 export const QuizSection: React.FC = () => {
   const dispatch = useAppDispatch();
   const userQuestions = useSelector(questions);
-  const usAnswers:any = useSelector(answers);
+  const userAnswers:any = useSelector(answers);
   const userEmail = useSelector(email);
   const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
   const [questionNumber, setQuestionNumber] = useState<number>(0);
@@ -36,15 +35,21 @@ export const QuizSection: React.FC = () => {
 
   const allQuestionsNumber = Object.keys(userQuestions).length;
 
+
   const currentQuestionHandler = () => {
     setQuestionNumber((prevState) => prevState + 1);
-    setSelectedAnswers([])
+    console.log(selectedAnswers)
+    if(questionKey==='swim_meters'){
+      setSelectedAnswers([])
+    }
   };
+
 
 
   const backButtonHandler = () => {
     if (0 < questionNumber) {
       setQuestionNumber((prevState) => prevState - 1);
+
     }
   };
 
@@ -59,12 +64,16 @@ export const QuizSection: React.FC = () => {
     }
     setSelectedAnswers(newAnswers);
     dispatch(setQuizAnswers({ [questionKey]: newAnswers }));
+
   };
 
   const singleAnswerHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (questionData.answerType === "single") {
       dispatch(setQuizAnswers({ [questionKey]: event.target.value }));
       setQuestionNumber((prevState) => prevState + 1);
+      if(questionKey==='swim_meters'){
+        setSelectedAnswers([])
+      }
     }
   };
   
@@ -87,6 +96,8 @@ export const QuizSection: React.FC = () => {
   const multipleAnswer = questionData.answerType === "multiple";
   const answerType = multipleAnswer ? "checkbox" : "radio";
   const answerHandler = multipleAnswer ? multipleAnswerHandler : singleAnswerHandler;
+  const nextButton =(multipleAnswer &&  <NextButton disabled={selectedAnswers.length === 0} onClick={currentQuestionHandler}>Next</NextButton>)
+  const everythingIsFineButton= <NextButton onClick={currentQuestionHandler}> {selectedAnswers.length === 0 ? 'Nope. Everything is fine.' : 'Next'}</NextButton> 
 
   return (
     <SectionWrapper>
@@ -102,20 +113,19 @@ export const QuizSection: React.FC = () => {
           </Box>
           {questionData.answerOptions.map((answer: string) => {
             return (
-              <QuizOptionsStyles isSelected={usAnswers[questionKey].includes(answer)} key={answer}>
+              <QuizOptionsStyles isSelected={userAnswers[questionKey].includes(answer)} key={answer}>
                 <InputAnswers
                   answer={answer}
                   onChange={answerHandler}
                   type={answerType}
                   value={answer}
                 />
-                {usAnswers[questionKey].includes(answer) && <Check />}
+                {userAnswers[questionKey].includes(answer) && <Check />}
               </QuizOptionsStyles>
             );
           })}
-          {multipleAnswer && (
-            <NextButton disabled={selectedAnswers.length === 0} onClick={currentQuestionHandler}>Next</NextButton>
-          )}
+          {questionKey==="exercise_type" && nextButton }
+          {questionKey==="health_problems" && everythingIsFineButton}
         </QuizSectionStyles>
       </ContainerSmall>
     </SectionWrapper>
@@ -138,12 +148,13 @@ const QuizOptionsStyles = styled(FlexWrapper)<{ isSelected: boolean }>`
   width: 95%;
 
   margin-top: 1.25rem;
-
-  border: ${({ isSelected }) =>isSelected === true ? `2px solid ${theme.colors.green}` : "2px solid #ccc"};
+  
+  border: ${({ isSelected }) =>isSelected === true ? `2px solid ${theme.colors.green}` : `2px solid ${theme.colors.radioColor}`};
   border-radius: ${theme.radii.r20};
-  cursor: pointer;
+ 
   
   :hover {
     border: 2px solid ${theme.colors.green};
   }
+
 `;

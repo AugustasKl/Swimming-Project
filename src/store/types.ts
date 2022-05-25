@@ -14,7 +14,8 @@ export interface QuizAnswers{
 
 export interface UserStateAnswers{
     email:string;
-    quiz_answers:QuizAnswers
+    price:number;
+    quiz_answers:QuizAnswers;
 
 }
 export interface UserStateQuestions{

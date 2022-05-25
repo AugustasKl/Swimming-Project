@@ -1,6 +1,6 @@
 import React from "react";
 import { BackButton } from "components/buttons/BackButton";
-import { FlexWrapper, Typography } from "components";
+import { Box, FlexWrapper, Typography } from "components";
 import { Logo } from "assets/icons";
 
 
@@ -32,7 +32,7 @@ export const QuizTopElement: React.FC<QuizTopElementProps> = ({
         <Logo />
         <Typography color="white" fontSize="fs18" pt="s16">{`${questionNumber + 1}/${allQuestionsLength}`}</Typography>
         </FlexWrapper>
-      <progress
+      <Box as='progress'
         max="100"
         value={progressBarValue}
         style={{ width: "100%", marginTop: "1rem" }}

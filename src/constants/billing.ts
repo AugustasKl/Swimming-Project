@@ -20,7 +20,7 @@ export const BILLING_OPTIONS: Array<BillingProps>=[
         id:'b2',
         name:'One-time payment',
         message: "Best Value",
-        price:600,
+        price:700,
         oldPrice:899,
         newPrice:79
     }

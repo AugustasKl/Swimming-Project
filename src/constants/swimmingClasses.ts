@@ -23,7 +23,7 @@ export const SWIMMING_CLASSES:Array<ClassesProps>=[
     {
         id:'c2',
         title:'Swimming class for intermediate swimmers',
-        price:600,
+        price:700,
         message: 'Evaluate your swimming skills and take them to another level!',
         lessonCount:12,
         enrolled: 22,
@@ -33,7 +33,7 @@ export const SWIMMING_CLASSES:Array<ClassesProps>=[
     {
         id:'c3',
         title:'Swimming class for professionals',
-        price:600,
+        price:700,
         message: 'Join swimming classes with professional swimmers and dominate the competition!',
         lessonCount:17,
         enrolled: 10,

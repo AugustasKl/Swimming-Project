@@ -3,7 +3,7 @@ import { Box, Container, FlexWrapper, SectionWrapper, Typography } from "compone
 import { ButtonPrimary } from "components/buttons/ButtonPrimary";
 import { email } from "store/users/selectors";
 import { Link } from "gatsby";
-import { setEmail, setQuizAnswers } from "store/users/answers-slice";
+import { setEmail, setPrice, setQuizAnswers } from "store/users/answers-slice";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "store/store/store";
 
@@ -24,6 +24,7 @@ export const SuccessText: React.FC = () => {
     sessionStorage.clear()
     dispatch(setQuizAnswers(emptyAnswers))
     dispatch(setEmail(''))
+    dispatch(setPrice(0))
   }
   return (
     <SectionWrapper>
@@ -33,7 +34,7 @@ export const SuccessText: React.FC = () => {
             We are happy that you have joined our growing community!
           </Typography>
           <Typography  >
-            We have just sent out a letter to this email address:
+            We have just sent out a letter and invoice to this email address:
           </Typography>
           <Typography fontSize="fs18" fontWeight="fw700"  >
             {userEmail}

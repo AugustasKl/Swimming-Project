@@ -13,6 +13,7 @@ const initialState: UserStateAnswers = {
     training_frequency: "",
   },
   email: "",
+  price: 0,
 };
 
 const answersSlice = createSlice({
@@ -28,8 +29,11 @@ const answersSlice = createSlice({
     setEmail: (state, actions: PayloadAction<string>) => {
       state.email = actions.payload;
     },
+    setPrice: (state, actions:PayloadAction<number>)=>{
+      state.price=actions.payload;
+    },
   },
 });
 
-export const { setQuizAnswers, setEmail } = answersSlice.actions;
+export const { setEmail, setPrice, setQuizAnswers  } = answersSlice.actions;
 export default answersSlice;

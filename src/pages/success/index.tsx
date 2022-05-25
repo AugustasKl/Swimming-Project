@@ -1,6 +1,6 @@
 import React from 'react';
 import { Header } from 'components';
-import { SuccessSection, SuccessText } from './sections';
+import { SuccessSection, SuccessSummary, SuccessText } from './sections';
 
 
 
@@ -9,6 +9,7 @@ const Success: React.FC = () => (
 	<Header/>
 	<SuccessSection/>
 	<SuccessText/>
+	<SuccessSummary/>
 	</>
 )
 

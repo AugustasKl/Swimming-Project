@@ -2,9 +2,11 @@ import React from "react";
 import { BillingProps } from "constants/billing";
 import { FlexWrapper, Typography } from "components";
 import { Link } from "gatsby";
-import { StartNow } from "components/buttons/StartNow";
+import { StartNowButton } from "components/buttons/StartNowButton";
+import { setPrice } from "store/users/answers-slice";
 import styled from "styled-components/macro";
 import { theme } from "styles/theme";
+import { useAppDispatch } from "store/store/store";
 
 export const PricingItem: React.FC<BillingProps> = ({
   message,
@@ -13,6 +15,12 @@ export const PricingItem: React.FC<BillingProps> = ({
   oldPrice,
   price,
 }) => {
+  const dispatch=useAppDispatch()
+  const paymentHandler=()=>{
+    console.log(price)
+    dispatch(setPrice(price))
+  }
+
   const payment= (price=== 800 ? <Typography fontSize="fs14"><del>${oldPrice}</del> &nbsp; <span>${newPrice}</span> billed every week</Typography> 
   : <Typography fontSize="fs14"> One time payment </Typography>)
 return(
@@ -29,11 +37,11 @@ return(
         /program
         </FlexWrapper>
         {payment}
-        <StartNow>
+        <StartNowButton onClick={paymentHandler}>
           <Link to='/success'>
           Start now (Save 25%)
           </Link>
-          </StartNow>
+          </StartNowButton>
       </FlexWrapper>
     </PricingItemStyles>
   );
