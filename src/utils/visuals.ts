@@ -133,7 +133,4 @@ export const visuals: Record<string, string> = {
 	confetti,
 	email,
 	phone
-
-
-
 };
