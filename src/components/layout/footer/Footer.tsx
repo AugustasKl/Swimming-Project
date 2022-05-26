@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, FlexWrapper, Typography } from "components";
 import { Logo } from "assets/icons";
-import { mobile } from "styles/theme";
+import { desktop, mdesktop, mobile, tablet, theme } from "styles/theme";
 import { SocialLinks } from "..";
 import styled from "styled-components/macro";
 
@@ -9,10 +9,11 @@ export const Footer: React.FC = () => (
   <FooterStyles>
     <FlexWrapper
       alignItems="center"
-      borderBottom="1px solid #ccc"
+      borderBottom={`1px solid ${theme.colors.radioColor}`}
+      flexDirection={{ _: "column", desktop: "row" }}
       justifyContent="space-between"
-      paddingY="s16"
-      paddingX={{ _: "s64", desktop: "s128" }}
+      paddingY={{ _: "s32", desktop: "s24" }}
+      paddingX={{ _: "s8", desktop: "s160" }}
     >
       <Logo />
       <FlexWrapper gap="0.5rem" marginRight={{ _: "s0", desktop: "s32" }}>
@@ -26,11 +27,12 @@ export const Footer: React.FC = () => (
   </FooterStyles>
 );
 
-
-
 const FooterStyles = styled(Box).attrs({ as: "footer" })`
-  background: linear-gradient(128deg, #000f33 28.7%, #0747da 20%);
+  @media ${mdesktop} {
+    background: ${theme.backgrounds.footerMDesktop};
+  }
+  background: ${theme.backgrounds.footerDesktop};
   @media ${mobile} {
-    background: linear-gradient(128deg, #1a2747 50%, #0747da 50%);
+    background: ${theme.backgrounds.footerMobile};
   }
 `;

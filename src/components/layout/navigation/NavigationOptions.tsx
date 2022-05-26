@@ -1,8 +1,8 @@
 import React from "react";
 import { FlexWrapper } from "components";
 import { Link } from "gatsby";
+import { mobile, theme } from "styles/theme";
 import styled from "styled-components/macro";
-import { theme } from "styles/theme";
 
 export const NavigationOptions: React.FC = () => (
     <HeaderWrapper>
@@ -15,7 +15,7 @@ export const NavigationOptions: React.FC = () => (
 
 
 const HeaderWrapper = styled(FlexWrapper)`
-  margin-right: 3rem;
+
   gap: 3rem;
 
   a {
@@ -31,4 +31,7 @@ const HeaderWrapper = styled(FlexWrapper)`
   a:active{
     border-color: ${theme.colors.heroBackground};
   }
+  @media ${mobile} {
+  margin-top: 1.5rem;
+}
 `;

@@ -1,7 +1,7 @@
 //plan benefits
 export * from './PlanBenefits'
 // plan switcher
-export * from '../../../components/PlanSwitcher/PlanSwitcher'
+export * from '../../../components/planSwitcher/PlanSwitcher'
 
 //plan benefits texts
 export * from './PlanBenefitsText'
@@ -28,7 +28,7 @@ export * from './AnswersItem'
 export * from './QuestionsImage'
 
 //plans
-export * from '../../../components/PlanSwitcher/SelectedPlan'
+export * from '../../../components/planSwitcher/SelectedPlan'
 
 //contact
 export * from './Contact'

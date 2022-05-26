@@ -1,5 +1,7 @@
 //logo
 export * from './Logo'
+//secondary logo
+export * from './LogoSecondary'
 
 
 //most popular choice (star)

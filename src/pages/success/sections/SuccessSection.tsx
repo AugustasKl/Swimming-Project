@@ -3,8 +3,8 @@ import { answerReason } from 'store/users/selectors';
 import Confetti from 'react-confetti';
 import { Container, FlexWrapper, Typography } from 'components';
 import { UniversalImages } from 'assets/icons';
-import { mobile, useQuery } from 'styles/theme';
 import styled from 'styled-components/macro';
+import { theme, useQuery } from 'styles/theme';
 import { useSelector } from 'react-redux';
 
 
@@ -29,10 +29,7 @@ console.log(userAnswerReason)
 const SuccessSectionsStyles=styled(FlexWrapper)`
   width:100%;
   
-  background: linear-gradient(128deg, #000f33 58%, #0747da 35%);
+  background: ${theme.backgrounds.findRightProgram};
   
-  @media ${mobile} {
-    background: linear-gradient(128deg, #000f33 68.5%, #0747da 35%);  
-  }
 `
 

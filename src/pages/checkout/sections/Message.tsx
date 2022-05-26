@@ -2,7 +2,7 @@ import React from "react";
 import {ContainerSmall, FlexWrapper, SectionWrapper, Typography } from "components";
 import { Physician, PhysicianMobile } from "assets/icons";
 import styled from "styled-components/macro";
-import { mobile, useQuery } from "styles/theme";
+import { mobile, theme, useQuery } from "styles/theme";
 
 export const Message: React.FC = () => {
     const {isMobile}=useQuery()
@@ -11,7 +11,7 @@ export const Message: React.FC = () => {
       <ContainerSmall maxWidth="36.75rem">
         <FlexWrapper
           alignItems={{_:"center",desktop:"center"}}
-          border="1px solid #ccc"
+          border={`1px solid ${theme.colors.radioColor}`}
           borderRadius="r20"
           gap="2rem"
           p={{_:"s16",desktop:"s32"}}

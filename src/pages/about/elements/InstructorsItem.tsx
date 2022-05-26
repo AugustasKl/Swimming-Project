@@ -50,7 +50,7 @@ const InstructorStyles = styled.li`
 
   width: 21rem;
 
-  background: linear-gradient(#e7f9fd 0%, #e7f9fd 100%);
+  background: ${theme.backgrounds.card};
   border-radius: ${theme.radii.r20};
   list-style: none;
   

@@ -10,10 +10,10 @@ import styled from "styled-components/macro";
 export const Pricing: React.FC = () => {
   const { isMobile } = useQuery();
   return (
-    <SectionWrapper  background= 'linear-gradient(128deg, #000F33 65%, #0747DA 35%)'>
+    <SectionWrapper  background={theme.backgrounds.findRightProgram}>
       <ContainerSmall maxWidth="49.5rem">
         <StyledPricing>
-          <Typography color="white" paddingBottom="s32" type="h6">
+          <Typography color="white" fontFamily={theme.fontFamily.secondary} paddingBottom="s32" type="h6">
             {isMobile ? "Choose your personal plan" : "Select billing option"}
           </Typography>
           <FlexWrapper

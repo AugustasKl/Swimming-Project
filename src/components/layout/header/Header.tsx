@@ -15,7 +15,7 @@ export const Header: React.FC = () => {
   const questionsData = useSelector(questions);
   
   return (
-    <HeaderWrapper>
+    <Box as='header' backgroundColor='mainBackground'>
       <FlexWrapper
         alignItems="center"
         flexDirection={{ _: "column", desktop: "row" }}
@@ -26,26 +26,12 @@ export const Header: React.FC = () => {
       >
         <Logo />
         <NavigationOptions />
-        {!isMobile && (
-          <FlexWrapper>
-            {questionsData ===null && (
-              <ButtonPrimary onClick={()=>{navigate('/quiz')}}>
-                Start Quiz
-              </ButtonPrimary>
-            )}
-          </FlexWrapper>
-        )}
+       
       </FlexWrapper>
-    </HeaderWrapper>
+    </Box>
   );
 };
 
 
 
-const HeaderWrapper = styled(Box).attrs({ as: "header" })`
-  background: linear-gradient(128deg, #000f33 65%, #0747da 35%);
- 
-  @media ${mobile} {
-    background: linear-gradient(128deg, #000f33 93%, #0747da 35%);
-  }
-`;
+

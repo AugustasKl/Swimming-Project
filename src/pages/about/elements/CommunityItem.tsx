@@ -1,7 +1,7 @@
 import React from "react";
 import { CommunityProps } from "constants/community";
 import { FlexWrapper, Typography } from "components";
-import {  useQuery } from "styles/theme";
+import {  theme, useQuery } from "styles/theme";
 
 export const CommunityItem: React.FC<CommunityProps> = ({
   percentage,
@@ -11,7 +11,7 @@ export const CommunityItem: React.FC<CommunityProps> = ({
   return (
     <FlexWrapper
     alignItems='center'
-    border="1px dashed #ccc"
+    border={`1px dashed ${theme.colors.radioColor}`}
     borderRadius="r10"
     flexDirection={{ _: "row", desktop: "column" }}
     gap={isMobile? '2rem': '0rem'}

@@ -12,7 +12,7 @@ interface PlanFromQuizProps{
 export const PlanFromQuiz:React.FC<PlanFromQuizProps> = ({enrolled, lessonCount,title }) => (
     <SelectedPlanStyles>
     <Typography fontSize='fs18' fontWeight='fw600'>You have been selected to:</Typography>
-    <Box border='1px solid #ccc' borderRadius='r20' paddingX={{_:'s32',desktop:'s64'}} paddingY='s20' textAlign='left'>         
+    <Box border={`1px solid ${theme.colors.radioColor}`} borderRadius='r20' paddingX={{_:'s32',desktop:'s64'}} paddingY='s20' textAlign='left'>         
     <Typography fontSize='fs18'>{title}!</Typography>
     <Typography fontSize='fs18'>You will be attending  <span>{lessonCount}</span> practices!</Typography>
     <Typography fontSize='fs18'>Yuo also will be training with <span>{enrolled}</span> teammates!</Typography>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { FlexWrapper } from 'components'
 import styled from 'styled-components/macro'
+import { theme } from 'styles/theme'
 import { UniversalImages } from 'assets/icons'
 
 
@@ -19,6 +20,6 @@ justify-content: center;
 
 width: 100%;
 
-background: linear-gradient(134deg, #000f33 50%, #0747da 50%);
+background: ${theme.backgrounds.footerMobile};
 border-radius: 1.25rem 0 0 1.25rem;
 `

@@ -47,7 +47,7 @@ const ProgramStyles = styled.li`
   
   padding: 3rem 0;
   
-  background: linear-gradient(#e7f9fd 0%, #e7f9fd 100%);
+  background: ${theme.backgrounds.card};
   border-radius: ${theme.radii.r10};
   list-style: none;
   text-align:center;

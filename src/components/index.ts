@@ -43,9 +43,9 @@ export * from './buttons/SocialButton'
 export * from './buttons/StartNowButton'
 
 //plan switcher
-export * from './PlanSwitcher/PlanSwitcher'
+export * from './planSwitcher/PlanSwitcher'
 //selected plan
-export * from './PlanSwitcher/SelectedPlan'
+export * from './planSwitcher/SelectedPlan'
 
 
 //lists

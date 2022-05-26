@@ -2,8 +2,8 @@ import React from "react";
 import {Box,Container,FlexWrapper,SectionWrapper,Typography} from "components";
 import { ButtonPrimary } from "components/buttons/ButtonPrimary";
 import { HeroImage} from "../elements";
-import { Link, navigate } from "gatsby";
-import { mobile } from "styles/theme";
+import { navigate } from "gatsby";
+import { mobile, theme } from "styles/theme";
 import styled from "styled-components/macro";
 
 export const HeroSection: React.FC = () => (
@@ -11,7 +11,7 @@ export const HeroSection: React.FC = () => (
     <Container>
       <FlexWrapper flexDirection={{ _: "column", desktop: "row" }}>
         <Box>
-          <Typography type="h4" color="white">
+          <Typography color="white" type="h4" >
             Unleash the Inner Beast
           </Typography>
           <Box marginY={{ _: "s16", desktop: "s32" }} width="20rem">
@@ -36,11 +36,11 @@ export const HeroSection: React.FC = () => (
 
 
 const HeroStyles = styled(SectionWrapper)`
-  background: linear-gradient(128deg, #1a2747 47.7%, #65bdf0 35%);
+  background: ${theme.backgrounds.heroSectionDesktop};
   padding: 6.8rem 4rem;
 
   @media ${mobile} {
     padding: 2rem 0.5rem;
-    background: linear-gradient(128deg, #1a2747 38.7%, #65bdf0 30%);
+    background: ${theme.backgrounds.heroSectionMobile}
   }
 `;

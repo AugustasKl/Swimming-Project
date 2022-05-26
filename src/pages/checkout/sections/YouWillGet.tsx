@@ -2,7 +2,7 @@ import React from "react";
 import { AQUIRED_BENEFITS } from "constants/acquiredBenefits";
 import {ContainerSmall, FlexWrapper, SectionWrapper, Typography } from "components";
 import Lists from "components/listController/Lists";
-import { mobile, useQuery } from "styles/theme";
+import { mobile, theme, useQuery } from "styles/theme";
 import styled from "styled-components/macro";
 import { SwimmingPool } from "assets/icons";
 
@@ -18,7 +18,7 @@ export const YouWillGet: React.FC = () => {
         )}
         <FlexWrapper
           alignItems="flex-start"
-          border="1px solid #ccc"
+          border={`1px solid ${theme.colors.radioColor}`}
           borderRadius="r30"
           flexDirection={{ _: "column", desktop: "row" }}
           padding={{ _: "s4", desktop: "s20" }}
@@ -41,7 +41,7 @@ export const YouWillGet: React.FC = () => {
 };
 
 const YouWillGetStyles = styled(SectionWrapper)`
-  padding: 0 0 0 1.5rem;
+  padding-top:1.5rem;
   @media ${mobile} {
     padding: 1rem 0.5rem;
   }

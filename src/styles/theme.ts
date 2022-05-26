@@ -2,10 +2,10 @@ import { useMediaQuery } from "react-responsive";
 
 
 export type Colors = keyof typeof colors;
-export type Backgrounds = keyof typeof backgrounds;
-
-export type Paddings = keyof typeof padding;
 export type BorderRadius = keyof typeof radii;
+
+
+
 
 
 const space = {
@@ -25,9 +25,7 @@ const space = {
 		s160: '10rem',
     minuss160:'-10rem'
 };
-const backgrounds ={
-  mainBackground: 'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 100%);'
-}
+
 
 const colors = {
   black: "#000000",
@@ -41,10 +39,23 @@ const colors = {
   blue:'#2C71F0',
   white:'#FFFFFF',
   heroBackground:'#1A2747',
+  heroPrimary:'#65bdf0',
   heroSecondary:'#D0DEFF',
+  footerBlue:'#0747da',
   questionsAnswers:'#212D4D',
   red:'#FF0000',
+  card:'#e7f9fd',
 };
+const backgrounds ={
+  card:`linear-gradient(${colors.card} 0%, ${colors.card} 100%)`,
+  header: colors.mainBackground,
+  heroSectionDesktop: `linear-gradient(128deg, ${colors.heroBackground} 47.7%,  ${colors.heroPrimary} 35%)`,
+  heroSectionMobile: `linear-gradient(128deg, ${colors.heroBackground} 50.7%,  ${colors.heroPrimary} 30%)`,
+  footerDesktop:`linear-gradient(128deg, ${colors.mainBackground} 30.4%, ${colors.footerBlue} 20%)`,
+  footerMDesktop: `linear-gradient(128deg, ${colors.mainBackground} 28.7%, ${colors.footerBlue} 20%)`,
+  footerMobile:`linear-gradient(128deg, ${colors.mainBackground} 50%, ${colors.footerBlue} 50%)`,
+  findRightProgram: `linear-gradient(128deg, ${colors.mainBackground} 65%, ${colors.footerBlue} 35%)`,
+}
 const radii = {
   r0: "0",
   r10: "0.625rem",
@@ -55,16 +66,12 @@ const radii = {
 };
 
 const padding = {
-  padding: "padding",
-  paddingTop: "padding-top",
-  paddingLeft: "padding-left",
-  paddingRight: "padding-right",
-  paddingBottom: "padding-bottom",
+
 };
 
 export const theme = {
   colors,
-  fontFamily: { primary: "Red Hat Display" },
+  fontFamily: { primary: "Red Hat Display", secondary:"Roboto" },
   fontSizes: {
     fs12: '0.75rem',
 		fs14: '0.875rem',
@@ -95,7 +102,7 @@ export const theme = {
 		h78: '4.875rem',
 	},
   // breakpoints: ['23.75rem', '30rem', '47.9375rem', '64.0625rem', '90rem', '120rem'] as unknown as Breakpoints,
-  breakpoints: ["30rem", "47.9375rem", "90rem"] as unknown as Breakpoints,
+  breakpoints: ["30rem", "47.9375rem", "90rem", "108rem", '120rem'] as unknown as Breakpoints,
   typography: {
     h1: {
       color: colors.black,
@@ -170,15 +177,15 @@ Breakpoints.mobile = Breakpoints[0];
 Breakpoints.tablet = Breakpoints[1];
 // Breakpoints.ltablet = Breakpoints[2];
 Breakpoints.desktop = Breakpoints[2];
-// Breakpoints.mdesktop = Breakpoints[4];
-// Breakpoints.ldesktop = Breakpoints[5];
+Breakpoints.mdesktop = Breakpoints[3];
+Breakpoints.ldesktop = Breakpoints[4];
 
 type Breakpoints<T = string> = {
   _: T;
   tablet: T;
   // ltablet: T;
   desktop: T;
-  // mdesktop:T;
+  mdesktop:T;
   // ldesktop:T;
 };
 
@@ -186,12 +193,14 @@ export const mobile = `(max-width:${Breakpoints.mobile})`;
 export const tablet = `(max-width:${Breakpoints.tablet})`;
 // export const ltablet=`(max-width:${Breakpoints.ltablet})`
 export const desktop = `(max-width:${Breakpoints.desktop})`;
-// export const mdesktop=`(max-width:${Breakpoints.mdesktop})`
-// export const ldesktop=`(max-width:${Breakpoints.ldesktop})`
+export const mdesktop=`(max-width:${Breakpoints.mdesktop})`
+export const ldesktop=`(max-width:${Breakpoints.ldesktop})`
 
 export const useQuery = () => ({
   isMobile: useMediaQuery({ query: mobile }),
   isTablet: useMediaQuery({ query: tablet }),
   // islTablet:useMediaQuery({query:ltablet}),
   isDesktop: useMediaQuery({ query: desktop }),
+  ismDesktop: useMediaQuery({ query: mdesktop }),
+  islDesktop: useMediaQuery({ query: ldesktop }),
 });
