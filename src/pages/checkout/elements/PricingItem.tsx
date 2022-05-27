@@ -38,7 +38,7 @@ return(
         </FlexWrapper>
         {payment}
         <StartNowButton onClick={paymentHandler}>
-          Pay now 
+          Pay now! 
           </StartNowButton>
       </FlexWrapper>
     </PricingItemStyles>

@@ -1,7 +1,7 @@
 import React from "react";
 import { ClassesProps } from "constants/swimmingClasses";
 import { FlexWrapper, Typography } from "components";
-import { mobile, theme, useQuery } from "styles/theme";
+import { mobile, tablet, theme, useQuery } from "styles/theme";
 import styled from "styled-components/macro";
 import { TagElement } from "components/tag/TagElement";
 import { UniversalImages } from "assets/icons";
@@ -15,7 +15,7 @@ export const ProgramsItem: React.FC<ClassesProps> = ({
   tag,
   title
 }) => {
-  const {isMobile}=useQuery()
+  const {isTablet}=useQuery()
     return (
         <ProgramStyles>
             <TagElement status={status}/>
@@ -31,7 +31,7 @@ export const ProgramsItem: React.FC<ClassesProps> = ({
         </FlexWrapper>
           <Typography>{message}</Typography>
           <FlexWrapper alignItems='center' borderTop='1px solid #ccc' gap="0.5rem" justifyContent='center' mt='s24' pt='s8'  >
-          {isMobile ? '' :<UniversalImages tag='practice' width="0.75rem"/>}
+          {isTablet? '' :<UniversalImages tag='practice' width="0.75rem"/>}
             <Typography fontSize='fs20' fontWeight="fw500">{lessonCount} Practices</Typography>
           </FlexWrapper>
         </ProgramStyles>
@@ -46,13 +46,19 @@ const ProgramStyles = styled.li`
   width: 21rem;
   
   padding: 3rem 0;
-  
+ 
+
   background: ${theme.backgrounds.card};
   border-radius: ${theme.radii.r10};
   list-style: none;
   text-align:center;
   img {
     margin-top: -4.3rem;
+  }
+  @media ${tablet} {
+    gap:2rem;
+    margin: 0 auto;
+    
   }
 
   @media ${mobile} {

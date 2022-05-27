@@ -1,10 +1,10 @@
 import React from "react";
 import { BILLING_OPTIONS } from "constants/billing";
 import { Box, ContainerSmall, FlexWrapper, SectionWrapper, Typography } from "components";
-import { mobile, theme, useQuery } from "styles/theme";
 import { PricingItem } from "../elements";
 import { SafeCheckout } from "assets/icons";
 import styled from "styled-components/macro";
+import {  tablet, theme, useQuery } from "styles/theme";
 
 
 export const Pricing: React.FC = () => {
@@ -54,7 +54,7 @@ const StyledPricing = styled(FlexWrapper)`
     color: ${theme.colors.blue};
     cursor: pointer;
   }
-  @media ${mobile} {
+  @media ${tablet} {
     align-items: center;
     width: 100%;
   }

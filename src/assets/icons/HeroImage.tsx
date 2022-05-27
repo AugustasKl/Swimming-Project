@@ -1,7 +1,7 @@
 import React from "react";
 import { FlexWrapper, Image } from "components";
 import styled from "styled-components/macro";
-import { mobile, theme, useQuery } from "styles/theme";
+import { mobile, tablet, theme, useQuery } from "styles/theme";
 
 export const HeroImage: React.FC = () => {
   const { isMobile } = useQuery();
@@ -22,6 +22,13 @@ const HeroImageStyles = styled(FlexWrapper)`
   img {
     border-radius: ${theme.radii.r10};
   }
+  @media ${tablet} {
+    img {
+      width: 100%;
+    }
+  }
+
+  
   @media ${mobile} {
     img {
       width: 95%;

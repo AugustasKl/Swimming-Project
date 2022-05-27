@@ -25,7 +25,7 @@ export * from './QuestionsItem'
 export * from './AnswersItem'
 
 //questions images
-export * from './QuestionsImage'
+export * from '../../../assets/icons/QuestionsImage'
 
 //plans
 export * from '../../../components/planSwitcher/SelectedPlan'

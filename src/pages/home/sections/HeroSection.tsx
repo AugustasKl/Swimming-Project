@@ -1,15 +1,15 @@
 import React from "react";
 import {Box,Container,FlexWrapper,SectionWrapper,Typography} from "components";
 import { ButtonPrimary } from "components/buttons/ButtonPrimary";
-import { HeroImage} from "../elements";
+import { HeroImage} from "assets/icons";
 import { navigate } from "gatsby";
-import { mobile, theme } from "styles/theme";
+import { mobile,  theme } from "styles/theme";
 import styled from "styled-components/macro";
 
 export const HeroSection: React.FC = () => (
   <HeroStyles>
     <Container>
-      <FlexWrapper flexDirection={{ _: "column", desktop: "row" }}>
+      <FlexWrapper flexDirection={{ _: "column",  desktop: "row" }}>
         <Box>
           <Typography color="white" type="h4" >
             Unleash the Inner Beast
@@ -36,11 +36,13 @@ export const HeroSection: React.FC = () => (
 
 
 const HeroStyles = styled(SectionWrapper)`
-  background: ${theme.backgrounds.heroSectionDesktop};
   padding: 6.8rem 4rem;
+  
+  background: ${theme.backgrounds.heroSectionDesktop};
 
   @media ${mobile} {
     padding: 2rem 0.5rem;
+
     background: ${theme.backgrounds.heroSectionMobile}
   }
 `;

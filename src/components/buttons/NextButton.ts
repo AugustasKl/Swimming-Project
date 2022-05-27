@@ -1,6 +1,6 @@
+import { Button } from "./Button";
 import styled from "styled-components/macro";
 import { theme } from "styles/theme";
-import { Button } from "./Button";
 
 
 export const NextButton=styled(Button)`

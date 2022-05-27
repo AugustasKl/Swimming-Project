@@ -1,6 +1,6 @@
 import React from "react";
 import { ABOUT } from "constants/about";
-import { AboutImage } from "../elements";
+import { AboutImage } from "assets/icons";
 import {Container, FlexWrapper, SectionWrapper, Typography} from "components";
 import Lists from "components/listController/Lists";
 import { useQuery } from "styles/theme";

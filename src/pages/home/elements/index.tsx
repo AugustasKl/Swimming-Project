@@ -1,2 +1,0 @@
-// HeroImage
-export * from './HeroImage'

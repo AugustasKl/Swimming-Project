@@ -5,7 +5,7 @@ export const SwimmingGirl:React.FC = () => (
   <StaticImage
   src='./../images/swimmingGirl.jpg'
   alt='Demo heart img'
-  style={{height:'19.9375rem',width:'17.625rem', borderRadius:'50px'}}
+  style={{height:'19.9375rem',width:'17.625rem', borderRadius:'3.125rem'}}
   />
   )
 

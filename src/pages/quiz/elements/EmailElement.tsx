@@ -3,7 +3,7 @@ import { answers, email } from "store/users/selectors";
 import { Box, FlexWrapper, Input, Typography } from "components";
 import { ButtonPrimary } from "components/buttons/ButtonPrimary";
 import { DataAnalyzer } from ".";
-import { mobile } from "styles/theme";
+import { mobile, theme } from "styles/theme";
 import { postUser } from "store/store/thunks";
 import styled from "styled-components/macro";
 import { useSelector } from "react-redux";
@@ -11,7 +11,7 @@ import { useAppDispatch } from "store/store/store";
 
 
 interface EmailElementProps {
-  onChange: () => void;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onClick?: () => void;
   value: string;
 }
@@ -90,7 +90,9 @@ const StyledEmailElement = styled(FlexWrapper)`
     
     font-size: 1.125rem; 
     
+    border:2px solid ${theme.colors.black};
     border-radius: 1rem;
+    outline: none;
   }
 
   @media ${mobile} {

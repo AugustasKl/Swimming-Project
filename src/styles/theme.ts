@@ -65,9 +65,7 @@ const radii = {
   r50: "3.125rem",
 };
 
-const padding = {
-
-};
+const padding = {};
 
 export const theme = {
   colors,
@@ -102,7 +100,7 @@ export const theme = {
 		h78: '4.875rem',
 	},
   // breakpoints: ['23.75rem', '30rem', '47.9375rem', '64.0625rem', '90rem', '120rem'] as unknown as Breakpoints,
-  breakpoints: ["30rem", "47.9375rem", "90rem", "108rem", '120rem'] as unknown as Breakpoints,
+  breakpoints: ["30rem", "768px", "90rem", "108rem", '120rem'] as unknown as Breakpoints,
   typography: {
     h1: {
       color: colors.black,

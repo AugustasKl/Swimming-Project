@@ -24,7 +24,7 @@ export const QuestionsItem: React.FC<QuestionsProps> = ({
     <QuestionItemStyles onClick={toggleAnswerHandler}>
       <FlexWrapper justifyContent="space-between">
         <FlexWrapper flexDirection="column" gap="0.5rem" pb="s4">
-          <Typography color="white" borderBottom="1px solid white" fontWeight="fw500" >
+          <Typography borderBottom={`1px solid ${theme.colors.white}`} color="white"  fontWeight="fw500" >
             {question}
           </Typography>
           {showAnswer && questionAsked === id && ( <AnswersItem specificAnswer={answer}/> )}

@@ -1,10 +1,10 @@
 import React from "react";
 import { FlexWrapper, Typography } from "components";
 import { InstructorsProps } from "constants/swimInstructors";
-import { mobile, theme } from "styles/theme";
 import { Star, UniversalImages } from "assets/icons";
 import styled from "styled-components/macro";
 import { SocialButton } from "components/buttons/SocialButton";
+import {  tablet, theme } from "styles/theme";
 
 
 export const InstructorsItem: React.FC<InstructorsProps> = ({
@@ -19,8 +19,8 @@ export const InstructorsItem: React.FC<InstructorsProps> = ({
       <FlexWrapper
         alignItems="center"
         flexDirection="column"
-        justifyContent="center"
         gap="0.5rem"
+        justifyContent="center"
       >
         <UniversalImages height='20rem' tag={tag} width='100%' />
         <Typography fontSize="fs24" fontWeight="fw600" textAlign="center" >
@@ -29,7 +29,7 @@ export const InstructorsItem: React.FC<InstructorsProps> = ({
         <Typography color="orange" fontSize="fs14" textAlign='center'>
           {position}
         </Typography>
-        <Typography border="1px dotted #000" padding="s4">
+        <Typography border={`1px dotted ${theme.colors.black}`} padding="s4">
           {experience} years of experience
         </Typography>
         <FlexWrapper gap="0.25rem">
@@ -59,7 +59,7 @@ const InstructorStyles = styled.li`
     margin-top: -4.3rem;
   }
   
-  @media ${mobile} {
+  @media ${tablet} {
     display: none;
     :nth-child(1),
     :nth-child(2),

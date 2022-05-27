@@ -6,9 +6,10 @@ import styled from "styled-components/macro";
 
 type InputType = "radio" | "checkbox";
 
+
 interface InputProps {
   answer: string;
-  onChange: () => void;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   type: InputType;
   value: string;
 }

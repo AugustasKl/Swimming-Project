@@ -1,7 +1,7 @@
 
 import { nextQuestion } from "./../../utils/nextQuestion";
 
-describe("if nextQuestion handler correctly changes questions", () => {
+describe("check if nextQuestion handler correctly changes questions", () => {
   it("returns next question", () => {
     expect(nextQuestion(1)).toEqual(2);
   });

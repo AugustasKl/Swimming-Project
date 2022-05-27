@@ -1,9 +1,9 @@
 import React from "react";
 import { ClientsProps } from "constants/clients";
 import { FlexWrapper, Image, Typography } from "components";
-import { mobile, theme, useQuery } from "styles/theme";
 import { RatingStars } from "assets/icons";
 import styled from "styled-components/macro";
+import { tablet, theme} from "styles/theme";
 
 interface SliderProps extends ClientsProps {
   infinite?: boolean;
@@ -44,16 +44,16 @@ const ClientsItemStyles = styled(FlexWrapper)`
   padding: 1rem;
   margin: 2.5rem 0.625rem;
 
-  gap: 0.25rem;
-  box-shadow: 0px 16px 32px rgba(57, 53, 60, 0.08);
+  box-shadow: 0rem 1rem 2rem rgba(57, 53, 60, 0.08);
   border-radius: ${theme.radii.r20};
   background: ${theme.colors.white};
+  gap: 0.25rem;
 
   img {
     border-radius: ${theme.radii.r40};
   }
 
-  @media ${mobile} {
+  @media ${tablet} {
     width: 90%;
   }
 `;

@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, {useRef, useState } from "react";
 import {Box,Container, FlexWrapper, GridWrapper, SectionWrapper, Typography} from "components";
 import { ButtonPrimary } from "components/buttons/ButtonPrimary";
 import { InstructorsItem } from "../elements";
@@ -7,6 +7,7 @@ import {InstructorsProps, SWIMMING_INSTRUCTORS} from "constants/swimInstructors"
 
 
 export const Instructors: React.FC = () => {
+  const element=document.querySelector(GridWrapper)
   const [instructors, setInstructors] = useState<Array<InstructorsProps>>([]);
   const [sortStatus, setSortStatus] = useState<boolean>(true);
   const instructorsCopy =[...SWIMMING_INSTRUCTORS]
@@ -23,6 +24,9 @@ export const Instructors: React.FC = () => {
       setInstructors(sorted);
       setSortStatus(!sortStatus);
     }
+
+    element?.scrollIntoView({behavior: "smooth", inline:"end"});
+
   };
 
   return (

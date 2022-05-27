@@ -2,13 +2,13 @@ import React from "react";
 import { AQUIRED_BENEFITS } from "constants/acquiredBenefits";
 import {ContainerSmall, FlexWrapper, SectionWrapper, Typography } from "components";
 import Lists from "components/listController/Lists";
-import { mobile, theme, useQuery } from "styles/theme";
+import { mobile, tablet, theme, useQuery } from "styles/theme";
 import styled from "styled-components/macro";
 import { SwimmingPool } from "assets/icons";
 
 
 export const YouWillGet: React.FC = () => {
-  const { isMobile } = useQuery();
+  const { isMobile, isTablet } = useQuery();
   return (
     <YouWillGetStyles>
       <ContainerSmall maxWidth="49.5rem">
@@ -17,13 +17,14 @@ export const YouWillGet: React.FC = () => {
           </Typography>
         )}
         <FlexWrapper
-          alignItems="flex-start"
+          alignItems={{tablet:'center',desktop:"flex-start"}}
           border={`1px solid ${theme.colors.radioColor}`}
           borderRadius="r30"
           flexDirection={{ _: "column", desktop: "row" }}
-          padding={{ _: "s4", desktop: "s20" }}
+          padding={{ _: "s4", desktop: "s20" }}       
         >
-          <SwimmingPool  />
+         {!isTablet && <SwimmingPool/>}
+        {isMobile && <SwimmingPool/>}
           {isMobile ? (
             <Typography
             fontWeight="fw900"
@@ -42,6 +43,7 @@ export const YouWillGet: React.FC = () => {
 
 const YouWillGetStyles = styled(SectionWrapper)`
   padding-top:1.5rem;
+  
   @media ${mobile} {
     padding: 1rem 0.5rem;
   }

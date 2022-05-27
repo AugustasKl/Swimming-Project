@@ -7,14 +7,14 @@ export const CommunityItem: React.FC<CommunityProps> = ({
   percentage,
   text,
 }) => {
-    const {isMobile}=useQuery()
+    const {isTablet}=useQuery()
   return (
     <FlexWrapper
     alignItems='center'
     border={`1px dashed ${theme.colors.radioColor}`}
     borderRadius="r10"
     flexDirection={{ _: "row", desktop: "column" }}
-    gap={isMobile? '2rem': '0rem'}
+    gap={isTablet? '2rem': '0rem'}
     paddingY="s16"
     paddingX="s8"
     >

@@ -3,6 +3,15 @@ export * from './Logo'
 //secondary logo
 export * from './LogoSecondary'
 
+//about image
+export * from './AboutImage'
+
+//hero image
+export * from './HeroImage'
+
+
+//questionsImage
+export * from './QuestionsImage'
 
 //most popular choice (star)
 export * from './Star'

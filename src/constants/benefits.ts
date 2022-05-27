@@ -14,6 +14,6 @@ export const BENEFITS:BenefitsProps[] = [
   {
     id: "b3",
     name: "Strengthen Muscles",
-    text: "Healthy heart and lungs. tones muscles and builds strength.",
+    text: "Healthy heart, lungs, tones muscles, builds strength.",
   },
 ];

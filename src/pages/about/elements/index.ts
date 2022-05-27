@@ -8,7 +8,7 @@ export * from './CommunityItem'
 export * from './ProgramsItem'
 
 //About Image
-export * from './AboutImage'
+export * from '../../../assets/icons/AboutImage'
 
 //instructors Item
 export * from './InstructorsItem'

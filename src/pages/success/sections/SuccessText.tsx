@@ -31,7 +31,7 @@ export const SuccessText: React.FC = () => {
     <SectionWrapper>
       <Container>
         <FlexWrapper alignItems="center" flexDirection="column" gap="1rem" >
-          <Typography pt="s80" textAlign='center' type="h6"  >
+          <Typography  textAlign='center' type="h6"  >
             We are happy that you have joined our growing community!
           </Typography>
           <Typography  >

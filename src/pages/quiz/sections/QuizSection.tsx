@@ -38,21 +38,20 @@ export const QuizSection: React.FC = () => {
 
 
   const currentQuestionHandler = () => {
-    setQuestionNumber((prevState) => prevState + 1);
-    
-    if(questionKey==='swim_meters'){
-      setSelectedAnswers([])
-    }
+    setQuestionNumber(questionNumber+ 1);
   };
 
 
 
   const backButtonHandler = () => {
     if ( questionNumber > 0 ) {
-      setQuestionNumber((prevState) => prevState - 1);
+      setQuestionNumber(questionNumber - 1);
     }
     if(questionNumber ===0){
       navigate('/')
+    }
+    if(questionKey==='swim_meters'){
+      setSelectedAnswers([])
     }
   };
 
@@ -67,13 +66,12 @@ export const QuizSection: React.FC = () => {
     }
     setSelectedAnswers(newAnswers);
     dispatch(setQuizAnswers({ [questionKey]: newAnswers }));
-
   };
 
   const singleAnswerHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (questionData.answerType === "single") {
       dispatch(setQuizAnswers({ [questionKey]: event.target.value }));
-      setQuestionNumber((prevState) => prevState + 1);
+      setQuestionNumber(questionNumber + 1);
       if(questionKey==='swim_meters'){
         setSelectedAnswers([])
       }
@@ -111,10 +109,13 @@ export const QuizSection: React.FC = () => {
               allQuestionsLength={allQuestionsNumber}
               onClick={backButtonHandler}
               renderedQuestion={questionData.questionText}
+              selectedAnswers={selectedAnswers}
               questionNumber={questionNumber}
+              questionKey={questionKey}
             />
           </Box>
           {questionData.answerOptions.map((answer: string) => {
+            console.log(userAnswers[questionKey].includes(answer))
             return (
               <QuizOptionsStyles isSelected={userAnswers[questionKey].includes(answer)} key={answer}>
                 <InputAnswers
@@ -141,7 +142,7 @@ const QuizSectionStyles = styled(FlexWrapper)`
   justify-content: center;
   
   padding-bottom: 2.5rem;
-  margin: 2rem auto;
+  margin: 1.5rem auto;
  
   box-shadow: 0rem 1rem 2rem rgba(57, 53, 60, 0.08);
 `;
@@ -159,5 +160,4 @@ const QuizOptionsStyles = styled(FlexWrapper)<{ isSelected: boolean }>`
   :hover {
     border: 2px solid ${theme.colors.green};
   }
-
 `;

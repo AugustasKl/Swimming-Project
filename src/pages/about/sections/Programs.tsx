@@ -5,8 +5,9 @@ import { SWIMMING_CLASSES } from "constants/swimmingClasses";
 import { useQuery } from "styles/theme";
 
 
+
 export const Programs: React.FC = () => {
-  const { isMobile } = useQuery();
+  const { isTablet } = useQuery();
   const swimmingClasses = SWIMMING_CLASSES.map(
     ({enrolled, id, lessonCount, message, price, status, tag, title}) => (
       <ProgramsItem
@@ -28,12 +29,12 @@ export const Programs: React.FC = () => {
         <Typography pb="s40" textAlign="center" type="h6">
           Swimclub provides these program plans
         </Typography>
-        {isMobile ? (
+        {isTablet? (
           <SliderComponent mobileSlidesToScroll={1} mobileSlidesToShow={1}>
             {swimmingClasses}
           </SliderComponent>
         ) : (
-          <FlexWrapper alignItems="center" gap="2.5rem">
+          <FlexWrapper alignItems="center" gap="2.5rem"> 
             {swimmingClasses}
           </FlexWrapper>
         )}

@@ -4,12 +4,12 @@ import { QuestionsImage, QuestionsList } from "../elements";
 import { useQuery } from "styles/theme";
 
 export const Questions: React.FC = () => {
-  const {isMobile}=useQuery()
+  const {isTablet}=useQuery()
   return (
     <SectionWrapper>
       <Container>
        <FlexWrapper>
-        {isMobile? '' :<QuestionsImage />}  
+        {isTablet? '' :<QuestionsImage />}  
           <QuestionsList />
        </FlexWrapper>
       </Container>

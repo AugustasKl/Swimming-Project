@@ -8,7 +8,7 @@ export const FindRightProgram: React.FC = () => {
   const { isMobile } = useQuery();
   return (
     <SectionWrapper background={theme.backgrounds.findRightProgram}>   
-        <ContainerSmall maxWidth="49.5rem">
+        <ContainerSmall maxWidth="49.5rem"    >
           <FlexWrapper
             alignItems="center"
             flexDirection={{ _: "column", desktop: "row" }}

@@ -1,5 +1,5 @@
 import React from "react";
-import { mobile, useQuery } from "styles/theme";
+import { mobile, tablet, useQuery } from "styles/theme";
 import Slider from "react-slick";
 import styled from "styled-components/macro";
 
@@ -22,14 +22,14 @@ export const SliderComponent: React.FC<SliderProps> = ({
   slidesToShow,
   ...rest
 }) => {
-  const { isMobile } = useQuery();
+  const { isTablet } = useQuery();
   return (
     <SliderP>
       <Slider
         dots={true}
         infinite={true}
-        slidesToScroll={isMobile ? mobileSlidesToScroll : slidesToScroll}
-        slidesToShow={isMobile ? mobileSlidesToShow : slidesToShow}
+        slidesToScroll={isTablet ? mobileSlidesToScroll : slidesToScroll}
+        slidesToShow={isTablet ? mobileSlidesToShow : slidesToShow}
         speed={500}
         {...rest}
       >
@@ -41,6 +41,12 @@ export const SliderComponent: React.FC<SliderProps> = ({
 
 const SliderP = styled.div`
   margin: 0 -1rem;
+
+  @media ${tablet} {
+  margin:0 auto;
+   width: 22rem;
+
+  } 
 
   @media ${mobile} {
   margin:0 auto;
