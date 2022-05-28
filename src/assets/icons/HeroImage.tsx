@@ -1,20 +1,18 @@
 import React from "react";
 import { FlexWrapper, Image } from "components";
+import { tablet, theme, useQuery } from "styles/theme";
 import styled from "styled-components/macro";
-import { mobile, tablet, theme, useQuery } from "styles/theme";
 
 export const HeroImage: React.FC = () => {
   const { isMobile } = useQuery();
   return (
-    <FlexWrapper opacity="0.8">
       <HeroImageStyles>
         {isMobile ? (
-          <Image src="swimmingMobile" alt="swimming freestyle" />
+          <Image src="swimmingMobile" alt="swimming freestyle"  />
         ) : (
           <Image src="swimmingDesktop" alt="swimming mobile freestyle" />
         )}
       </HeroImageStyles>
-    </FlexWrapper>
   );
 };
 const HeroImageStyles = styled(FlexWrapper)`
@@ -29,9 +27,4 @@ const HeroImageStyles = styled(FlexWrapper)`
   }
 
   
-  @media ${mobile} {
-    img {
-      width: 95%;
-    }
-  }
 `;

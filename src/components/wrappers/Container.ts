@@ -14,12 +14,14 @@ import { Theme } from 'styles/theme';
 
 const containerProps = compose(backgroundColor, color, position);
 
-interface Styles<T> extends BackgroundColorProps<T>, ColorProps<T>, PositionProps<T> { }
+interface Styles<T> extends BackgroundColorProps<T>, ColorProps<T>, PositionProps<T> { 
+    padding?:string
+}
 
 export const Container = styled.div<Styles<Theme>>`
     max-width: 70rem;
 	
-    padding: 0 1rem;
+    padding: ${({ padding }) => padding || "0 1rem"};
     margin: 0 auto;
 
     @media ${tablet} {

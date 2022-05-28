@@ -100,7 +100,7 @@ export const theme = {
 		h78: '4.875rem',
 	},
   // breakpoints: ['23.75rem', '30rem', '47.9375rem', '64.0625rem', '90rem', '120rem'] as unknown as Breakpoints,
-  breakpoints: ["30rem", "768px", "90rem", "108rem", '120rem'] as unknown as Breakpoints,
+  breakpoints: ["23.4375rem", "48rem", "90rem", "108rem", '120rem'] as unknown as Breakpoints,
   typography: {
     h1: {
       color: colors.black,
@@ -163,9 +163,7 @@ export const theme = {
   space,
   backgrounds,
   borders: {
-    border: `1 px solid ${colors ? colors.black : colors}`,
-    borderTop: "border-top",
-  },
+},
 } as const;
 
 export type Theme = typeof theme;

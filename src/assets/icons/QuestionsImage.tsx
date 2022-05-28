@@ -1,14 +1,14 @@
 import React from 'react'
-import { FlexWrapper } from 'components'
+import { FlexWrapper, Image } from 'components'
 import styled from 'styled-components/macro'
 import { theme } from 'styles/theme'
-import { UniversalImages } from 'assets/icons'
+
 
 
 
 export const QuestionsImage:React.FC = () => (
     <QuestionImageStyles>
-        <UniversalImages tag='logo' width='20rem'/>
+        <Image src='logo' alt='swimmer freestyle' width='20rem'/>
     </QuestionImageStyles>
   )
 

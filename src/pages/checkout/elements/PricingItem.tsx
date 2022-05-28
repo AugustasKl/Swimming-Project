@@ -1,11 +1,11 @@
 import React from "react";
 import { BillingProps } from "constants/billing";
 import { FlexWrapper, Typography } from "components";
+import { mobile, theme } from "styles/theme";
 import { navigate } from "gatsby";
 import { StartNowButton } from "components/buttons/StartNowButton";
 import { setPrice } from "store/users/answers-slice";
 import styled from "styled-components/macro";
-import { theme } from "styles/theme";
 import { useAppDispatch } from "store/store/store";
 
 export const PricingItem: React.FC<BillingProps> = ({
@@ -27,7 +27,7 @@ return(
   <PricingItemStyles>
       <FlexWrapper alignItems="center" flexDirection="column" justifyContent="center" >
         <FlexWrapper gap="0.25rem" alignItems="center">
-          <Typography fontWeight="fw700"> {name}</Typography>
+          <Typography fontWeight="fw700">{name}</Typography>
           <TypographyStyles hasMessage={message.includes('Most popular')} >
             {message}
           </TypographyStyles>
@@ -60,9 +60,9 @@ const PricingItemStyles = styled(FlexWrapper)`
   span{
       color:${theme.colors.orange}
   }
-  a{
-    color:${theme.colors.white};
-    text-decoration: none;
+  
+  @media ${mobile} {
+    width: 22rem;
   }
 `;
 

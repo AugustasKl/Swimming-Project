@@ -17,13 +17,14 @@ const containerSmallProps = compose(color,border, position);
 interface Styles<T> extends BackgroundColorProps<T>, BorderProps<T>, ColorProps<T>, PositionProps<T> {
     maxWidth?:string
     boder?:string
+    padding?:string
  }
 
 export const ContainerSmall = styled.div<Styles<Theme>>`
 	margin: 0 auto;
     max-width: ${({maxWidth})=>maxWidth ||  '75rem'};
     border: ${({border})=>border ||  ''};
-    padding: 0 1rem;
+    padding: ${({ padding }) => padding || "0 1rem"};
     @media ${tablet} {
     max-width: 100%;
     }

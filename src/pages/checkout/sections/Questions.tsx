@@ -9,7 +9,7 @@ export const Questions: React.FC = () => {
     <SectionWrapper>
       <Container>
        <FlexWrapper>
-        {isTablet? '' :<QuestionsImage />}  
+        {!isTablet && <QuestionsImage />}  
           <QuestionsList />
        </FlexWrapper>
       </Container>

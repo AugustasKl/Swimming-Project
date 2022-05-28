@@ -1,9 +1,9 @@
 import React from "react";
-import {Box,Container,FlexWrapper,SectionWrapper,Typography} from "components";
+import { Box,Container, FlexWrapper, SectionWrapper, Typography} from "components";
 import { ButtonPrimary } from "components/buttons/ButtonPrimary";
 import { HeroImage} from "assets/icons";
 import { navigate } from "gatsby";
-import { mobile,  theme } from "styles/theme";
+import { tablet,  theme } from "styles/theme";
 import styled from "styled-components/macro";
 
 export const HeroSection: React.FC = () => (
@@ -40,9 +40,10 @@ const HeroStyles = styled(SectionWrapper)`
   
   background: ${theme.backgrounds.heroSectionDesktop};
 
-  @media ${mobile} {
+  @media ${tablet} {
     padding: 2rem 0.5rem;
 
     background: ${theme.backgrounds.heroSectionMobile}
   }
+
 `;

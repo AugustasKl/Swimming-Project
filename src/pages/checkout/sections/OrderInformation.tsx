@@ -9,7 +9,7 @@ export const OrderInformation:React.FC = () => (
                 <li>You receive an email with all the necessary info to begin your Swimclub journey.</li>
                 <li>You will be enrolled in the email sequence, which will guide you with tips & tricks throughout the entire journey.</li>
            </Typography>
-           <Typography fontSize='fs14' pt={{_:'s32', desktop:'s48'}} color="radioColor" >
+           <Typography color="radioColor" fontSize='fs14' pt={{_:'s32', desktop:'s48'}}>
            The information we provide at our website or app is not intended to replace consultation with a qualified medical professional. Please, seek the advice of your psychologist or another qualified health provider with any questions you may have regarding a medical condition. For questions or concerns about any medical conditions you may have, please contact your doctor. For more information check out our Terms and Conditions.
            </Typography>
         </ContainerSmall>

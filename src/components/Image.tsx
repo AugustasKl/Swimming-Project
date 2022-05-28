@@ -9,8 +9,7 @@ interface Styles {
 	width?: string;
 	maxHeight?: string;
 	maxWidth?: string;
-	margin?: string;
-	
+	margin?: string;	
 }
 
 interface ImageProps extends Styles {

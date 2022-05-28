@@ -7,14 +7,14 @@ import { QuestionsItem } from './QuestionsItem'
 
 export const QuestionsList:React.FC = () => (
     <QuestionsListStyles >
-        <Typography color='white' fontWeight="fw900" py="s16" textAlign='center' type='h6' >Any Questions? Find here.</Typography>
-        <Box maxWidth='32rem' paddingX={{_:"s16",tablet:'s32',desktop:'s20'}}>
-        <Typography color='white' textAlign='center'>These are most frequently asked questions. If you have one don't hesitate to contact us!</Typography>
-        {QUESTIONS.map(({id, question, answer})=>(
+        <Typography color='white' fontWeight="fw900" py="s16" textAlign='center' type='h6'>Any Questions? Find here.</Typography>
+        <Box maxWidth='32rem' paddingX={{_:"s16", tablet:'s32', desktop:'s20'}}>
+        <Typography color='white' fontSize={{_:"fs14", tablet:'fs16', desktop:'fs16'}}  textAlign='center'>These are most frequently asked questions. If you have one don't hesitate to contact us!</Typography>
+        {QUESTIONS.map(({answer, id, question})=>(
           <QuestionsItem 
+          answer={answer}
           id={id}
           key={id}
-          answer={answer}
           question={question}
           />
           ))}

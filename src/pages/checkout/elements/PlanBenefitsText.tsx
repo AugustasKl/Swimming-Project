@@ -1,7 +1,7 @@
 import React from "react";
 import { BENEFITS } from "constants/benefits";
-import { PlanBenefitsTextItems } from ".";
 import { FlexWrapper} from "components";
+import { PlanBenefitsTextItems } from ".";
 
 
 export const PlanBenefitsText: React.FC = () => (

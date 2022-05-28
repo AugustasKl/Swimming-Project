@@ -9,7 +9,7 @@ import { Loader } from "components/loader/Loader";
 import { navigate } from "gatsby";
 import { setQuizAnswers, setEmail } from "store/users/answers-slice";
 import styled from "styled-components/macro";
-import { theme } from "styles/theme";
+import { tablet, theme } from "styles/theme";
 import {useSelector } from "react-redux";
 import { useAppDispatch } from "store/store/store";
 
@@ -46,8 +46,7 @@ export const QuizSection: React.FC = () => {
   const backButtonHandler = () => {
     if ( questionNumber > 0 ) {
       setQuestionNumber(questionNumber - 1);
-    }
-    if(questionNumber ===0){
+    }else{
       navigate('/')
     }
     if(questionKey==='swim_meters'){
@@ -67,6 +66,7 @@ export const QuizSection: React.FC = () => {
     setSelectedAnswers(newAnswers);
     dispatch(setQuizAnswers({ [questionKey]: newAnswers }));
   };
+
 
   const singleAnswerHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (questionData.answerType === "single") {
@@ -104,6 +104,7 @@ export const QuizSection: React.FC = () => {
     <SectionWrapper>
       <ContainerSmall maxWidth="35rem">
         <QuizSectionStyles>
+
           <Box backgroundColor="heroBackground" width='100%'>
             <QuizTopElement
               allQuestionsLength={allQuestionsNumber}
@@ -114,9 +115,8 @@ export const QuizSection: React.FC = () => {
               questionKey={questionKey}
             />
           </Box>
-          {questionData.answerOptions.map((answer: string) => {
-            console.log(userAnswers[questionKey].includes(answer))
-            return (
+
+          {questionData.answerOptions.map((answer: string) =>(
               <QuizOptionsStyles isSelected={userAnswers[questionKey].includes(answer)} key={answer}>
                 <InputAnswers
                   answer={answer}
@@ -126,8 +126,8 @@ export const QuizSection: React.FC = () => {
                 />
                 {userAnswers[questionKey].includes(answer) && <Check />}
               </QuizOptionsStyles>
-            );
-          })}
+            ))}
+
           {questionKey==="exercise_type" && nextButton }
           {questionKey==="health_problems" && everythingIsFineButton}
         </QuizSectionStyles>
@@ -145,6 +145,7 @@ const QuizSectionStyles = styled(FlexWrapper)`
   margin: 1.5rem auto;
  
   box-shadow: 0rem 1rem 2rem rgba(57, 53, 60, 0.08);
+
 `;
 
 const QuizOptionsStyles = styled(FlexWrapper)<{ isSelected: boolean }>`
@@ -156,8 +157,13 @@ const QuizOptionsStyles = styled(FlexWrapper)<{ isSelected: boolean }>`
   border: ${({ isSelected }) =>isSelected === true ? `2px solid ${theme.colors.green}` : `2px solid ${theme.colors.radioColor}`};
   border-radius: ${theme.radii.r20};
  
-  
   :hover {
     border: 2px solid ${theme.colors.green};
   }
+
+  @media ${tablet}{
+    :hover {
+      border: ${({ isSelected }) =>isSelected === false ? `2px solid ${theme.colors.radioColor}` : `2px solid ${theme.colors.green}`};
+  }
+}
 `;

@@ -16,13 +16,11 @@ interface EmailElementProps {
   value: string;
 }
 
-
 export const EmailElement: React.FC<EmailElementProps> = ({
   onChange,
   onClick,
-  value,
+  value
 }) => {
-  
   const dispatch=useAppDispatch()
   const userEmail = useSelector(email);
   const userAnswers = useSelector(answers);
@@ -38,11 +36,7 @@ export const EmailElement: React.FC<EmailElementProps> = ({
   };
 
 
-  if(initLoader){
-    return(
-     <DataAnalyzer/>
-    )
-  }
+  if(initLoader){return(<DataAnalyzer/>)}
   const message=<Typography color="red" fontSize="fs12" mb='s8' p='s0' textAlign='center'>Email must include @ symbol</Typography>
 
   return (
@@ -80,7 +74,7 @@ const StyledEmailElement = styled(FlexWrapper)`
   width: 35rem;
   
   padding-bottom: 2.5rem;
-  margin: 5rem auto;
+  margin: 2.5rem auto;
   
   box-shadow: 0rem 1rem 2rem rgba(57, 53, 60, 0.08);
 

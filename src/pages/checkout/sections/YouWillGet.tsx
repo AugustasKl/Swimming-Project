@@ -1,8 +1,7 @@
 import React from "react";
 import { AQUIRED_BENEFITS } from "constants/acquiredBenefits";
-import {ContainerSmall, FlexWrapper, SectionWrapper, Typography } from "components";
-import Lists from "components/listController/Lists";
-import { mobile, tablet, theme, useQuery } from "styles/theme";
+import {ContainerSmall, FlexWrapper,Lists, SectionWrapper, Typography } from "components";
+import { mobile, theme, useQuery } from "styles/theme";
 import styled from "styled-components/macro";
 import { SwimmingPool } from "assets/icons";
 
@@ -12,12 +11,12 @@ export const YouWillGet: React.FC = () => {
   return (
     <YouWillGetStyles>
       <ContainerSmall maxWidth="49.5rem">
-        {isMobile ? ("") : (<Typography fontWeight="fw900" paddingBottom="s32" textAlign="center" type="h6">
+        {!isMobile && (<Typography fontWeight="fw900" paddingBottom="s32" textAlign="center" type="h6">
             What will You get:
           </Typography>
         )}
         <FlexWrapper
-          alignItems={{tablet:'center',desktop:"flex-start"}}
+          alignItems={{tablet:'center', desktop:"flex-start"}}
           border={`1px solid ${theme.colors.radioColor}`}
           borderRadius="r30"
           flexDirection={{ _: "column", desktop: "row" }}
@@ -25,7 +24,7 @@ export const YouWillGet: React.FC = () => {
         >
          {!isTablet && <SwimmingPool/>}
         {isMobile && <SwimmingPool/>}
-          {isMobile ? (
+          {isMobile && 
             <Typography
             fontWeight="fw900"
             paddingLeft="s40"
@@ -33,7 +32,7 @@ export const YouWillGet: React.FC = () => {
             type="h6"
             >
               What will You get:
-            </Typography> ) : ("")}
+            </Typography>}
           <Lists columns="1" bullet="bullet" listItems={AQUIRED_BENEFITS}/>
         </FlexWrapper>
       </ContainerSmall>

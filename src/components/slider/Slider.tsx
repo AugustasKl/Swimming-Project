@@ -40,18 +40,14 @@ export const SliderComponent: React.FC<SliderProps> = ({
 };
 
 const SliderP = styled.div`
-  margin: 0 -1rem;
-
   @media ${tablet} {
-  margin:0 auto;
-   width: 22rem;
-
+    width: 100%;
+    margin:0 auto;
   } 
-
+  
   @media ${mobile} {
-  margin:0 auto;
-   width: 100%;
-
+    gap: 1rem;
+    width: 100%;
   }
 `;
 

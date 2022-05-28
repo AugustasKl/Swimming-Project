@@ -8,10 +8,10 @@ const AboutPage: React.FC = () => (
       <Header/>
       <About/>
       <Programs/>
-      <FindRightProgram/>
+      <FindRightProgram/> 
       <Community/>
       <Instructors/>
-      <Partners/>
+      <Partners/> 
     </>
   );
 

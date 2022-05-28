@@ -3,7 +3,7 @@ import { AnswersItem } from ".";
 import { FlexWrapper, Typography } from "components";
 import { QuestionsProps } from "constants/questions";
 import { Minus, Plus } from "assets/icons";
-import {mobile, theme } from "styles/theme";
+import {mobile, tablet, theme } from "styles/theme";
 import styled from "styled-components/macro";
 
 
@@ -24,7 +24,7 @@ export const QuestionsItem: React.FC<QuestionsProps> = ({
     <QuestionItemStyles onClick={toggleAnswerHandler}>
       <FlexWrapper justifyContent="space-between">
         <FlexWrapper flexDirection="column" gap="0.5rem" pb="s4">
-          <Typography borderBottom={`1px solid ${theme.colors.white}`} color="white"  fontWeight="fw500" >
+          <Typography borderBottom={`1px solid ${theme.colors.white}`} color="white" fontSize={{_:"fs14", tablet:'fs16', desktop:'fs16'}} fontWeight="fw500" >
             {question}
           </Typography>
           {showAnswer && questionAsked === id && ( <AnswersItem specificAnswer={answer}/> )}
@@ -45,7 +45,13 @@ const QuestionItemStyles = styled.li`
   background: ${theme.colors.questionsAnswers};
   list-style: none;
 
- @media ${mobile} {
+  @media ${tablet} {
     margin: 1rem auto;
+  }
+
+ @media ${mobile} {
+   padding: 0.5rem;
+    margin: 1rem auto;
+  
   }
 `;

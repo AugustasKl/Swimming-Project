@@ -1,8 +1,8 @@
 import React from "react";
-import { Box, FlexWrapper, Typography } from "components";
+import { Box, FlexWrapper, SocialLinks, Typography } from "components";
 import { Logo } from "assets/icons";
 import { mdesktop, mobile, theme } from "styles/theme";
-import { SocialLinks } from "..";
+
 import styled from "styled-components/macro";
 
 export const Footer: React.FC = () => (
@@ -12,7 +12,7 @@ export const Footer: React.FC = () => (
       borderBottom={`1px solid ${theme.colors.radioColor}`}
       justifyContent="space-between"
       paddingY={{ _: "s32", desktop: "s16" }}
-      paddingX={{ _: "s8", tablet:'s20', desktop: "s160" }}
+      paddingX={{ _: "s20", desktop: "s160" }}
     >
       <Logo />
       <FlexWrapper gap="0.5rem" marginRight={{ _: "s0", desktop: "s32" }}>
@@ -30,6 +30,7 @@ const FooterStyles = styled(Box).attrs({ as: "footer" })`
   @media ${mdesktop} {
     background: ${theme.backgrounds.footerMDesktop};
   }
+  
   background: ${theme.backgrounds.footerDesktop};
   @media ${mobile} {
     background: ${theme.backgrounds.footerMobile};

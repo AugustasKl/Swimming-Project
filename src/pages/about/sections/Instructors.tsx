@@ -1,8 +1,10 @@
-import React, {useRef, useState } from "react";
-import {Box,Container, FlexWrapper, GridWrapper, SectionWrapper, Typography} from "components";
+import React, {useState } from "react";
+import {Box, Container, FlexWrapper, GridWrapper, SectionWrapper, Typography} from "components";
 import { ButtonPrimary } from "components/buttons/ButtonPrimary";
-import { InstructorsItem } from "../elements";
+import {InstructorsItem } from "../elements";
 import {InstructorsProps, SWIMMING_INSTRUCTORS} from "constants/swimInstructors";
+import { tablet } from "styles/theme";
+import styled from "styled-components/macro";
 
 
 
@@ -24,16 +26,14 @@ export const Instructors: React.FC = () => {
       setInstructors(sorted);
       setSortStatus(!sortStatus);
     }
-
     element?.scrollIntoView({behavior: "smooth", inline:"end"});
-
   };
 
   return (
-    <SectionWrapper>
+    <InstructorStyles >
       <Container>
         <Typography textAlign="center" type="h6">
-          Our Professional Instructors
+          Our Professional Coaches
         </Typography>
         <FlexWrapper
           alignItems="center"
@@ -42,19 +42,20 @@ export const Instructors: React.FC = () => {
         >
           <Box maxWidth="28.25rem">
             <Typography color="radioColor" textAlign="center" fontSize="fs14" >
-            Meet the coaches. Rigorously Trained. Fully Certified
+            Meet the coaches. Rigorously Trained. Fully Certified.
             </Typography>
           </Box>
           <GridWrapper
             gap="2.5rem"
             gridTemplateColumns={{ _: "1fr", desktop: "repeat(3, 1fr)" }}
-            marginTop="s48"
+            marginTop={{_:"s16", tablet:'s20', desktop:'s48'}}
+            marginBottom='s24'
           >
             {renderSwimmingInstructors.map(({ experience, id, name, position, rating, tag }) => (
               <InstructorsItem
+                experience={experience}
                 id={id}
                 key={id}
-                experience={experience}
                 name={name}
                 position={position}
                 rating={rating}
@@ -62,12 +63,14 @@ export const Instructors: React.FC = () => {
               />
             ))}
           </GridWrapper>
-        <Box marginTop='s24'>
           <ButtonPrimary onClick={sortHandler}>Sort by Rating In {sortStatus? 'Ascending': 'Descending'} order</ButtonPrimary>
-        </Box>
         </FlexWrapper>
       </Container>
-    </SectionWrapper>
+    </InstructorStyles>
   );
 };
-
+ const InstructorStyles=styled(SectionWrapper)`
+   @media ${tablet} {
+    padding:1rem 0.5rem;
+  }
+ `

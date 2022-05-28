@@ -5,6 +5,6 @@ export const Check: React.FC = () => (
   <StaticImage
     src="./../svg/complete.svg"
     alt="complete logo"
-    style={{ width: "2rem", height: "2rem", marginRight: "1rem" }}
+    style={{ width: "2rem", height: "1.9rem", marginRight: "1rem" }}
   />
 );

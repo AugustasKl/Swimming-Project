@@ -18,7 +18,7 @@ export const PERSONAL_PLAN:Array<PlanProps>=[
     },
     {
         id:'p4',
-        text:'A regular swimming regimen can help you sleep better.'
+        text:'Swimming can help you sleep better.'
     },
     {
         id:'p5',

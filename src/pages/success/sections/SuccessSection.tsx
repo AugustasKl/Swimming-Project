@@ -18,7 +18,7 @@ export const SuccessSection: React.FC = () => {
           >
             Thank you for your order!
           </Typography>
-        <Confetti numberOfPieces={30} width={isMobile ? 480: (isTablet? 768: 2000)} />
+        <Confetti numberOfPieces={30} width={isMobile ? 375: (isTablet? 768: 2000)} />
       </Container>
     </SuccessSectionsStyles>
   );

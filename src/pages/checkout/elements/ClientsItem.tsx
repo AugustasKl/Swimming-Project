@@ -3,7 +3,7 @@ import { ClientsProps } from "constants/clients";
 import { FlexWrapper, Image, Typography } from "components";
 import { RatingStars } from "assets/icons";
 import styled from "styled-components/macro";
-import { tablet, theme} from "styles/theme";
+import { mobile, tablet, theme} from "styles/theme";
 
 interface SliderProps extends ClientsProps {
   infinite?: boolean;
@@ -54,6 +54,12 @@ const ClientsItemStyles = styled(FlexWrapper)`
   }
 
   @media ${tablet} {
+    width: 25rem;
+    margin: 1.5rem auto;
+  }
+  @media ${mobile} {
     width: 90%;
+    font-size: ${theme.fontSizes.fs14};
+ 
   }
 `;

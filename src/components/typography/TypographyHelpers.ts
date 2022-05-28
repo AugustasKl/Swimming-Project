@@ -1,5 +1,4 @@
 import { css } from "styled-components/macro";
-
 import { tablet, Theme } from "styles/theme";
 import { TextType } from "./Typography";
 

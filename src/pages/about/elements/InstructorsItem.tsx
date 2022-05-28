@@ -1,7 +1,7 @@
 import React from "react";
-import { FlexWrapper, Typography } from "components";
+import { FlexWrapper, Image, Typography } from "components";
 import { InstructorsProps } from "constants/swimInstructors";
-import { Star, UniversalImages } from "assets/icons";
+import { Star } from "assets/icons";
 import styled from "styled-components/macro";
 import { SocialButton } from "components/buttons/SocialButton";
 import {  tablet, theme } from "styles/theme";
@@ -22,7 +22,7 @@ export const InstructorsItem: React.FC<InstructorsProps> = ({
         gap="0.5rem"
         justifyContent="center"
       >
-        <UniversalImages height='20rem' tag={tag} width='100%' />
+        <Image src={tag} alt={tag} height='20rem' width='100%'/>
         <Typography fontSize="fs24" fontWeight="fw600" textAlign="center" >
           {name}
         </Typography>

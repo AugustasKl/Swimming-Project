@@ -1,7 +1,7 @@
 import React from 'react'
-import { Box } from 'components'
-import { Footer } from '.'
-import { Header } from './header/Header'
+import { Box, Footer, Header } from 'components'
+
+
 
 
 export const Layout:React.FC = ({children}) => (

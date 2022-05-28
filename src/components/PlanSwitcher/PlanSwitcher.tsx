@@ -11,7 +11,6 @@ export const PlanSwitcher: React.FC<{ answer: string }> = ({ answer }) => {
             title={SWIMMING_CLASSES[0].title}
             enrolled={SWIMMING_CLASSES[0].enrolled}
             lessonCount={SWIMMING_CLASSES[0].lessonCount}
-           
           />
         );
       case "I want to take my skills to another level":

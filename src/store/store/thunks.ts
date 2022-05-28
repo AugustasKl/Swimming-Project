@@ -5,7 +5,7 @@ import { UserStateAnswers } from "store/types";
 
 const url ="https://62810b691020d8520584bcbd.mockapi.io/data/";
 
-const urlAnnsw ="https://62810b691020d8520584bcbd.mockapi.io/answers";
+const urlAnswers ="https://62810b691020d8520584bcbd.mockapi.io/answers";
 
 const fetchQuestionsPrefix = "questions/GET_QUESTIONS";
 const postAnswersPrefix = "answers/POST_ANSWERS";
@@ -28,7 +28,7 @@ export const postUser= createAsyncThunk(
     try {
       const resp = await axios({
         method: "post",
-        url: urlAnnsw,
+        url: urlAnswers,
         data: quizData,
       });
     } catch (e) {

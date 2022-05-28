@@ -2,6 +2,7 @@ import React from "react";
 import { FlexWrapper } from "components";
 import { Input } from "./elements/Input";
 import styled from "styled-components/macro";
+import { tablet } from "styles/theme";
 
 
 type InputType = "radio" | "checkbox";
@@ -41,17 +42,20 @@ const InputAnswers: React.FC<InputProps> = ({
 export default InputAnswers;
 
 export const InputStyles = styled(FlexWrapper).attrs({ as: "label" })`
+  width: 100%;
+  
   padding: 1rem;
   margin: 0.5rem;
 
-  width: 100%;
-
   cursor: pointer;
-  
   input {
     opacity: 0;
   }
   p{
     cursor:pointer
+  }
+  @media ${tablet} {
+  padding: 1rem 0.25rem;
+  font-size: 14px;
   }
 `;

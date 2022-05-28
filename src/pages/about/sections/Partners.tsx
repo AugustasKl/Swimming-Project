@@ -1,10 +1,15 @@
 import React from "react";
-import {Box, Container, FlexWrapper, SectionWrapper, Typography} from "components";
+import {
+  Box,
+  Container,
+  FlexWrapper,
+  Image,
+  SectionWrapper,
+  Typography,
+} from "components";
 import { logosArray, logosMobileArray } from "constants/partners";
-import { mobile, theme, useQuery } from "styles/theme";
+import { mobile, tablet, useQuery } from "styles/theme";
 import styled from "styled-components/macro";
-import { UniversalImages } from "assets/icons";
-
 
 export const Partners: React.FC = () => {
   const { isMobile } = useQuery();
@@ -15,10 +20,10 @@ export const Partners: React.FC = () => {
         <Typography pb="s32" textAlign="center" type="h6">
           Our beloved Partners
         </Typography>
-        <FlexWrapper gap="2rem" justifyContent="center">
+        <FlexWrapper gap="1.5rem" justifyContent="center">
           {isMobileData.map((tag) => (
             <LogosStyles key={tag}>
-              <UniversalImages height="4rem" tag={tag} width="10rem"/>
+              <Image src={tag} alt={tag} height="4rem" width="10rem" />
             </LogosStyles>
           ))}
         </FlexWrapper>
@@ -28,9 +33,11 @@ export const Partners: React.FC = () => {
 };
 
 const LogosStyles = styled(Box)`
-  &:not(:last-child) {
-    border-right: "2px solid ${theme.colors.radioColor}";
-    padding-right: 1rem;
+  @media ${tablet} {
+    img {
+      height: 3rem;
+      width: 8rem;
+    }
   }
   @media ${mobile} {
     img {

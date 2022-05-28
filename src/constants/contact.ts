@@ -5,7 +5,7 @@ export interface ContactProps{
     tag:string
 }
 
-export const CONTACT =[
+export const CONTACT:Array<ContactProps> =[
     {
         id:'c1',
         text:'Email us!',

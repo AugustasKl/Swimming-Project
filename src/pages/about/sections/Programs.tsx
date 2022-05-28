@@ -8,7 +8,7 @@ import { useQuery } from "styles/theme";
 
 export const Programs: React.FC = () => {
   const { isTablet } = useQuery();
-  const swimmingClasses = SWIMMING_CLASSES.map(
+  const swimmingPrograms = SWIMMING_CLASSES.map(
     ({enrolled, id, lessonCount, message, price, status, tag, title}) => (
       <ProgramsItem
       enrolled={enrolled}
@@ -26,16 +26,16 @@ export const Programs: React.FC = () => {
   return (
     <SectionWrapper>
       <Container>
-        <Typography pb="s40" textAlign="center" type="h6">
+        <Typography pb={{_:'s16', desktop:'s40'}} textAlign="center" type="h6">
           Swimclub provides these program plans
         </Typography>
         {isTablet? (
           <SliderComponent mobileSlidesToScroll={1} mobileSlidesToShow={1}>
-            {swimmingClasses}
+            {swimmingPrograms}
           </SliderComponent>
         ) : (
           <FlexWrapper alignItems="center" gap="2.5rem"> 
-            {swimmingClasses}
+            {swimmingPrograms}
           </FlexWrapper>
         )}
       </Container>

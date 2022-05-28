@@ -2,24 +2,26 @@ import React from "react";
 import { Box, Container, FlexWrapper, SectionWrapper, Typography } from "components";
 import { ButtonPrimary } from "components/buttons/ButtonPrimary";
 import { email } from "store/users/selectors";
-import {  navigate } from "gatsby";
+import { navigate } from "gatsby";
 import { setEmail, setPrice, setQuizAnswers } from "store/users/answers-slice";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "store/store/store";
 
+const emptyAnswers={
+  exercise_type:[],
+  gender:'',
+  health_problems:[],
+  last_3_months:'',
+  personality:'',
+  reason:'',
+  swim_meters:'',
+  training_frequency:'',
+ }
+
 export const SuccessText: React.FC = () => {
   const dispatch=useAppDispatch()
   const userEmail=useSelector(email)
-  const emptyAnswers={
-    exercise_type:[],
-    gender:'',
-    health_problems:[],
-    last_3_months:'',
-    personality:'',
-    reason:'',
-    swim_meters:'',
-    training_frequency:'',
-   }
+
   const startOverHandler=()=>{
     sessionStorage.clear()
     dispatch(setQuizAnswers(emptyAnswers))
@@ -27,6 +29,7 @@ export const SuccessText: React.FC = () => {
     dispatch(setPrice(0))
     navigate('/')
   }
+
   return (
     <SectionWrapper>
       <Container>
@@ -37,7 +40,7 @@ export const SuccessText: React.FC = () => {
           <Typography  >
             We have just sent out a letter and invoice to this email address:
           </Typography>
-          <Typography fontSize="fs18" fontWeight="fw700"  >
+          <Typography fontSize="fs18" fontWeight="fw700">
             {userEmail}
           </Typography>
           <Typography fontSize="fs14">

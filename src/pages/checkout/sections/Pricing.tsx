@@ -50,8 +50,8 @@ const StyledPricing = styled(FlexWrapper)`
   flex-direction: column;
   justify-content: center;
   
-  a {
-    color: ${theme.colors.blue};
+  a{
+    color: ${theme.colors.orange};
     cursor: pointer;
   }
   @media ${tablet} {

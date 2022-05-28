@@ -32,7 +32,7 @@ export const QuizTopElement: React.FC<QuizTopElementProps> = ({
         ml="s8"
         width="90%"
       >
-        <BackButton  disabled={questionKey==='health_problems' && selectedAnswers.length>0} onClick={onClick}>Back</BackButton>
+        <BackButton disabled={questionKey==='health_problems' && selectedAnswers.length>0} onClick={onClick}>Back</BackButton>
         <Logo />
         <Typography color="white" fontSize="fs18" pt="s16">{`${questionNumber + 1}/${allQuestionsLength}`}</Typography>
         </FlexWrapper>
@@ -41,7 +41,7 @@ export const QuizTopElement: React.FC<QuizTopElementProps> = ({
         style={{ marginTop: "1rem", width: "100%"}}
         value={progressBarValue}
       />
-      <Typography  color="white"  p="s16" textAlign="center" type="h6">{renderedQuestion}</Typography>
+      <Typography color="white" p="s16" textAlign="center" type="h6">{renderedQuestion}</Typography>
     </>
   );
 };

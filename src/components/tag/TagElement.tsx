@@ -1,11 +1,11 @@
 import React from 'react'
+import { Image } from 'components'
 import styled from 'styled-components/macro'
-import { UniversalImages } from 'assets/icons'
 
 export const TagElement:React.FC<{status:string}> = ({status}) =>(
     <>
         <StyledTag>
-        <UniversalImages tag={status}/>
+        <Image src={status} alt={status}/>
         </StyledTag>
     </>
   )
@@ -13,6 +13,6 @@ export const TagElement:React.FC<{status:string}> = ({status}) =>(
 const StyledTag=styled.image`
 position: absolute;
 
-left: 35%;
+left: 34%;
 top:45%;
 `

@@ -21,8 +21,7 @@ export * from './SafeCheckout'
 
 //rating stars
 export * from './RatingStars'
-//universal images
-export * from './UniversalImages'
+
 
 //plus/minus icons
 export * from './Plus'

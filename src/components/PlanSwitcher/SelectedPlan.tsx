@@ -10,7 +10,7 @@ interface PlanProps{
     lessonCount:number,
 }
 
-export const SelectedPlan:React.FC<PlanProps> = ({title, enrolled, lessonCount,}) =>{
+export const SelectedPlan:React.FC<PlanProps> = ({title, enrolled, lessonCount}) =>{
 const selectedPrice=useSelector(price)
 
 if(selectedPrice!==0){

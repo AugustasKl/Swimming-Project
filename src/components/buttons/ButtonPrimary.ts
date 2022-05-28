@@ -1,21 +1,30 @@
 import { Button } from "./Button";
+import { mobile, tablet, theme } from "styles/theme";
 import styled from "styled-components/macro";
-import {  mobile, theme } from "styles/theme";
 
-export const ButtonPrimary=styled(Button)`
+export const ButtonPrimary = styled(Button)`
+  width: ${({ width }) => width || ""};
 
-width: ${({width})=> width || ''}; 
+  padding: 0.75rem 2rem;
+  margin: ${({ margin }) => margin || ""};
 
-padding: 0.75rem 2rem;
-margin: ${({margin})=> margin || ''};
+  background: ${theme.colors.black};
+  border-radius: ${theme.radii.r10};
+  color: ${theme.colors.white};
+  cursor: pointer;
 
-background: ${theme.colors.black};
-border-radius: ${theme.radii.r10};
-color:${theme.colors.white};
-cursor: pointer;
+  :hover {
+    background: ${theme.colors.blue};
+  }
 
-
-@media ${mobile} {
+  @media ${tablet} {
     text-align: center;
+    /* width: 45%; */
+    :hover {
+      background: ${theme.colors.black};
     }
-`
+}
+  /* @media ${mobile} {
+    width: 95%;
+  } */
+`;
