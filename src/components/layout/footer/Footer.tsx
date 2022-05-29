@@ -2,7 +2,6 @@ import React from "react";
 import { Box, FlexWrapper, SocialLinks, Typography } from "components";
 import { Logo } from "assets/icons";
 import { mdesktop, mobile, theme } from "styles/theme";
-
 import styled from "styled-components/macro";
 
 export const Footer: React.FC = () => (

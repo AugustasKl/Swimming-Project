@@ -1,14 +1,14 @@
 import { valueNumber } from "./../valueNumber"
-
+import { SWIMMING_CLASSES } from "../../constants/swimmingClasses";
 
 
 describe('is value a number test',()=>{
     it('returns number',()=>{
-        expect(valueNumber(2)).toBeTruthy()
+        expect(valueNumber(SWIMMING_CLASSES[0].price)).toBeTruthy()
       
     })
     it('does not return number',()=>{
-        expect(valueNumber('hello, mate')).toBeFalsy()
+        expect(valueNumber(SWIMMING_CLASSES[0].message)).toBeFalsy()
         
     })
 

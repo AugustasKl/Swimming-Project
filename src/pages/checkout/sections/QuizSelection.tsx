@@ -10,7 +10,7 @@ export const QuizSelection: React.FC = () => {
   return (
     <SectionWrapper>
       <Container>
-        <Typography  pb="s20" textAlign="center" type="h6">
+        <Typography pb="s20" textAlign="center" type="h6">
           Welcome to the Swimclub Family!
         </Typography>
         <PlanSwitcher answer={userAnswerReason} />

@@ -1,13 +1,12 @@
 import React from "react";
 import { QuizSection } from "./sections";
 
-
-
 const Quiz: React.FC = () => (
-	<>
-    <QuizSection/>
-	</>
-)
-
+  <>
+    <QuizSection />
+  </>
+);
 
 export default Quiz;
+
+

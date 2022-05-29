@@ -3,8 +3,8 @@ import {Box, Container, FlexWrapper, GridWrapper, SectionWrapper, Typography} fr
 import { ButtonPrimary } from "components/buttons/ButtonPrimary";
 import {InstructorsItem } from "../elements";
 import {InstructorsProps, SWIMMING_INSTRUCTORS} from "constants/swimInstructors";
-import { tablet } from "styles/theme";
 import styled from "styled-components/macro";
+import { tablet } from "styles/theme";
 
 
 
@@ -32,23 +32,22 @@ export const Instructors: React.FC = () => {
   return (
     <InstructorStyles >
       <Container>
-        <Typography textAlign="center" type="h6">
+        <Typography pb='s8' textAlign="center" type="h6">
           Our Professional Coaches
         </Typography>
         <FlexWrapper
           alignItems="center"
           flexDirection="column"
           justifyContent="center"
-        >
+          >
           <Box maxWidth="28.25rem">
-            <Typography color="radioColor" textAlign="center" fontSize="fs14" >
+            <Typography  mb={{_:"s16", tablet:'s20', desktop:'s32'}} textAlign="center">
             Meet the coaches. Rigorously Trained. Fully Certified.
             </Typography>
           </Box>
           <GridWrapper
             gap="2.5rem"
-            gridTemplateColumns={{ _: "1fr", desktop: "repeat(3, 1fr)" }}
-            marginTop={{_:"s16", tablet:'s20', desktop:'s48'}}
+            gridTemplateColumns={{ _: "1fr", desktop: "repeat(3, 1fr)"}}
             marginBottom='s24'
           >
             {renderSwimmingInstructors.map(({ experience, id, name, position, rating, tag }) => (

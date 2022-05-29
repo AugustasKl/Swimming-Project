@@ -25,8 +25,8 @@ export const PricingItem: React.FC<BillingProps> = ({
   : <Typography fontSize="fs14"> One time payment </Typography>)
 return(
   <PricingItemStyles>
-      <FlexWrapper alignItems="center" flexDirection="column" justifyContent="center" >
-        <FlexWrapper gap="0.25rem" alignItems="center">
+      <FlexWrapper alignItems="center" flexDirection="column" justifyContent="center">
+        <FlexWrapper alignItems="center" gap="0.25rem" >
           <Typography fontWeight="fw700">{name}</Typography>
           <TypographyStyles hasMessage={message.includes('Most popular')} >
             {message}

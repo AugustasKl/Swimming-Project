@@ -25,15 +25,13 @@ export const Contact: React.FC = () => (
     justify-content: center;
     gap:2rem;
 
-
     @media ${mobile} {
       align-items: flex-start;
       flex-direction: column;
       
-      width: 60%;
+      width: 52%;
       
       margin: 0 auto;
       gap: 0.5rem;
   }
-
   `

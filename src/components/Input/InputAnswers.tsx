@@ -15,7 +15,7 @@ interface InputProps {
   value: string;
 }
 
-const InputAnswers: React.FC<InputProps> = ({
+export const InputAnswers: React.FC<InputProps> = ({
   answer,
   onChange,
   type,
@@ -39,7 +39,7 @@ const InputAnswers: React.FC<InputProps> = ({
   );
 };
 
-export default InputAnswers;
+
 
 export const InputStyles = styled(FlexWrapper).attrs({ as: "label" })`
   width: 100%;

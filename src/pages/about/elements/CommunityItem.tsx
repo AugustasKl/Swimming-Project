@@ -15,8 +15,8 @@ export const CommunityItem: React.FC<CommunityProps> = ({
       borderRadius="r10"
       flexDirection={{ _: "row", desktop: "column" }}
       gap={isTablet ? "1.25rem" : "0rem"}
-      paddingY="s16"
       paddingX="s8"
+      paddingY="s16"
     >
       <Typography fontSize="fs40" fontWeight="fw600">
         {percentage}%

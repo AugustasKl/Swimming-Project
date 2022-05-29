@@ -6,7 +6,7 @@ import { Logo } from "assets/icons";
 
 interface QuizTopElementProps {
   allQuestionsLength: number;
-   onClick?: () => void;
+  onClick?: () => void;
   renderedQuestion?: string;
   questionNumber: number;
   questionKey:string,
@@ -24,7 +24,7 @@ export const QuizTopElement: React.FC<QuizTopElementProps> = ({
   const progressBarValue = ((questionNumber + 1) / allQuestionsLength) * 100;
 
   return (
-    <>
+    <Box backgroundColor="heroBackground" width='100%'>
       <FlexWrapper
         alignItems="center"
         justifyContent="space-evenly"
@@ -42,6 +42,6 @@ export const QuizTopElement: React.FC<QuizTopElementProps> = ({
         value={progressBarValue}
       />
       <Typography color="white" p="s16" textAlign="center" type="h6">{renderedQuestion}</Typography>
-    </>
+    </Box>
   );
 };

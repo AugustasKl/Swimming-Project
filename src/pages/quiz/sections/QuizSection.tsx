@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { answers, email, questions } from "store/users/selectors";
-import { Box, ContainerSmall, FlexWrapper,NextButton,SectionWrapper} from "components";
 import { Check } from "assets/icons";
+import { ContainerSmall, FlexWrapper, InputAnswers, NextButton,SectionWrapper} from "components";
 import { EmailElement, QuizTopElement } from "../elements";
 import { fetchQuizAxios } from "store/store/thunks";
-import InputAnswers from "components/Input/InputAnswers";
 import { Loader } from "components/loader/Loader";
 import { navigate } from "gatsby";
-import { setQuizAnswers, setEmail } from "store/users/answers-slice";
+import {setEmail, setQuizAnswers } from "store/users/answers-slice";
 import styled from "styled-components/macro";
 import { tablet, theme } from "styles/theme";
 import {useSelector } from "react-redux";
@@ -49,9 +48,6 @@ export const QuizSection: React.FC = () => {
     }else{
       navigate('/')
     }
-    if(questionKey==='swim_meters'){
-      setSelectedAnswers([])
-    }
   };
 
   const multipleAnswerHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -59,9 +55,7 @@ export const QuizSection: React.FC = () => {
     if (!selectedAnswers.includes(event.target.value)) {
       newAnswers = [...selectedAnswers, event.target.value];
     } else {
-      newAnswers = selectedAnswers.filter(
-        (item) => item !== event.target.value
-      );
+      newAnswers = selectedAnswers.filter((item) => item !== event.target.value);
     }
     setSelectedAnswers(newAnswers);
     dispatch(setQuizAnswers({ [questionKey]: newAnswers }));
@@ -105,7 +99,6 @@ export const QuizSection: React.FC = () => {
       <ContainerSmall maxWidth="35rem">
         <QuizSectionStyles>
 
-          <Box backgroundColor="heroBackground" width='100%'>
             <QuizTopElement
               allQuestionsLength={allQuestionsNumber}
               onClick={backButtonHandler}
@@ -114,8 +107,7 @@ export const QuizSection: React.FC = () => {
               questionNumber={questionNumber}
               questionKey={questionKey}
             />
-          </Box>
-
+          
           {questionData.answerOptions.map((answer: string) =>(
               <QuizOptionsStyles isSelected={userAnswers[questionKey].includes(answer)} key={answer}>
                 <InputAnswers
@@ -136,16 +128,15 @@ export const QuizSection: React.FC = () => {
   );
 };
 
-const QuizSectionStyles = styled(FlexWrapper)` 
+const QuizSectionStyles = styled(FlexWrapper)`
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  
+
   padding-bottom: 2.5rem;
   margin: 1.5rem auto;
- 
-  box-shadow: 0rem 1rem 2rem rgba(57, 53, 60, 0.08);
 
+  box-shadow: 0rem 1rem 2rem rgba(57, 53, 60, 0.08);
 `;
 
 const QuizOptionsStyles = styled(FlexWrapper)<{ isSelected: boolean }>`
@@ -153,17 +144,18 @@ const QuizOptionsStyles = styled(FlexWrapper)<{ isSelected: boolean }>`
   width: 95%;
 
   margin-top: 1.25rem;
-  
+
   border: ${({ isSelected }) =>isSelected === true ? `2px solid ${theme.colors.green}` : `2px solid ${theme.colors.radioColor}`};
   border-radius: ${theme.radii.r20};
- 
+
   :hover {
     border: 2px solid ${theme.colors.green};
   }
 
-  @media ${tablet}{
+  @media ${tablet} {
     :hover {
-      border: ${({ isSelected }) =>isSelected === false ? `2px solid ${theme.colors.radioColor}` : `2px solid ${theme.colors.green}`};
+      border: ${({ isSelected }) =>isSelected === false? `2px solid ${theme.colors.radioColor}`: `2px solid ${theme.colors.green}`};
+    }
   }
-}
 `;
+

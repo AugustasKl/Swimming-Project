@@ -1,10 +1,12 @@
+import { ABOUT } from "../../constants/about";
+import { COMMUNITY } from "../../constants/community";
 import { firstCapitalLetter } from "../firstCapitalLetter";
 
 describe("first capital letter test", () => {
   it("returns first capital letter", () => {
-    expect(firstCapitalLetter("hello")).toEqual("Hello");
+    expect(firstCapitalLetter(ABOUT[0].text)).toEqual("Experienced staff");
   });
   it("does not return first capital letter", () => {
-    expect(firstCapitalLetter("hamburger")).not.toEqual("hamburger");
+    expect(firstCapitalLetter(COMMUNITY[0].text)).not.toEqual('of our members said that Swimclub has one of the most expereinced staff members');
   });
 });

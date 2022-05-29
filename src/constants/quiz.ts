@@ -1,4 +1,4 @@
-import { getMaxListeners } from "process"
+
 
 export interface QuestionsState{
   [key: number]: QuestionsPropsDDD
@@ -12,12 +12,7 @@ export interface QuestionsPropsDDD{
     answers:string[]
 }
 
-// const answers = {
-//   lukas@getMaxListeners.com: {
-//     0: ['Moncius'],
-//     1: ['New Yo']
-//   }
-// }
+
 
 export const QUIZ:QuestionsState={
    

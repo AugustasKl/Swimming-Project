@@ -6,20 +6,20 @@ import styled from "styled-components/macro";
 interface SliderProps {
   dots?: boolean;
   infinite?: boolean;
-  mobileSlidesToScroll?: number;
-  mobileSlidesToShow?: number;
   slidesToShow?: number;
   slidesToScroll?: number;
   speed?: number;
+  tabletSlidesToScroll?: number;
+  tabletSlidesToShow?: number;
 }
 
 
 export const SliderComponent: React.FC<SliderProps> = ({
   children,
-  mobileSlidesToScroll,
-  mobileSlidesToShow,
   slidesToScroll,
   slidesToShow,
+  tabletSlidesToScroll,
+  tabletSlidesToShow,
   ...rest
 }) => {
   const { isTablet } = useQuery();
@@ -28,8 +28,8 @@ export const SliderComponent: React.FC<SliderProps> = ({
       <Slider
         dots={true}
         infinite={true}
-        slidesToScroll={isTablet ? mobileSlidesToScroll : slidesToScroll}
-        slidesToShow={isTablet ? mobileSlidesToShow : slidesToShow}
+        slidesToScroll={isTablet ? tabletSlidesToScroll : slidesToScroll}
+        slidesToShow={isTablet ? tabletSlidesToScroll : slidesToShow}
         speed={500}
         {...rest}
       >

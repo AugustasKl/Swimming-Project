@@ -1,5 +1,5 @@
 import React from "react";
-import { SelectedPlan } from "../../pages/checkout/elements";
+import { SelectedPlan } from "components";
 import { SWIMMING_CLASSES } from "constants/swimmingClasses";
 
 export const PlanSwitcher: React.FC<{ answer: string }> = ({ answer }) => {

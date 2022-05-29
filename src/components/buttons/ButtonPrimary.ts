@@ -1,6 +1,6 @@
 import { Button } from "./Button";
-import { mobile, tablet, theme } from "styles/theme";
 import styled from "styled-components/macro";
+import {tablet, theme } from "styles/theme";
 
 export const ButtonPrimary = styled(Button)`
   width: ${({ width }) => width || ""};
@@ -18,13 +18,8 @@ export const ButtonPrimary = styled(Button)`
   }
 
   @media ${tablet} {
-    text-align: center;
-    /* width: 45%; */
     :hover {
       background: ${theme.colors.black};
     }
 }
-  /* @media ${mobile} {
-    width: 95%;
-  } */
 `;

@@ -2,8 +2,8 @@ import React from "react";
 import { ClientsProps } from "constants/clients";
 import { FlexWrapper, Image, Typography } from "components";
 import { RatingStars } from "assets/icons";
-import styled from "styled-components/macro";
 import { mobile, tablet, theme} from "styles/theme";
+import styled from "styled-components/macro";
 
 interface SliderProps extends ClientsProps {
   infinite?: boolean;
@@ -23,13 +23,11 @@ export const ClientsItem: React.FC<SliderProps> = ({
       <Image src={client} alt={client} height="4rem" width="4rem" />
       <FlexWrapper flexDirection="column">
         <Typography fontWeight="fw600">{client}</Typography>
-        <Typography color="radioColor" fontSize="fs14">
-          {level}
-        </Typography>
+        <Typography color="radioColor" fontSize="fs14">{level}</Typography>
         <Typography fontSize="fs12">{country}</Typography>
       </FlexWrapper>
     </FlexWrapper>
-    <RatingStars />
+    <RatingStars/>
     <Typography>{message}</Typography>
   </ClientsItemStyles>
 );

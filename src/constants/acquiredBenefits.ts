@@ -1,9 +1,9 @@
-export interface BenefitsProps{
+export interface AquiredBenefitsProps{
     id:string,
     text:string
 }
 
-export const AQUIRED_BENEFITS: Array<BenefitsProps>=[
+export const AQUIRED_BENEFITS: Array<AquiredBenefitsProps>=[
     {
         id:'b1',
         text:'You will have a the best swim coach delivering the lessons.'

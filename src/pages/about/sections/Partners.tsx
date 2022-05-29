@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Container,
-  FlexWrapper,
-  Image,
-  SectionWrapper,
-  Typography,
-} from "components";
+import { Box, Container, FlexWrapper, Image, SectionWrapper, Typography} from "components";
 import { logosArray, logosMobileArray } from "constants/partners";
 import { mobile, tablet, useQuery } from "styles/theme";
 import styled from "styled-components/macro";

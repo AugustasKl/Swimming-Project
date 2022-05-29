@@ -30,7 +30,7 @@ export const Programs: React.FC = () => {
           Swimclub provides these program plans
         </Typography>
         {isTablet? (
-          <SliderComponent mobileSlidesToScroll={1} mobileSlidesToShow={1}>
+          <SliderComponent tabletSlidesToScroll={1} tabletSlidesToShow={1}>
             {swimmingPrograms}
           </SliderComponent>
         ) : (

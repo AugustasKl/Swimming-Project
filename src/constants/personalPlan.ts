@@ -28,7 +28,6 @@ export const PERSONAL_PLAN:Array<PlanProps>=[
         id:'p6',
         text:'Swimming works all major muscle groups, resulting in stronger muscles overall.'
     },
-    
     {
         id:'p7',
         text:'Swimming is one of the most effective ways to burn calories.'

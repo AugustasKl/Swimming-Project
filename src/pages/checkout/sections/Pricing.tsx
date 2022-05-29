@@ -4,7 +4,7 @@ import { Box, ContainerSmall, FlexWrapper, SectionWrapper, Typography } from "co
 import { PricingItem } from "../elements";
 import { SafeCheckout } from "assets/icons";
 import styled from "styled-components/macro";
-import {  tablet, theme, useQuery } from "styles/theme";
+import { tablet, theme, useQuery } from "styles/theme";
 
 
 export const Pricing: React.FC = () => {

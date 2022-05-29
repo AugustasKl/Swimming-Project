@@ -9,13 +9,11 @@ export const DataAnalyzer: React.FC = () => {
             navigate('/checkout')
           }, 3000);   
   return (
-    <>
         <StyledDataAnalyzer>
           <Typography type="h6">Calculating your results...</Typography>
           <Loader />
           <Typography>It will take just a couple of seconds...</Typography>
         </StyledDataAnalyzer>
-    </>
   );
 };
 

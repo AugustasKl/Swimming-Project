@@ -50,8 +50,7 @@ const QuestionItemStyles = styled.li`
   }
 
  @media ${mobile} {
-   padding: 0.5rem;
+    padding: 0.5rem;
     margin: 1rem auto;
-  
   }
 `;

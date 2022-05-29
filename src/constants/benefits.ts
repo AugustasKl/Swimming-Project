@@ -1,4 +1,8 @@
-import { BenefitsProps } from "typings/benefits";
+export interface BenefitsProps{
+  id:string,
+  name?:string,
+  text?:string
+}
 
 export const BENEFITS:BenefitsProps[] = [
   {

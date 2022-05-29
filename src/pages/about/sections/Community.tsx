@@ -13,11 +13,10 @@ export const Community: React.FC = () => (
           Join our swimmers community!
         </Typography>
         <Typography paddingBottom="s32" textAlign="center">
-          See how Swimclub helps all kinds of swimmers to take their skills to
-          another level!
+          See how Swimclub helps all kinds of swimmers to take their skills to another level!
         </Typography>
         <FlexWrapper
-          flexDirection={{ _: "column", desktop: "row" }}
+          flexDirection={{ _: "column", tablet:'column', desktop: "row" }}
           gap="1.5rem"
         >
           {COMMUNITY.map(({ id, percentage, text }) => (
@@ -35,8 +34,9 @@ export const Community: React.FC = () => (
 );
 
 const CommunityStyles = styled(SectionWrapper)`
+
   @media ${tablet} {
-    padding: 1rem 1.5rem;
+    padding: 1rem 4rem;
   }
   @media ${mobile} {
     padding: 2rem 0.5rem;

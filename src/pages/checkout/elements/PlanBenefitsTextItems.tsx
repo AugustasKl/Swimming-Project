@@ -1,5 +1,5 @@
 import React from 'react'
-import { BenefitsProps } from 'typings/benefits'
+import { BenefitsProps } from 'constants/benefits'
 import { FlexWrapper, Typography } from 'components'
 
 export const PlanBenefitsTextItems:React.FC<BenefitsProps> = ({name, text}) => (

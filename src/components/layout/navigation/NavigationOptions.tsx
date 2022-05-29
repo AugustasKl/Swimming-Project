@@ -1,17 +1,35 @@
 import React from "react";
 import { FlexWrapper } from "components";
+import {
+  initialState,
+  setEmail,
+  setPrice,
+  setQuizAnswers,
+} from "store/users/answers-slice";
 import { Link } from "gatsby";
 import { mobile, tablet, theme } from "styles/theme";
 import styled from "styled-components/macro";
+import { useAppDispatch } from "store/store/store";
 
-export const NavigationOptions: React.FC = () => (
-  <HeaderWrapper>
-    <Link to="/">Home</Link>
-    <Link to="/about">About</Link>
-    <Link to="/checkout">Contact</Link>
-    <Link to="#">Services</Link>
-  </HeaderWrapper>
-);
+export const NavigationOptions: React.FC = () => {
+  const dispatch = useAppDispatch();
+  
+  const setInitialStateHandler = () => {
+    sessionStorage.clear();
+    dispatch(setQuizAnswers(initialState.quiz_answers));
+    dispatch(setEmail(initialState.email));
+    dispatch(setPrice(initialState.price));
+  };
+
+  return (
+    <HeaderWrapper>
+      <Link to="/" onClick={setInitialStateHandler}> Home</Link>
+      <Link to="/about" onClick={setInitialStateHandler}>About</Link>
+      <Link to="#">Contact</Link>
+      <Link to="#">Services</Link>
+    </HeaderWrapper>
+  );
+};
 
 const HeaderWrapper = styled(FlexWrapper)`
   gap: 3rem;

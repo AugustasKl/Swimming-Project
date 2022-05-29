@@ -22,7 +22,7 @@ color:${theme.colors.backgroundSecondary};
 }
 
 @media ${tablet} {
-   padding: 0.5rem 1rem;
    width: 4rem;
+   padding: 0.5rem 1rem;
   }
 `

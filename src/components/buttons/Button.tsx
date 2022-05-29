@@ -12,7 +12,6 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>{
     borderRadius?:string;
     fontSize?:string;
     fontWeight?:string;
-    isLoading?:boolean
     margin?:string;
     maxWidth?:string;
     minWidth?:string;
@@ -25,12 +24,11 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>{
 
 export const Button:React.FC<ButtonProps>=({
     children,
-    isLoading,
     onClick,
     ...rest
 })=>(
-<ButtonP disabled={isLoading} onClick={onClick} {...rest}>
-    {isLoading? 'Loading... ' :children}
+<ButtonP onClick={onClick} {...rest}>
+    {children}
 </ButtonP>
 )
 
@@ -55,8 +53,5 @@ const ButtonP=styled.button<ButtonProps>`
     :disabled{
         cursor: not-allowed;
         opacity: 0.8;
-    }
-    a{
-        cursor:pointer;
     }
 ` 

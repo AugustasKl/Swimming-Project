@@ -2,8 +2,8 @@ import React from "react";
 import { FlexWrapper, Image, Typography } from "components";
 import { InstructorsProps } from "constants/swimInstructors";
 import { Star } from "assets/icons";
-import styled from "styled-components/macro";
 import { SocialButton } from "components/buttons/SocialButton";
+import styled from "styled-components/macro";
 import {  tablet, theme } from "styles/theme";
 
 

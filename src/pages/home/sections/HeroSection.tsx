@@ -3,7 +3,7 @@ import { Box,Container, FlexWrapper, SectionWrapper, Typography} from "component
 import { ButtonPrimary } from "components/buttons/ButtonPrimary";
 import { HeroImage} from "assets/icons";
 import { navigate } from "gatsby";
-import { tablet,  theme } from "styles/theme";
+import { tablet, theme } from "styles/theme";
 import styled from "styled-components/macro";
 
 export const HeroSection: React.FC = () => (
@@ -14,13 +14,13 @@ export const HeroSection: React.FC = () => (
           <Typography color="white" type="h4" >
             Unleash the Inner Beast
           </Typography>
-          <Box marginY={{ _: "s16", desktop: "s32" }} width="20rem">
+          <Box marginY={{_: "s16", desktop: "s32" }} width="20rem">
             <FlexWrapper justifyContent="flex-start">
               <Typography color="orange">500+ &nbsp;</Typography>
               <Typography color="white">happy community members</Typography>
             </FlexWrapper>
           </Box>
-          <Typography color="white" marginRight={{ desktop: "s24" }}>
+          <Typography color="white">
             Take a 30-sec quiz approved by our professionals and get your personalized swimming program right now! 
           </Typography>
           <ButtonPrimary margin="2rem 0" onClick={()=>{navigate('/quiz')}}>
@@ -45,5 +45,4 @@ const HeroStyles = styled(SectionWrapper)`
 
     background: ${theme.backgrounds.heroSectionMobile}
   }
-
 `;
