@@ -28,5 +28,4 @@ const SuccessSectionsStyles = styled(FlexWrapper)`
   width: 100%;
 
   background: ${theme.backgrounds.findRightProgram};
-  
 `;

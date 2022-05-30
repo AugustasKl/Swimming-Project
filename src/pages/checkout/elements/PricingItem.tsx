@@ -16,6 +16,7 @@ export const PricingItem: React.FC<BillingProps> = ({
   price,
 }) => {
   const dispatch=useAppDispatch()
+
   const paymentHandler=()=>{
     dispatch(setPrice(price))
     navigate('/success')
@@ -23,23 +24,28 @@ export const PricingItem: React.FC<BillingProps> = ({
 
   const payment= (price=== 800 ? <Typography fontSize="fs14"><del>${oldPrice}</del> &nbsp; <span>${newPrice}</span> billed every week</Typography> 
   : <Typography fontSize="fs14"> One time payment </Typography>)
+
 return(
   <PricingItemStyles>
       <FlexWrapper alignItems="center" flexDirection="column" justifyContent="center">
+
         <FlexWrapper alignItems="center" gap="0.25rem" >
           <Typography fontWeight="fw700">{name}</Typography>
           <TypographyStyles hasMessage={message.includes('Most popular')} >
             {message}
           </TypographyStyles>
         </FlexWrapper>
+
         <FlexWrapper alignItems="center" gap="0.25rem">
         <Typography fontSize="fs24" fontWeight="fw900">${price}</Typography>
         /program
         </FlexWrapper>
+
         {payment}
         <StartNowButton onClick={paymentHandler}>
           Pay now! 
           </StartNowButton>
+
       </FlexWrapper>
     </PricingItemStyles>
   );
@@ -57,9 +63,7 @@ const PricingItemStyles = styled(FlexWrapper)`
   background-color: ${theme.colors.white};
   border-radius: ${theme.radii.r20};
 
-  span{
-      color:${theme.colors.orange}
-  }
+  span{color:${theme.colors.orange}}
   
   @media ${mobile} {
     width: 22rem;

@@ -1,4 +1,4 @@
-import { switchCase } from "./../switchCase";
+import { switchCase } from "../tests/switchCase";
 
 
 describe("if switch/case works properly it must return right values", () => {

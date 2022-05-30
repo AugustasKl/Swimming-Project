@@ -1,7 +1,6 @@
 import styled from 'styled-components/macro';
 import {
-    backgroundColor,
-    BackgroundColorProps,
+   
     color,
     ColorProps,
     compose,
@@ -12,9 +11,9 @@ import { tablet } from 'styles/theme';
 import { Theme } from 'styles/theme';
 
 
-const containerProps = compose(backgroundColor, color, position);
+const containerProps = compose( color, position);
 
-interface Styles<T> extends BackgroundColorProps<T>, ColorProps<T>, PositionProps<T> { 
+interface Styles<T> extends ColorProps<T>, PositionProps<T> { 
     padding?:string
 }
 

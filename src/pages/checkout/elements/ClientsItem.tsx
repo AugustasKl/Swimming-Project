@@ -21,11 +21,13 @@ export const ClientsItem: React.FC<SliderProps> = ({
   <ClientsItemStyles>
     <FlexWrapper alignItems="center" gap="1rem">
       <Image src={client} alt={client} height="4rem" width="4rem" />
+
       <FlexWrapper flexDirection="column">
         <Typography fontWeight="fw600">{client}</Typography>
         <Typography color="radioColor" fontSize="fs14">{level}</Typography>
         <Typography fontSize="fs12">{country}</Typography>
       </FlexWrapper>
+      
     </FlexWrapper>
     <RatingStars/>
     <Typography>{message}</Typography>

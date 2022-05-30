@@ -1,6 +1,7 @@
 import React from 'react'
 import { FlexWrapper, Typography } from 'components'
 import { theme } from 'styles/theme'
+
 interface SummaryDetails{
     title:string,
     price:number

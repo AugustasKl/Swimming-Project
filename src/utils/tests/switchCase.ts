@@ -1,4 +1,4 @@
-import { SWIMMING_CLASSES } from "./../constants/swimmingClasses";
+import { SWIMMING_CLASSES } from "./../../constants/swimmingClasses";
 
 export const switchCase = (answer: string) => {
     switch (answer) {

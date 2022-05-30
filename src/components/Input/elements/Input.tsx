@@ -6,7 +6,7 @@ export type InputProps = InputHTMLAttributes<HTMLInputElement> &
   BoxProps<Theme> & {
     label?: string;
     errorMessage?: string;
-   htmlFor?:string
+    htmlFor?:string
   };
 
 export const Input: React.FC<InputProps> = ({

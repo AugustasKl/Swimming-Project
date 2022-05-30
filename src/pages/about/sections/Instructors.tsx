@@ -30,7 +30,7 @@ export const Instructors: React.FC = () => {
   };
 
   return (
-    <InstructorStyles >
+    <InstructorStyles>
       <Container>
         <Typography pb='s8' textAlign="center" type="h6">
           Our Professional Coaches

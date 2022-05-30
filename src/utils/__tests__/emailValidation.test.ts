@@ -1,4 +1,4 @@
-import { emailValidation } from "../emailValidation";
+import { emailValidation } from "../tests/emailValidation";
 
 
 describe("check if email input contains '@' symbol ", () => {

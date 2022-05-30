@@ -1,24 +1,24 @@
 import React from "react";
+import { email } from "store/users/selectors";
 import { FlexWrapper } from "components";
-import {
-  initialState,
-  setEmail,
-  setPrice,
-  setQuizAnswers,
-} from "store/users/answers-slice";
+import {initialState,setEmail,setPrice,setQuizAnswers} from "store/users/answers-slice";
 import { Link } from "gatsby";
 import { mobile, tablet, theme } from "styles/theme";
 import styled from "styled-components/macro";
 import { useAppDispatch } from "store/store/store";
+import { useSelector } from "react-redux";
 
 export const NavigationOptions: React.FC = () => {
   const dispatch = useAppDispatch();
+  const userEmail=useSelector(email)
   
   const setInitialStateHandler = () => {
-    sessionStorage.clear();
-    dispatch(setQuizAnswers(initialState.quiz_answers));
-    dispatch(setEmail(initialState.email));
-    dispatch(setPrice(initialState.price));
+    if(userEmail!==""){
+      sessionStorage.clear();
+      dispatch(setQuizAnswers(initialState.quiz_answers));
+      dispatch(setEmail(initialState.email));
+      dispatch(setPrice(initialState.price));
+    }
   };
 
   return (

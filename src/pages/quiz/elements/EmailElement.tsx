@@ -85,7 +85,7 @@ const StyledEmailElement = styled(FlexWrapper)`
     font-size: 1.125rem; 
     
     border:2px solid ${theme.colors.black};
-    border-radius: 1rem;
+    border-radius: ${theme.radii.r10};
     outline: none;
   }
 

@@ -17,6 +17,7 @@ export const ProgramsItem: React.FC<ClassesProps> = ({
   return (
     <ProgramStyles>
       <TagElement status={status} />
+
       <FlexWrapper flexDirection="column" gap="0.5rem">
         <Image src={tag} alt={tag} width="21rem" />
         <Typography fontSize="fs24" fontWeight="fw700" paddingTop="s32">
@@ -29,7 +30,9 @@ export const ProgramsItem: React.FC<ClassesProps> = ({
           /Person
         </FlexWrapper>
       </FlexWrapper>
+
       <Typography paddingX="s16">{message}</Typography>
+
       <FlexWrapper
         alignItems="center"
         borderTop={`1px solid ${theme.colors.radioColor}`}
@@ -43,6 +46,7 @@ export const ProgramsItem: React.FC<ClassesProps> = ({
           {lessonCount} Practices
         </Typography>
       </FlexWrapper>
+      
     </ProgramStyles>
   );
 };

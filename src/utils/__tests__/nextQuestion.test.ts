@@ -1,5 +1,5 @@
 
-import { nextQuestion } from "./../../utils/nextQuestion";
+import { nextQuestion } from "../tests/nextQuestion";
 
 describe("check if nextQuestion handler correctly changes questions", () => {
   it("returns next question", () => {

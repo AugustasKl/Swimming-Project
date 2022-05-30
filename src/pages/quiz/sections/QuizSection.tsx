@@ -148,9 +148,7 @@ const QuizOptionsStyles = styled(FlexWrapper)<{ isSelected: boolean }>`
   border: ${({ isSelected }) =>isSelected === true ? `2px solid ${theme.colors.green}` : `2px solid ${theme.colors.radioColor}`};
   border-radius: ${theme.radii.r20};
 
-  :hover {
-    border: 2px solid ${theme.colors.green};
-  }
+  :hover {border: 2px solid ${theme.colors.green}}
 
   @media ${tablet} {
     :hover {

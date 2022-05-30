@@ -1,6 +1,6 @@
 import { ABOUT } from "../../constants/about";
 import { COMMUNITY } from "../../constants/community";
-import { firstCapitalLetter } from "../firstCapitalLetter";
+import { firstCapitalLetter } from "../tests/firstCapitalLetter";
 
 describe("first capital letter test", () => {
   it("returns first capital letter", () => {

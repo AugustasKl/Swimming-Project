@@ -13,7 +13,7 @@ export const SWIMMING_CLASSES:Array<ClassesProps>=[
     {
         id:'c1',
         title:'Swimming class for beginners',
-        price:800,
+        price:700,
         message: 'Beginners classes are specifically designed to make learning and swimming fun!',
         lessonCount:20,
         enrolled: 18,

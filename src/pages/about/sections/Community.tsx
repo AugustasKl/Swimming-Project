@@ -9,12 +9,15 @@ export const Community: React.FC = () => (
   <CommunityStyles>
     <Container>
       <FlexWrapper flexDirection="column">
+        
         <Typography paddingY="s8" textAlign="center" type="h6">
           Join our swimmers community!
         </Typography>
+
         <Typography paddingBottom="s32" textAlign="center">
           See how Swimclub helps all kinds of swimmers to take their skills to another level!
         </Typography>
+
         <FlexWrapper
           flexDirection={{ _: "column", tablet:'column', desktop: "row" }}
           gap="1.5rem"
@@ -28,6 +31,7 @@ export const Community: React.FC = () => (
             />
           ))}
         </FlexWrapper>
+
       </FlexWrapper>
     </Container>
   </CommunityStyles>

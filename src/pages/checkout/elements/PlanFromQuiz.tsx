@@ -27,7 +27,5 @@ justify-content: center;
 
 gap: 1rem;
 
-span{
-  color:${theme.colors.orange}  
-}
+span{color:${theme.colors.orange}}
 `
