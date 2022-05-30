@@ -1,9 +1,9 @@
 import React from "react";
 import { ClassesProps } from "constants/swimmingClasses";
-import { FlexWrapper, Image, Typography } from "components";
+import { FlexWrapper, Image, TagElement, Typography } from "components";
 import styled from "styled-components/macro";
 import { tablet, theme, useQuery } from "styles/theme";
-import { TagElement } from "components/tag/TagElement";
+
 
 export const ProgramsItem: React.FC<ClassesProps> = ({
   lessonCount,
