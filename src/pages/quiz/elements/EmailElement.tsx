@@ -36,7 +36,10 @@ export const EmailElement: React.FC<EmailElementProps> = ({
   };
 
 
-  if(initLoader){return(<DataAnalyzer/>)}
+  if(initLoader){
+    return(<DataAnalyzer/>)
+  }
+
   const message=<Typography color="red" fontSize="fs12" mb='s8' p='s0' textAlign='center'>Email must include @ symbol</Typography>
 
   return (

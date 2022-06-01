@@ -12,17 +12,16 @@ export const Instructors: React.FC = () => {
   const element=document.querySelector(GridWrapper)
   const [instructors, setInstructors] = useState<Array<InstructorsProps>>([]);
   const [sortStatus, setSortStatus] = useState<boolean>(true);
-  const instructorsCopy =[...SWIMMING_INSTRUCTORS]
   const renderSwimmingInstructors =  instructors.length === 0 ? SWIMMING_INSTRUCTORS :instructors
   
  
   const sortHandler = () => {
     if (sortStatus) {
-      const sorted = instructorsCopy.sort((a, b) => a.rating > b.rating ? 1 : -1);
+      const sorted = SWIMMING_INSTRUCTORS.sort((a, b) => a.rating > b.rating ? 1 : -1);
       setInstructors(sorted);
       setSortStatus(!sortStatus);
     } else {
-      const sorted = instructorsCopy.sort((a, b) => a.rating < b.rating ? 1 : -1);
+      const sorted = SWIMMING_INSTRUCTORS.sort((a, b) => a.rating < b.rating ? 1 : -1);
       setInstructors(sorted);
       setSortStatus(!sortStatus);
     }

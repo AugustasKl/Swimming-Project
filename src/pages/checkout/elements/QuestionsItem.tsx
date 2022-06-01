@@ -9,17 +9,12 @@ import styled from "styled-components/macro";
 
 export const QuestionsItem: React.FC<QuestionsProps> = ({
   answer,
-  id,
-  question,
+  question
 }) => {
-  const [questionAsked, setQuestionAsked] = useState<string>("");
   const [showAnswer, setShowAnswer] = useState<boolean>(false);
-
   const toggleAnswerHandler = () => {
-    setQuestionAsked(id);
     setShowAnswer((prevState) => !prevState);
   };
-
   return (
     <QuestionItemStyles onClick={toggleAnswerHandler}>
       <FlexWrapper justifyContent="space-between">
@@ -27,7 +22,7 @@ export const QuestionsItem: React.FC<QuestionsProps> = ({
           <Typography borderBottom={`1px solid ${theme.colors.white}`} color="white" fontSize={{_:"fs14", tablet:'fs16', desktop:'fs16'}} fontWeight="fw500" >
             {question}
           </Typography>
-          {showAnswer && questionAsked === id && ( <AnswersItem specificAnswer={answer}/> )}
+          {showAnswer  && (<AnswersItem specificAnswer={answer}/>)}
         </FlexWrapper>
         {showAnswer ? <Minus /> : <Plus />}
       </FlexWrapper>

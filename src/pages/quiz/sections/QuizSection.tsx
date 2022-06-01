@@ -33,14 +33,9 @@ export const QuizSection: React.FC = () => {
     return (<FlexWrapper justifyContent='center' mt='s160'><Loader/></FlexWrapper>)
   }
 
-  const allQuestionsNumber = Object.keys(userQuestions).length;
-
-
   const currentQuestionHandler = () => {
     setQuestionNumber(questionNumber+ 1);
   };
-
-
 
   const backButtonHandler = () => {
     if ( questionNumber > 0 ) {
@@ -63,12 +58,10 @@ export const QuizSection: React.FC = () => {
 
 
   const singleAnswerHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (questionData.answerType === "single") {
       dispatch(setQuizAnswers({ [questionKey]: event.target.value }));
       setQuestionNumber(questionNumber + 1);
       if(questionKey==='swim_meters'){
         setSelectedAnswers([])
-      }
     }
   };
   
@@ -87,7 +80,7 @@ export const QuizSection: React.FC = () => {
         />
     );
   }
- 
+  const allQuestionsNumber = Object.keys(userQuestions).length;
   const multipleAnswer = questionData.answerType === "multiple";
   const answerType = multipleAnswer ? "checkbox" : "radio";
   const answerHandler = multipleAnswer ? multipleAnswerHandler : singleAnswerHandler;
