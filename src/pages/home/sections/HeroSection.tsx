@@ -36,7 +36,7 @@ export const HeroSection: React.FC = () => (
 
 
 const HeroStyles = styled(SectionWrapper)`
-  padding: 6.8rem 4rem;
+  padding: 6.7rem 4rem;
   
   background: ${theme.backgrounds.heroSectionDesktop};
 
